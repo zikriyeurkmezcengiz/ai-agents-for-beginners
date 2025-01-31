@@ -31,7 +31,7 @@ So what scenarios are a good use case for using multi-agents? The answer is that
 
 - **Large workloads**: Large workloads can be divided into smaller tasks and assigned to different agents, allowing for parallel processing and faster completion. Example of this is in the case of a large data processing task.
 - **Complex tasks**: Complex tasks, like large workloads, can be broken down into smaller subtasks and assigned to different agents, each specializing in a specific aspect of the task. A good example of this is in the case of autonomous vehicles where different agents manage navigation, obstacle detection, and communication with other vehicles.
-- **Diverse expertise**: Different agents can have diverse expertise, allowing them to handle different aspects of a task more effectively than a single agent. For this case, a good example is in the case of healthcare where agents can manage diagnostics, treatment plans, and patient monitoring. 
+- **Diverse expertise**: Different agents can have diverse expertise, allowing them to handle different aspects of a task more effectively than a single agent. For this case, a good example is in the case of healthcare where agents can manage diagnostics, treatment plans, and patient monitoring.
 
 ## Advantages of Using Multi-Agents Over a Singular Agent
 
@@ -43,7 +43,7 @@ A single agent system could work well for simple tasks, but for more complex tas
 
 Let's take an example, let's book a trip for a user. A single agent system would have to handle all aspects of the trip booking process, from finding flights to booking hotels and rental cars. To achieve this with a single agent, the agent would need to have tools for handling all these tasks. This could lead to a complex and monolithic system that is difficult to maintain and scale. A multi-agent system, on the other hand, could have different agents specialized in finding flights, booking hotels, and rental cars. This would make the system more modular, easier to maintain, and scalable.
 
-Compare this to a travel bureau run as a mom and pop store versus a travel bureau run as a franchise. The mom and pop store would have a single agent handling all aspects of the trip booking process, while the franchise would have different agents handling different aspects of the trip booking process. 
+Compare this to a travel bureau run as a mom and pop store versus a travel bureau run as a franchise. The mom and pop store would have a single agent handling all aspects of the trip booking process, while the franchise would have different agents handling different aspects of the trip booking process.
 
 ## Building Blocks of Implementing the Multi-Agent Design Pattern
 
@@ -76,15 +76,47 @@ Let's look at each of these aspects more in detail.
 
 Let's dive into some concrete patterns we can use to create multi agent apps. Here are some interesting patterns worth considering:
 
-- **Group chat**: This pattern is useful when you want to create a group chat application where multiple agents can communicate with each other. Typical use cases for this pattern include team collaboration, customer support, and social networking. In this pattern, each agent represents a user in the group chat, and messages are exchanged between agents using a messaging protocol. The agents can send messages to the group chat, receive messages from the group chat, and respond to messages from other agents. This pattern can be implemented using a centralized architecture where all messages are routed through a central server, or a decentralized architecture where messages are exchanged directly.
-- **Hand-off**: This pattern is useful when you want to create an application where multiple agents can hand off tasks to each other. Typical use cases for this pattern include customer support, task management, and workflow automation. In this pattern, each agent represents a task or a step in a workflow, and agents can hand off tasks to other agents based on predefined rules.
-- **Collaborative filtering**: This pattern is useful when you want to create an application where multiple agents can collaborate to make recommendations to users. Why you would want multiple agents to collaborate is because each agent can have different expertise and can contribute to the recommendation process in different ways. Let's take an example where a user wants a recommendation on the best stock to buy on the stock market. One agent could be an expert in a specific industry, another agent could be an expert in technical analysis, and another agent could be an expert in fundamental analysis. By collaborating, these agents can provide a more comprehensive recommendation to the user.  
+### Group chat
 
-### Scenario: Refund process
+This pattern is useful when you want to create a group chat application where multiple agents can communicate with each other. Typical use cases for this pattern include team collaboration, customer support, and social networking.
+
+In this pattern, each agent represents a user in the group chat, and messages are exchanged between agents using a messaging protocol. The agents can send messages to the group chat, receive messages from the group chat, and respond to messages from other agents. 
+
+This pattern can be implemented using a centralized architecture where all messages are routed through a central server, or a decentralized architecture where messages are exchanged directly.
+
+![Group chat](./assets/multi-agent.jpeg)
+
+### Hand-off
+
+This pattern is useful when you want to create an application where multiple agents can hand off tasks to each other.
+
+Typical use cases for this pattern include customer support, task management, and workflow automation.
+
+In this pattern, each agent represents a task or a step in a workflow, and agents can hand off tasks to other agents based on predefined rules.
+
+![Hand off](./assets/hand-off.jpeg)
+
+### Collaborative filtering
+
+This pattern is useful when you want to create an application where multiple agents can collaborate to make recommendations to users.
+
+Why you would want multiple agents to collaborate is because each agent can have different expertise and can contribute to the recommendation process in different ways.
+
+Let's take an example where a user wants a recommendation on the best stock to buy on the stock market.
+
+- **Industry expert**:. One agent could be an expert in a specific industry. 
+- **Technical analysis**: Another agent could be an expert in technical analysis. 
+- **Fundamental analysis**: and another agent could be an expert in fundamental analysis. By collaborating, these agents can provide a more comprehensive recommendation to the user.  
+
+![Recommendation](./assets/recommendation.jpeg)
+
+## Scenario: Refund process
 
 Consider a scenario where a customer is trying to get refund for a product, there can be quite a few agents involved in this process but lets divide it up between agents specific for this process and general agents that can be used in other processes.
 
 **Agents specific for the refund process**:
+
+Below are some agents that could be involved in the refund process:
 
 - **Customer agent**: This agent represents the customer and is responsible for initiating the refund process.
 - **Seller agent**: This agent represents the seller and is responsible for processing the refund.
@@ -117,7 +149,7 @@ Design a multi-agent system for a customer support process. Identify the agents 
 
 > Have a think before you read the solution below, you may need more agents than you think.
 
-> TIP: Think about the different stages of the customer support process and also consider agents needed for any system. 
+> TIP: Think about the different stages of the customer support process and also consider agents needed for any system.
 
 ## Solution
 
@@ -125,11 +157,11 @@ Design a multi-agent system for a customer support process. Identify the agents 
 
 ## Knowledge checks
 
-Q1: When should you consider using multi-agents?
+Question: When should you consider using multi-agents?
 
-A1: When you have a small workload and a simple task.
-A2: When you have a large workload
-A3: When you have a simple task.
+- [] A1: When you have a small workload and a simple task.
+- [] A2: When you have a large workload
+- [] A3: When you have a simple task.
 
 [Solution quiz](./solution/solution-quiz.md) 
 
