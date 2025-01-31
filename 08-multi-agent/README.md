@@ -1,6 +1,8 @@
-# Multi agent design pattern
+# Multi agent design patterns
 
-## Introduction 
+As soon as you start working on a project that involves multiple agents, you will need to consider the multi-agent design pattern. However, it might not be immediately clear when to switch to multi-agents and what the advantages are.  
+
+## Introduction
 
 In this lesson, we're looking to answer the following questions:
 
@@ -9,16 +11,13 @@ In this lesson, we're looking to answer the following questions:
 - What are the building blocks of implementing the multi-agent design pattern? 
 - How do we have visibility to how the multiple agents are interacting with each other
 
-## Learning Goals 
+## Learning Goals
 
 After this lesson, you should be able to:
 
 - Identify scenarios where multi-agents are applicable
 - Recognize the advantages of using multi-agents over a singular agent.
 - Comprehend the building blocks of implementing the multi-agent design pattern.
-
-
-# Multi agent design pattern
 
 What's the bigger picture?
 
@@ -122,24 +121,7 @@ Design a multi-agent system for a customer support process. Identify the agents 
 
 ## Solution
 
-**Agents specific for the customer support process**:
-
-- **Customer agent**: This agent represents the customer and is responsible for initiating the support process.
-- **Support agent**: This agent represents the support process and is responsible for providing assistance to the customer.
-- **Escalation agent**: This agent represents the escalation process and is responsible for escalating issues to a higher level of support.
-- **Resolution agent**: This agent represents the resolution process and is responsible for resolving any issues that arise during the support process.
-- **Feedback agent**: This agent represents the feedback process and is responsible for collecting feedback from the customer.
-- **Notification agent**: This agent represents the notification process and is responsible for sending notifications to the customer at various stages of the support process.
-- **Analytics agent**: This agent represents the analytics process and is responsible for analyzing data related to the support process.
-- **Audit agent**: This agent represents the audit process and is responsible for auditing the support process to ensure that it is being carried out correctly.
-- **Reporting agent**: This agent represents the reporting process and is responsible for generating reports on the support process.
-- **Knowledge agent**: This agent represents the knowledge process and is responsible for maintaining a knowledge base of information related to the support process.
-- **Security agent**: This agent represents the security process and is responsible for ensuring the security of the support process.
-- **Quality agent**: This agent represents the quality process and is responsible for ensuring the quality of the support process.
-- **Compliance agent**: This agent represents the compliance process and is responsible for ensuring that the support process complies with regulations and policies.
-- **Training agent**: This agent represents the training process and is responsible for training support agents on how to assist customers.
-
-That's a few agents, was that more or less than you expected? 
+[Solution](./solution/solution.md)
 
 ## Knowledge checks
 
@@ -149,11 +131,11 @@ A1: When you have a small workload and a simple task.
 A2: When you have a large workload
 A3: When you have a simple task.
 
-A: A2: When you have a large workload 
- 
+[Solution quiz](./solution/solution-quiz.md) 
+
 ## Summary
 
-In this lesson, we've looked at the multi-agent design pattern, including the scenarios where multi-agents are applicable, the advantages of using multi-agents over a singular agent, the building blocks of implementing the multi-agent design pattern, and how to have visibility into how the multiple agents are interacting with each other. 
+In this lesson, we've looked at the multi-agent design pattern, including the scenarios where multi-agents are applicable, the advantages of using multi-agents over a singular agent, the building blocks of implementing the multi-agent design pattern, and how to have visibility into how the multiple agents are interacting with each other.
 
 ## Additional resources
 
