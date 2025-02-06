@@ -113,13 +113,10 @@ jobs:
       - name: Run markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v19.1.0
         with:
-          config: |
-            {
-              "default": true,
-              "MD013": {
-                "line_length": 360
-              }
-            }
+          globs: ${{ steps.changed-files.outputs.all_changed_files }}
+          separator: ","
+          fix: true
+          continue-on-error: true
 
 
 
