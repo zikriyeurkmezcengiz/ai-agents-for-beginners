@@ -1,7 +1,7 @@
-import json
 import datetime
 import time
 import os
+import json
 import requests
 from typing import Any, Callable, Set, Dict, List, Optional
 
@@ -26,21 +26,31 @@ def convert_to_unix(date_str: str, date_format: str = "%Y-%m-%d %H:%M:%S") -> in
     :return: The Unix timestamp.
     """
     dt = datetime.datetime.strptime(date_str, date_format)
-    return int(time.mktime(dt.timetuple()))
+    return str(int(time.mktime(dt.timetuple())))
 
 
-def get_airport_code_by_city(city_name: str, airports_data: List[Dict[str, str]]) -> str:
+def get_airport_code_by_city(city_name: str) -> Optional[str]:
     """
     Search for the airport code by city name in the airports data.
-
     :param city_name: The name of the city to search for.
-    :param airports_data: The list of airport data.
     :return: The airport code if found, otherwise None.
     """
-    for airport in airports_data:
-        if airport.get("city") == city_name:
+    dirname = os.path.dirname(__file__)
+    json_path = os.path.join(dirname, "airports.json")
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+    for airport in data:
+        if airport.get("city", "").lower() == city_name.lower():
             return airport.get("code")
     return None
+
+
+# Example usage:
+if __name__ == "__main__":
+    city = "Syracuse"
+    code = get_airport_code_by_city(city)
+    print(f"Airport code for {city} is: {code}")
+
 
 
 def get_airport_traffic(city_name: str, date_str1: str, date_str2: str, airports_data: List[Dict[str, str]]):
@@ -53,24 +63,26 @@ def get_airport_traffic(city_name: str, date_str1: str, date_str2: str, airports
     :param airports_data: The list of airport data.
     :return: The response from the OpenSky Network API.
     """
-    airport_code = get_airport_code_by_city(city_name, airports_data)
+    airport_code = get_airport_code_by_city(city_name)
     if not airport_code:
         return {"error": "Invalid city name"}
 
     unix_time1 = convert_to_unix(date_str1)
     unix_time2 = convert_to_unix(date_str2)
 
-    current_unix_time = int(time.time())
-    seven_days_ago_unix_time = current_unix_time - 7 * 24 * 60 * 60
+    # current_unix_time = int(time.time())
+    # seven_days_ago_unix_time = current_unix_time - 7 * 24 * 60 * 60
 
-    if unix_time1 >= current_unix_time or unix_time2 >= current_unix_time:
-        return {"error": "Dates must be in the past"}
+    # if unix_time1 >= current_unix_time or unix_time2 >= current_unix_time:
+    #     return {"error": "Dates must be in the past"}
 
-    if unix_time1 < seven_days_ago_unix_time or unix_time2 < seven_days_ago_unix_time:
-        return {"error": "Dates must be within the last 7 days"}
+    # if unix_time1 < seven_days_ago_unix_time or unix_time2 < seven_days_ago_unix_time:
+    #     return {"error": "Dates must be within the last 7 days"}
 
     url = f"https://opensky-network.org/api/flights/arrival?airport={airport_code}&begin={unix_time1}&end={unix_time2}"
     response = requests.get(url)
+
+    print(url)
 
     if response.status_code != 200:
         return {"error": "Failed to fetch data from OpenSky Network"}
