@@ -1,21 +1,27 @@
 # Building Trustworty AI Agents
 
 ## Introduction
-This lesson will cover: 
+
+This lesson will cover:
+
 - How to build and deploy safe and effective AI Agents
-- Important security considerations when developing AI Agents 
-- How to maintain data and user privacy when developing AI Agents 
+- Important security considerations when developing AI Agents.
+- How to maintain data and user privacy when developing AI Agents.
 
-## Learning Goals 
-After completing this lesson you will know how to: 
+## Learning Goals
+
+After completing this lesson you will know how to:
+
 - Identify and mitigate risks when creating AI Agents.
-- Implement security measures to ensure that data and access are properly managed. 
-- Create AI Agents that maintain data privacy and provide a quality user experience. 
+- Implement security measures to ensure that data and access are properly managed.
+- Create AI Agents that maintain data privacy and provide a quality user experience.
 
-## Safety 
+## Safety
+
 Let's first look at building safe agentic applications. Safety means that the AI agent performs as designed.  As builders of agentic applications, we have methods and tools to maximize safety:
 
-### Building a Meta Prompting System 
+### Building a Meta Prompting System
+
  If you have ever built an AI application using Large Language Models (LLMs), you know the importance of designing a robust system prompt or system message. These prompts establish the meta rules, instructions, and guidelines for how the LLM will interact with the user and data.
 
 For AI Agents, the system prompt is even more important as the AI Agents will need highly specific instructions to complete the tasks we have designed for them.
@@ -25,9 +31,9 @@ To create scalable system prompts, we can use a meta prompting system for buildi
  **Step 1: Create a Meta or Template Prompt**
  The meta prompt will be used by an LLM to generate the system prompts for the agents we create. We design it as a template so that we can efficiently create multiple agents if needed.
 
-Here is an example of a meta prompt we would give to the LLM: 
+Here is an example of a meta prompt we would give to the LLM:
 
-```
+```plaintext
 You are an expert at creating AI agent assitants. 
 You will be provided a company name, role, responsibilites and other
 information that you will use to provide a system prompt for.
@@ -37,9 +43,9 @@ To create the system prompt, be descriptive as possible and provide a structure 
 **Step 2: Create a basic prompt**
 The next step is to create a basic prompt to describe the AI Agent. You should include the role of the agent, the tasks the agent will complete, and any other responsibilities of the agent.
 
-Here is an example: 
+Here is an example:
 
-```
+```plaintext
 You are a travel agent for Contoso Travel with that is great at booking flights for customers. To help customers you can perform the following tasks: lookup available flights, book flights, ask for preferences in seating and times for flights, cancel any previously booked flights and alert customers on any delays or cancellations of flights.  
 ```
 
@@ -48,7 +54,7 @@ Now we can optimize this prompt by providing the meta prompt as the system promp
 
 This will produce a prompt that is better designed for guiding our AI agents:
 
-``` 
+```plaintext
 **Company Name:** Contoso Travel  
 **Role:** Travel Agent Assistant
 
@@ -102,32 +108,36 @@ It is important to always review this prompt beforehand and edit any details nee
 
 ## Understanding Threats  
 
-To build trustworthy AI agents, it is important to understand and mitigate the risks and threats to your AI agent. Let's look at only some of the different threats to AI agents and how you can better plan and prepare for them
-
+To build trustworthy AI agents, it is important to understand and mitigate the risks and threats to your AI agent. Let's look at only some of the different threats to AI agents and how you can better plan and prepare for them.
 
 ### Task and Instruction
+
 **Description:** Attackers attempt to change the instructions or goals of the AI agent through prompting or manipulating inputs. 
 
 **Mitigation**: Execute validation checks and input filters to detect potentially dangerous prompts before they are processed by the AI Agent. Since these attacks typically require frequent interaction with the Agent, limiting the number of turns in a conversation is another way to prevent these types of attacks.
-### Access to Critical Systems 
+
+### Access to Critical Systems
+
 **Description**: If an AI agent has access to systems and services that store sensitive data, attackers can compromise the communication between the agent and these services. These can be direct attacks or indirect attempts to gain information about these systems through the agent.
 
-**Mitigation**: AI agents should have access to systems on a need-only basis to prevent these types of attacks. Communication between the agent and system should also be secure. Implementing authentication and access control is another way to protect this information. 
+**Mitigation**: AI agents should have access to systems on a need-only basis to prevent these types of attacks. Communication between the agent and system should also be secure. Implementing authentication and access control is another way to protect this information.
 
-### Resource and Service Overloading 
+### Resource and Service Overloading
+
 **Description:** AI agents can access different tools and services to complete tasks. Attackers can use this ability to attack these services by sending a high volume of requests through the AI Agent, which may result in system failures or high costs.
 
 **Mitigation:** Implement policies to limit the number of requests an AI agent can make to a service. Limiting the number of conversation turns and requests to your AI agent is another way to prevent these types of attacks.
 
-### Knowledge Base Poisoning 
+### Knowledge Base Poisoning
+
 **Description:** This type of attack does not target the AI agent directly but targets the knowledge base and other services that the AI agent will use. This could involve corrupting the data or information that the AI agent will use to complete a task, leading to biased or unintended responses to the user.
 
 **Mitigation:** Perform regular verification of the data that the AI agent will be using in its workflows. Ensure that access to this data is secure and only changed by trusted individuals to avoid this type of attack.
 
-### Cascading Errors 
+### Cascading Errors
+
 **Description:** AI agents access various tools and services to complete tasks. Errors caused by attackers can lead to failures of other systems that the AI agent is connected to, causing the attack to become more widespread and harder to troubleshoot.
 
-**Mitigation**: One method to avoid this is to have the AI Agent operate in a limited environment, such as performing tasks in a Docker container, to prevent direct system attacks. Creating fallback mechanisms and retry logic when certain systems respond with an error is another way to prevent larger system failures
-
+**Mitigation**: One method to avoid this is to have the AI Agent operate in a limited environment, such as performing tasks in a Docker container, to prevent direct system attacks. Creating fallback mechanisms and retry logic when certain systems respond with an error is another way to prevent larger system failures.
 
 [TODO: Human in the Loop]
