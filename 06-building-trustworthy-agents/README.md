@@ -1,4 +1,4 @@
-# Building Trustworty AI Agents
+# Building Trustworthy AI Agents
 
 ## Introduction
 
