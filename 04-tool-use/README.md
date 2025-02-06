@@ -185,7 +185,7 @@ Function Calling is at the heart of most, if not all agent tool use design, howe
   - Securely managed data – instead of managing your own conversation state, you can rely on threads to store all the information you need
   - Out-of-the-box tools – Tools that you can use to interact with your data sources, such as Bing, Azure AI Search, and Azure Functions.
  
-    [agent service in action](./agent_service_in_action.jpg)
+    ![agent service in action](./agent_service_in_action.jpg)
 
 - **[Autogen](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html)**
   TODO: Add more info here 
