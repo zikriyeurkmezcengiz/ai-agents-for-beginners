@@ -1,23 +1,87 @@
-# Name Of Lesson 
+# Introduction to AI Agents and Agent Use Cases 
+
+Welcome to the "AI Agents for Beginners" course! This course will give you fundamental knowledge and applied samples for building with AI Agents. 
+
+Join the Azure AI Discord Community to meet other learners, and AI Agent Builders and ask any questions you have on this course. 
+
+To start this course, we will begin by getting a better understanding of what AI Agents are and how we can use them in the applications and workflows we build. 
 
 ## Introduction 
-This lesson will cover
-* Concept 1 
-* Concept 2
-* Concept 3
 
+This lesson will cover:
+- What are AI Agents and what are the different types of agents?
+- What use cases are best for AI Agents and how they can help us?
+- What are some of the basic building blocks when designing Agentic Solutions?
 
 ## Learning Goals 
-After completing this lesson, you will have an understanding about: 
-* Goal 1 
-* Goal 2 
-* Goal 3 
 
-## Concept 1 
+After completing this lesson you should have: 
+- Have a better understanding of AI Agents and how they differ from other AI solutions. 
+- Knowledge of where best to apply AI Agents most efficiently. 
+- How to design Agentic solutions productively for both users and customers. 
 
-## Concept 2 
+## Defining AI Agents and Types of AI Agents 
 
-## Concept 3 
+### What are AI Agents? 
+AI Agents are **systems** that enable **Large Language Models(LLMs)** to **perform actions** by extending their capabilities by giving LLMs **access to tools** and **knowledge**. 
+
+Let's break this definition into smaller parts: 
+
+**System** - It's important to think about agents not as just a single component but as a system of many components. At the basic level, the components of an AI Agent are: 
+	 - **Environment** - this is the defined space where the AI Agent is operating. For example, if we had an AI Agent that handles travel booking, the environment could be the travel booking system that the AI Agent will use to complete tasks.
+	 - **Sensors** - Environments have information and provide feedback.  AI Agents use sensors to gather and interpret this information about the current state of the environment. In the example of the Travel Booking Agent, the travel booking system can provide information such as hotel availability or flight prices. 
+	 - **Actuators** - Once the AI Agent receives the current state of the environment, it needs to determine what action to perform to change the environment based on the task at hand. For the travel booking agent, it may be to book an available room for the user. 
+
+**Large Language Models** - The concept of agents existed before the creation of LLM's. The advantage of building AI Agents with LLMs is their ability to interpret human language and data. This enables LLMs to interpret environmental information and define a plan to change the environment. 
+
+**Perform Actions** - Outside of AI Agent systems, LLMs are limited to situations where the action is generating content or information based on a user's prompt. Inside AI Agent systems, LLMs can accomplish tasks by interpreting the user's request and what tools are available in its environment. 
+
+**Access To Tools** - What tools the LLM has access to is defined by 1) the environment it is operating in and 2) the developer of the AI Agent. Continuing with our travel agent example,  the agent's tools can be limited both by the operations available in the booking system, and/or the developer can define the agent as being only for a certain type of travel such as flights. 
+
+**Knowledge** - Outside of the information provided by the environment, AI Agents can also retrieve knowledge from other systems, services, tools, and even other agents. In the case of the travel agent, this could be the information on the user's travel preferences located in a customer database. 
 
 
-## Additional Resources 
+### The different types of agents 
+Now that we have covered a general definition of AI Agents, let us look at some specific agent types and how they would be applied to a travel booking AI agent. 
+
+| **Agent Type**                | **Description**                                                                                                                       | **Example**                                                                                                                                                                                                                   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Simple Reflex Agents**      | Perform immediate actions based on predefined rules.                                                                                  | Travel agent interprets the context of the email and forwards travel complaints to customer service.                                                                                                                          |
+| **Model-Based Reflex Agents** | Perform actions based on a model of the world and changes to that model.                                                              | Travel agent prioritizes routes with significant price changes based on historical pricing data it has access to.                                                                                                             |
+| **Goal-Based Agents**         | Create plans to achieve specific goals by interpreting the goal and determining actions to reach it.                                  | Travel agent books a journey by determining necessary travel arrangements (car, public transit, flights) from current location to destination.                                                                                |
+| **Utility-Based Agents**      | Consider preferences and weigh tradeoffs numerically to determine how to achieve goals.                                               | Travel agent maximizes utility by weighing convenience vs. cost when booking travel.                                                                                                                                          |
+| **Learning Agents**           | Improve over time by responding to feedback and adjusting actions accordingly.                                                        | Travel agent improves by using customer feedback from post-trip surveys to make adjustments to future bookings.                                                                                                               |
+| **Hierarchical Agents**       | Feature multiple agents in a tiered system, with higher-level agents breaking tasks into subtasks for lower-level agents to complete. | Travel agent cancels a trip by dividing the task into subtasks (e.g., canceling specific bookings) and having lower-level agents complete them, reporting back to the higher-level agent.                                     |
+| **Multi-Agent Systems (MAS)** | Agents complete tasks independently, either cooperatively or competitively.                                                           | Cooperative: Multiple agents book specific travel services such as hotels, flights, and entertainment. Competitive: Multiple agents manage and compete over a shared hotel booking calendar to book customers into the hotel. |
+
+
+## When to Use AI Agents 
+
+In the earlier section, we use the Travel Agent use-case to explain how the different type of agents can be used in different scenarios of travel booking. 
+
+Let's look at when to use AI Agents more generally: 
+- **Open-Ended Problems** - allowing the LLM to determine needed steps to complete a task because it cannot alway be hardcoded into a workflow.
+- **Multi-Step Processes** - tasks that require a level of complexity in which the AI Agent will need to use tools or information over multiple turns vs single shot retrieval.  
+- **Improvement Over Time** - tasks where the agent can improve over time by receiving feedback from either its environment or users in order to provide better utility. 
+
+We will cover more considerations of using AI Agents in the Building Trustworthy AI Agents lesson. 
+## Basics of Agentic Solutions 
+
+### Agent Development 
+Defining the tools, actions, and behaviors is the first place to start when designing an AI Agent system. In this course, we will focus on using the **Azure AI Agent Service** to define our Agents. It offers features like 
+	- Open Model Selection. - use of OpenAI, Mistral, and Llama
+	- Use of Licensed Data through providers such as Tripadvisor 
+	- Use of standardized OpenAPI 3.0 tools 
+
+### Agentic Patterns
+Communication with LLMs is through prompts. Given the semi-autonomous nature of AI Agents, it is not always possible or required to manually re-prompt the LLM after a change in the environment.  We use **Agentic Patterns** that allow us to prompt the LLM over multiple steps in a more scalable and way. 
+
+This course is divided into some of the current popular Agentic patterns. 
+
+### Agentic Frameworks 
+Agentic Frameworks allow developers to implement agentic patterns through code. These frameworks offer templates, plugins, and tools for better AI Agent collaboration. With these benefits comes the ability for better observability and troubleshooting of AI Agent systems. 
+
+In this course, we will explore the research-driven Autogen framework and the production ready Agent framework from Semantic Kernel. 
+
+Go to Lesson 2 where we will explore the differences between these AI Agent frameworks and tools. 
+
