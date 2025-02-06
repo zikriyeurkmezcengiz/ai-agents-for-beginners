@@ -1,15 +1,13 @@
 # Building Trustworty AI Agents
 
-## Introduction 
-
+## Introduction
 This lesson will cover: 
-- How to build and deploy safe and effective AI Agents 
+- How to build and deploy safe and effective AI Agents
 - Important security considerations when developing AI Agents 
 - How to maintain data and user privacy when developing AI Agents 
+
 ## Learning Goals 
-
 After completing this lesson you will know how to: 
-
 - Identify and mitigate risks when creating AI Agents.
 - Implement security measures to ensure that data and access are properly managed. 
 - Create AI Agents that maintain data privacy and provide a quality user experience. 
