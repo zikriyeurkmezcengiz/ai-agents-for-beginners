@@ -8,44 +8,22 @@ To start this course, we will begin by getting a better understanding of what Ag
 ## Introduction
 This lesson will cover 
 
-### Understand Agentic RAG
-Learn about the emerging paradigm in AI where large language models (LLMs) autonomously plan their next steps while pulling information from external data sources.
-
-### Grasp Iterative Maker-Checker Style
-Comprehend the loop of iterative calls to the LLM, interspersed with tool or function calls and structured outputs, designed to improve correctness and handle malformed queries.
-
-### Explore Practical Applications
-Identify scenarios where Agentic RAG shines, such as correctness-first environments, complex database interactions, and extended workflows.
+- **Understand Agentic RAG:**  Learn about the emerging paradigm in AI where large language models (LLMs) autonomously plan their next steps while pulling information from external data sources
+- **Grasp Iterative Maker-Checker Style:** Comprehend the loop of iterative calls to the LLM, interspersed with tool or function calls and structured outputs, designed to improve correctness and handle malformed queries.
+- **Explore Practical Applications:** Identify scenarios where Agentic RAG shines, such as correctness-first environments, complex database interactions, and extended workflows.
 
 ## Learning Goals 
 After completing this lesson you will know how to/understand: 
 
-### Understanding Agentic RAG
- Learn about the emerging paradigm in AI where large language models (LLMs) autonomously plan their next steps while pulling information from external data sources.
-
-### Iterative Maker-Checker Style
- Grasp the concept of a loop of iterative calls to the LLM, interspersed with tool or function calls and structured outputs, designed to improve correctness and handle malformed queries.
-
-### Owning the Reasoning Process
-Comprehend the system's ability to own its reasoning process, making decisions on how to approach problems without relying on pre-defined paths.
-
-### Workflow
-Understand how an agentic model independently decides to retrieve market trend reports, identify competitor data, correlate internal sales metrics, synthesize findings, and evaluate the strategy.
-
-### Iterative Loops, Tool Integration, and Memory 
-Learn about the system's reliance on a looped interaction pattern, maintaining state and memory across steps to avoid repetitive loops and make informed decisions.
-
-### Handling Failure Modes and Self-Correction:
-Explore the system's robust self-correction mechanisms, including iterating and re-querying, using diagnostic tools, and falling back on human oversight.
-
-### Boundaries of Agency
- Understand the limitations of Agentic RAG, focusing on domain-specific autonomy, infrastructure dependence, and respect for guardrails.
-
-### Practical Use Cases and Value
-Identify scenarios where Agentic RAG shines, such as correctness-first environments, complex database interactions, and extended workflows.
-
-### Governance, Transparency, and Trust
- Learn about the importance of governance and transparency, including explainable reasoning, bias control, and human oversight.
+- **Understanding Agentic RAG:** Learn about the emerging paradigm in AI where large language models (LLMs) autonomously plan their next steps while pulling information from external data sources.
+- **Iterative Maker-Checker Style:** Grasp the concept of a loop of iterative calls to the LLM, interspersed with tool or function calls and structured outputs, designed to improve correctness and handle malformed queries.
+- **Owning the Reasoning Process:** Comprehend the system's ability to own its reasoning process, making decisions on how to approach problems without relying on pre-defined paths.
+- **Workflow:** Understand how an agentic model independently decides to retrieve market trend reports, identify competitor data, correlate internal sales metrics, synthesize findings, and evaluate the strategy.
+- **Iterative Loops, Tool Integration, and Memory:** Learn about the system's reliance on a looped interaction pattern, maintaining state and memory across steps to avoid repetitive loops and make informed decisions.
+- **Handling Failure Modes and Self-Correction:** Explore the system's robust self-correction mechanisms, including iterating and re-querying, using diagnostic tools, and falling back on human oversight.
+- **Boundaries of Agency:** Understand the limitations of Agentic RAG, focusing on domain-specific autonomy, infrastructure dependence, and respect for guardrails.
+- **Practical Use Cases and Value:** Identify scenarios where Agentic RAG shines, such as correctness-first environments, complex database interactions, and extended workflows.
+- **Governance, Transparency, and Trust:** Learn about the importance of governance and transparency, including explainable reasoning, bias control, and human oversight.
 
 ## What is Agentic RAG?
 
