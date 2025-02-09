@@ -217,6 +217,12 @@ travel_agent.adjust_based_on_feedback(feedback)
 
 ## 3. Corrective RAG System
 
+Firstly lets start by understanding the difference between RAG Tool and Pre-emptive Context Load
+
+### Retrieval-Augmented Generation (RAG):
+
+RAG combines a retrieval system with a generative model. When a query is made, the retrieval system fetches relevant documents or data from an external source, and this retrieved information is used to augment the input to the generative model. This helps the model generate more accurate and contextually relevant responses.
+
 #### Introduction to RAG
 Retrieval-Augmented Generation (RAG) is a technique that combines retrieval-based and generation-based approaches to enhance the performance of AI agents. In a RAG system, the agent retrieves relevant information from a knowledge base and uses it to generate appropriate responses or actions.
 
@@ -358,6 +364,237 @@ feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)
 new_itinerary = travel_agent.adjust_based_on_feedback(feedback)
 print("Updated Itinerary:", new_itinerary)
 ```
+
+### Pre-emptive Context Load:
+
+Pre-emptive Context Load involves loading relevant context or background information into the model before processing a query. This means the model has access to this information from the start, which can help it generate more informed responses without needing to retrieve additional data during the process.
+
+Here's a simplified example of how a pre-emptive context load might look for a travel agent application in Python:
+
+```python
+class TravelAgent:
+    def __init__(self):
+        # Pre-load popular destinations and their information
+        self.context = {
+            "Paris": {"country": "France", "currency": "Euro", "language": "French", "attractions": ["Eiffel Tower", "Louvre Museum"]},
+            "Tokyo": {"country": "Japan", "currency": "Yen", "language": "Japanese", "attractions": ["Tokyo Tower", "Shibuya Crossing"]},
+            "New York": {"country": "USA", "currency": "Dollar", "language": "English", "attractions": ["Statue of Liberty", "Times Square"]},
+            "Sydney": {"country": "Australia", "currency": "Dollar", "language": "English", "attractions": ["Sydney Opera House", "Bondi Beach"]}
+        }
+
+    def get_destination_info(self, destination):
+        # Fetch destination information from pre-loaded context
+        info = self.context.get(destination)
+        if info:
+            return f"{destination}:\nCountry: {info['country']}\nCurrency: {info['currency']}\nLanguage: {info['language']}\nAttractions: {', '.join(info['attractions'])}"
+        else:
+            return f"Sorry, we don't have information on {destination}."
+
+# Example usage
+travel_agent = TravelAgent()
+print(travel_agent.get_destination_info("Paris"))
+print(travel_agent.get_destination_info("Tokyo"))
+```
+
+#### Explanation:
+
+1. **Initialization (`__init__` method)**: The `TravelAgent` class pre-loads a dictionary containing information about popular destinations such as Paris, Tokyo, New York, and Sydney. This dictionary includes details like the country, currency, language, and major attractions for each destination.
+
+2. **Retrieving Information (`get_destination_info` method)**: When a user queries about a specific destination, the `get_destination_info` method fetches the relevant information from the pre-loaded context dictionary.
+
+By pre-loading the context, the travel agent application can quickly respond to user queries without having to retrieve this information from an external source in real-time. This makes the application more efficient and responsive.
+
+### Bootstrapping the Plan with a Goal Before Iterating
+
+Bootstrapping a plan with a goal involves starting with a clear objective or target outcome in mind. By defining this goal upfront, the model can use it as a guiding principle throughout the iterative process. This helps ensure that each iteration moves closer to achieving the desired outcome, making the process more efficient and focused.
+
+Here's an example of how you might bootstrap a travel plan with a goal before iterating for a travel agent in Python:
+
+### Scenario:
+A travel agent wants to plan a customized vacation for a client. The goal is to create a travel itinerary that maximizes the client's satisfaction based on their preferences and budget.
+
+### Steps:
+1. Define the client's preferences and budget.
+2. Bootstrap the initial plan based on these preferences.
+3. Iterate to refine the plan, optimizing for the client's satisfaction.
+
+#### Python Code:
+
+```python
+class TravelAgent:
+    def __init__(self, destinations):
+        self.destinations = destinations
+
+    def bootstrap_plan(self, preferences, budget):
+        plan = []
+        total_cost = 0
+
+        for destination in self.destinations:
+            if total_cost + destination['cost'] <= budget and self.match_preferences(destination, preferences):
+                plan.append(destination)
+                total_cost += destination['cost']
+
+        return plan
+
+    def match_preferences(self, destination, preferences):
+        for key, value in preferences.items():
+            if destination.get(key) != value:
+                return False
+        return True
+
+    def iterate_plan(self, plan, preferences, budget):
+        for i in range(len(plan)):
+            for destination in self.destinations:
+                if destination not in plan and self.match_preferences(destination, preferences) and self.calculate_cost(plan, destination) <= budget:
+                    plan[i] = destination
+                    break
+        return plan
+
+    def calculate_cost(self, plan, new_destination):
+        return sum(destination['cost'] for destination in plan) + new_destination['cost']
+
+# Example usage
+destinations = [
+    {"name": "Paris", "cost": 1000, "activity": "sightseeing"},
+    {"name": "Tokyo", "cost": 1200, "activity": "shopping"},
+    {"name": "New York", "cost": 900, "activity": "sightseeing"},
+    {"name": "Sydney", "cost": 1100, "activity": "beach"},
+]
+
+preferences = {"activity": "sightseeing"}
+budget = 2000
+
+travel_agent = TravelAgent(destinations)
+initial_plan = travel_agent.bootstrap_plan(preferences, budget)
+print("Initial Plan:", initial_plan)
+
+refined_plan = travel_agent.iterate_plan(initial_plan, preferences, budget)
+print("Refined Plan:", refined_plan)
+```
+
+#### Explanation:
+
+1. **Initialization (`__init__` method)**: The `TravelAgent` class is initialized with a list of potential destinations, each having attributes like name, cost, and activity type.
+
+2. **Bootstrapping the Plan (`bootstrap_plan` method)**: This method creates an initial travel plan based on the client's preferences and budget. It iterates through the list of destinations and adds them to the plan if they match the client's preferences and fit within the budget.
+
+3. **Matching Preferences (`match_preferences` method)**: This method checks if a destination matches the client's preferences.
+
+4. **Iterating the Plan (`iterate_plan` method)**: This method refines the initial plan by trying to replace each destination in the plan with a better match, considering the client's preferences and budget constraints.
+
+5. **Calculating Cost (`calculate_cost` method)**: This method calculates the total cost of the current plan, including a potential new destination.
+
+#### Example Usage:
+- **Initial Plan**: The travel agent creates an initial plan based on the client's preferences for sightseeing and a budget of $2000.
+- **Refined Plan**: The travel agent iterates the plan, optimizing for the client's preferences and budget.
+
+By bootstrapping the plan with a clear goal (e.g., maximizing client satisfaction) and iterating to refine the plan, the travel agent can create a customized and optimized travel itinerary for the client. This approach ensures that the travel plan aligns with the client's preferences and budget from the start and improves with each iteration.
+
+
+### Taking Advantage of LLM for Re-ranking and Scoring
+
+Large Language Models (LLMs) can be used for re-ranking and scoring by evaluating the relevance and quality of retrieved documents or generated responses. Here's how it works:
+
+**Retrieval:** The initial retrieval step fetches a set of candidate documents or responses based on the query.
+
+**Re-ranking:** The LLM evaluates these candidates and re-ranks them based on their relevance and quality. This step ensures that the most relevant and high-quality information is presented first.
+
+**Scoring:** The LLM assigns scores to each candidate, reflecting their relevance and quality. This helps in selecting the best response or document for the user.
+
+By leveraging LLMs for re-ranking and scoring, the system can provide more accurate and contextually relevant information, improving the overall user experience.
+
+Here's an example of how a travel agent might use a Large Language Model (LLM) for re-ranking and scoring travel destinations based on user preferences in Python:
+
+#### Scenario:
+A travel agent wants to recommend the best travel destinations to a client based on their preferences. The LLM will help re-rank and score the destinations to ensure the most relevant options are presented.
+
+#### Steps:
+1. Collect user preferences.
+2. Retrieve a list of potential travel destinations.
+3. Use the LLM to re-rank and score the destinations based on user preferences.
+
+Here’s how you can update the previous example to use Azure OpenAI Services:
+
+#### Requirements:
+1. You need to have an Azure subscription.
+2. Create an Azure OpenAI resource and get your API key.
+
+#### Python Code:
+
+```python
+import requests
+import json
+
+class TravelAgent:
+    def __init__(self, destinations):
+        self.destinations = destinations
+
+    def get_recommendations(self, preferences, api_key, endpoint):
+        # Generate a prompt for the Azure OpenAI
+        prompt = self.generate_prompt(preferences)
+        
+        # Define headers and payload for the request
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {api_key}'
+        }
+        payload = {
+            "prompt": prompt,
+            "max_tokens": 150,
+            "temperature": 0.7
+        }
+        
+        # Call the Azure OpenAI API to get the re-ranked and scored destinations
+        response = requests.post(endpoint, headers=headers, json=payload)
+        response_data = response.json()
+        
+        # Extract and return the recommendations
+        recommendations = response_data['choices'][0]['text'].strip().split('\n')
+        return recommendations
+
+    def generate_prompt(self, preferences):
+        prompt = "Here are the travel destinations ranked and scored based on the following user preferences:\n"
+        for key, value in preferences.items():
+            prompt += f"{key}: {value}\n"
+        prompt += "\nDestinations:\n"
+        for destination in self.destinations:
+            prompt += f"- {destination['name']}: {destination['description']}\n"
+        return prompt
+
+# Example usage
+destinations = [
+    {"name": "Paris", "description": "City of lights, known for its art, fashion, and culture."},
+    {"name": "Tokyo", "description": "Vibrant city, famous for its modernity and traditional temples."},
+    {"name": "New York", "description": "The city that never sleeps, with iconic landmarks and diverse culture."},
+    {"name": "Sydney", "description": "Beautiful harbour city, known for its opera house and stunning beaches."},
+]
+
+preferences = {"activity": "sightseeing", "culture": "diverse"}
+api_key = 'your_azure_openai_api_key'
+endpoint = 'https://your-endpoint.com/openai/deployments/your-deployment-name/completions?api-version=2022-12-01'
+
+travel_agent = TravelAgent(destinations)
+recommendations = travel_agent.get_recommendations(preferences, api_key, endpoint)
+print("Recommended Destinations:")
+for rec in recommendations:
+    print(rec)
+```
+
+#### Explanation:
+
+1. **Initialization**: The `TravelAgent` class is initialized with a list of potential travel destinations, each having attributes like name and description.
+
+2. **Getting Recommendations (`get_recommendations` method)**: This method generates a prompt for the Azure OpenAI service based on the user's preferences and makes an HTTP POST request to the Azure OpenAI API to get re-ranked and scored destinations.
+
+3. **Generating Prompt (`generate_prompt` method)**: This method constructs a prompt for the Azure OpenAI, including the user's preferences and the list of destinations. The prompt guides the model to re-rank and score the destinations based on the provided preferences.
+
+4. **API Call**: The `requests` library is used to make an HTTP POST request to the Azure OpenAI API endpoint. The response contains the re-ranked and scored destinations.
+
+5. **Example Usage**: The travel agent collects user preferences (e.g., interest in sightseeing and diverse culture) and uses the Azure OpenAI service to get re-ranked and scored recommendations for travel destinations.
+
+Make sure to replace `your_azure_openai_api_key` with your actual Azure OpenAI API key and `https://your-endpoint.com/...` with the actual endpoint URL of your Azure OpenAI deployment.
+
+By leveraging the LLM for re-ranking and scoring, the travel agent can provide more personalized and relevant travel recommendations to clients, enhancing their overall experience.
 
 ### RAG: Prompting Technique vs Tool
 
@@ -810,21 +1047,86 @@ In this example, we'll design a code generating agent, Travel Agent, to assist u
    print("Updated Itinerary:", updated_itinerary)
    ```
 
-#### Applications
-- **Automated Code Generation**: Generate code snippets for specific tasks.
-- **SQL as a RAG**: Use SQL queries to manipulate data.
-- **Problem Solving**: Create and execute code to solve problems.
+### Leveraging environment awareness and reasoning 
 
-**Example**:
-A data analysis agent:
-1. **Task**: Analyze a dataset to find trends.
-2. **Steps**:
-   - Load the dataset.
-   - Generate SQL queries to filter data.
-   - Execute queries and retrieve results.
-   - Generate visualizations and insights.
-3. **Resources**: Dataset access, SQL capabilities.
-4. **Experience**: Use past results to improve future analyses.
+Based on the schema of the table can indeed enhance the query generation process by leveraging environment awareness and reasoning. 
+
+Here's an example of how this can be done:
+
+1. **Understanding the Schema**: The system will understand the schema of the table and use this information to ground the query generation.
+2. **Adjusting Based on Feedback**: The system will adjust user preferences based on feedback and reason about which fields in the schema need to be updated.
+3. **Generating and Executing Queries**: The system will generate and execute queries to fetch updated flight and hotel data based on the new preferences.
+
+Here is an updated Python code example that incorporates these concepts:
+
+```python
+def adjust_based_on_feedback(feedback, preferences, schema):
+    # Adjust preferences based on user feedback
+    if "liked" in feedback:
+        preferences["favorites"] = feedback["liked"]
+    if "disliked" in feedback:
+        preferences["avoid"] = feedback["disliked"]
+    # Reasoning based on schema to adjust other related preferences
+    for field in schema:
+        if field in preferences:
+            preferences[field] = adjust_based_on_environment(feedback, field, schema)
+    return preferences
+
+def adjust_based_on_environment(feedback, field, schema):
+    # Custom logic to adjust preferences based on schema and feedback
+    if field in feedback["liked"]:
+        return schema[field]["positive_adjustment"]
+    elif field in feedback["disliked"]:
+        return schema[field]["negative_adjustment"]
+    return schema[field]["default"]
+
+def generate_code_to_fetch_data(preferences):
+    # Generate code to fetch flight data based on updated preferences
+    return f"fetch_flights(preferences={preferences})"
+
+def generate_code_to_fetch_hotels(preferences):
+    # Generate code to fetch hotel data based on updated preferences
+    return f"fetch_hotels(preferences={preferences})"
+
+def execute_code(code):
+    # Simulate execution of code and return mock data
+    return {"data": f"Executed: {code}"}
+
+def generate_itinerary(flights, hotels, attractions):
+    # Generate itinerary based on flights, hotels, and attractions
+    return {"flights": flights, "hotels": hotels, "attractions": attractions}
+
+# Example schema
+schema = {
+    "favorites": {"positive_adjustment": "increase", "negative_adjustment": "decrease", "default": "neutral"},
+    "avoid": {"positive_adjustment": "decrease", "negative_adjustment": "increase", "default": "neutral"}
+}
+
+# Example usage
+preferences = {"favorites": "sightseeing", "avoid": "crowded places"}
+feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)"]}
+updated_preferences = adjust_based_on_feedback(feedback, preferences, schema)
+
+# Regenerate and execute code with updated preferences
+updated_flight_code = generate_code_to_fetch_data(updated_preferences)
+updated_hotel_code = generate_code_to_fetch_hotels(updated_preferences)
+
+updated_flights = execute_code(updated_flight_code)
+updated_hotels = execute_code(updated_hotel_code)
+
+updated_itinerary = generate_itinerary(updated_flights, updated_hotels, feedback["liked"])
+print("Updated Itinerary:", updated_itinerary)
+```
+
+#### Explanation:
+1. **Schema Awareness**: The `schema` dictionary defines how preferences should be adjusted based on feedback. It includes fields like `favorites` and `avoid`, with corresponding adjustments.
+2. **Adjusting Preferences (`adjust_based_on_feedback` method)**: This method adjusts preferences based on user feedback and the schema.
+3. **Environment-Based Adjustments (`adjust_based_on_environment` method)**: This method customizes the adjustments based on the schema and feedback.
+4. **Generating and Executing Queries**: The system generates code to fetch updated flight and hotel data based on the adjusted preferences and simulates the execution of these queries.
+5. **Generating Itinerary**: The system creates an updated itinerary based on the new flight, hotel, and attraction data.
+
+By making the system environment-aware and reasoning based on the schema, it can generate more accurate and relevant queries, leading to better travel recommendations and a more personalized user experience.
+
 
 ### Using SQL as a Retrieval-Augmented Generation (RAG) Technique
 
@@ -843,6 +1145,22 @@ SQL (Structured Query Language) is a powerful tool for interacting with database
 3. **Dynamic Query Generation**:
    - The AI agent generates dynamic SQL queries based on the context and user needs.
    - Example: Customizing SQL queries to filter results based on budget, dates, and interests.
+
+#### Applications
+- **Automated Code Generation**: Generate code snippets for specific tasks.
+- **SQL as a RAG**: Use SQL queries to manipulate data.
+- **Problem Solving**: Create and execute code to solve problems.
+
+**Example**:
+A data analysis agent:
+1. **Task**: Analyze a dataset to find trends.
+2. **Steps**:
+   - Load the dataset.
+   - Generate SQL queries to filter data.
+   - Execute queries and retrieve results.
+   - Generate visualizations and insights.
+3. **Resources**: Dataset access, SQL capabilities.
+4. **Experience**: Use past results to improve future analyses.
 
 #### Practical Example: Using SQL in Travel Agent
 
