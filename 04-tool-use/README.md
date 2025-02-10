@@ -186,7 +186,7 @@ Function Calling is at the heart of most, if not all agent tool use design, howe
     ![function calling](./functioncalling_diagram.png)
 
     
-    In Semantic Kernel functions/tools are called [Plugins](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/?pivots=programming-language-python). We can convert the `get_current_time` function we saw earlier into a plugin by turning it into a class with the function in it. We can also import the `kernel_function` decorator, which takes in the description of the function. When you then create a kernel with the GetCurrentTimePlugin, the kernel will automatically serialize the function and its parameters, creating the schema to send to the LLM in the process.
+    In Semantic Kernel functions/tools are called [Plugins](https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python). We can convert the `get_current_time` function we saw earlier into a plugin by turning it into a class with the function in it. We can also import the `kernel_function` decorator, which takes in the description of the function. When you then create a kernel with the GetCurrentTimePlugin, the kernel will automatically serialize the function and its parameters, creating the schema to send to the LLM in the process.
 
     ```python
     from semantic_kernel.functions import kernel_function
@@ -238,94 +238,56 @@ Function Calling is at the heart of most, if not all agent tool use design, howe
         - [OpenAI defined tools](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview)
         - [Azure Functions](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview)
 
-    The Agent Service allows us to be able to use these tools 
+    The Agent Service allows us to be able to use these tools together as a `toolset`. It also utilizes `threads` which keep track of the history of messages from a particular conversation. 
+    
+    Imagine you are a sales agent at a company called Contoso. You want to develop a conversational agent that can answer questions about your sales data. 
+    <br>The image below illustrates how you could use Azure AI Agent Service to analyze your sales data:
 
     <img src="./agent_service_in_action.jpg" alt="agent service in action" />
 
-    To use any of these tools with the service we create a client and define a tool or toolset. 
+
+    To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the Python code below. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query`, or the pre-built Code Interpreter depending on the user request. 
     
     ```python 
     import os
     from azure.ai.projects import AIProjectClient
     from azure.identity import DefaultAzureCredential
-    from azure.ai.projects.models import ToolSet, CodeInterpreterTool
-    from azure.ai.projects.models import FilePurpose
+    from fecth_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fecth_sales_data_functions.py file.
+    from azure.ai.projects.models import ToolSet, FunctionTool, CodeInterpreterTool
 
     project_client = AIProjectClient.from_connection_string(
         credential=DefaultAzureCredential(),
         conn_str=os.environ["PROJECT_CONNECTION_STRING"],
     )
 
-    # Upload a file and add it to the client 
-    file = project_client.agents.upload_file_and_poll(
-        file_path="contoso_sales_data.csv", purpose=FilePurpose.AGENTS
-    )
-    print(f"Uploaded file, file ID: {file.id}")
+    # Initialize function calling agent with the fetch_sales_data_using_sqlite_query function and adding it to the toolset
+    fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
+    toolset = ToolSet()
+    toolset.add(fetch_data_function)
 
-    # Initialize Code Interpreter tool and include the file ID of the file you uploaded. Then add it to the toolset. 
-    code_interpreter = code_interpreter = CodeInterpreterTool(file_ids=[file.id])
+    # Initialize Code Interpreter tool and adding it to the toolset. 
+    code_interpreter = code_interpreter = CodeInterpreterTool()
     toolset = ToolSet()
     toolset.add(code_interpreter)
 
     agent = project_client.agents.create_agent(
         model="gpt-4o-mini", name="my-agent", instructions="You are helpful agent", 
-        toolset=toolset, tool_resources=code_interpreter.resources
+        toolset=toolset
     )
-    print(f"Created agent, ID: {agent.id}")
-
     ```
-
-    ```python
-    # create a thread
-    thread = project_client.agents.create_thread()
-    print(f"Created thread, thread ID: {thread.id}")
-
-    # create a message
-    message = project_client.agents.create_message(
-        thread_id=thread.id,
-        role="user",
-        content="Could you please create bar chart in the TRANSPORTATION sector for the operating profit from the uploaded csv file and provide file to me?",
-    )
-    print(f"Created message, message ID: {message.id}")
-
-    # create and execute a run
-    run = project_client.agents.create_and_process_run(thread_id=thread.id, assistant_id=agent.id)
-    print(f"Run finished with status: {run.status}")
-
-    # print the messages from the agent
-    messages = project_client.agents.list_messages(thread_id=thread.id)
-    print(f"Messages: {messages}")
-
-    # get the most recent message from the assistant
-    last_msg = messages.get_last_text_message_by_sender("assistant")
-    if last_msg:
-        print(f"Last Message: {last_msg.text.value}")
-
-    ```
-
-
-
- 
-
-
- 
 
 
 ## What are the special considerations for using the Tool Use Design Pattern to build trustworthy AI agents?
 
-A common concern with SQL dynamically generated by LLMs is security, particularly the risk of SQL injection or malicious actions, such as dropping or tampering with the database. While these concerns are valid, they can be effectively mitigated by properly configuring database access permissions.
-
-For SQLite, this involves configuring the database as read-only. For database services like PostgreSQL or Azure SQL, the app should be assigned a read-only (SELECT) role. Running the app in a secure environment further enhances protection.
-
-In enterprise scenarios, data is typically extracted and transformed from operational systems into a read-only database or data warehouse with a user-friendly schema. This approach ensures that the data is secure, optimized for performance and accessibility, and that the app has restricted, read-only access.
+A common concern with SQL dynamically generated by LLMs is security, particularly the risk of SQL injection or malicious actions, such as dropping or tampering with the database. While these concerns are valid, they can be effectively mitigated by properly configuring database access permissions. For most databases this involves configuring the database as read-only. For database services like PostgreSQL or Azure SQL, the app should be assigned a read-only (SELECT) role. Running the app in a secure environment further enhances protection. In enterprise scenarios, data is typically extracted and transformed from operational systems into a read-only database or data warehouse with a user-friendly schema. This approach ensures that the data is secure, optimized for performance and accessibility, and that the app has restricted, read-only access.
 
 
 ## Additional Resources 
 
-- [Contoso Creative Writer Multi-Agent Workshop](https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop)
 - [Azure AI Agents Service Workshop](https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/)
-- [Semantic Kernel Function Calling Tutorial](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions).
-- [here](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py). 
-- [Autogen](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html)
+- [Contoso Creative Writer Multi-Agent Workshop](https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop)
+- [Semantic Kernel Function Calling Tutorial](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions)
+- [Semantic Kernel Code Interpreter](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py)
+- [Autogen Tools](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html)
 
     
