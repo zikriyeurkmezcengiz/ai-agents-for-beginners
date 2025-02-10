@@ -34,40 +34,61 @@ AI Agents can leverage tools to complete complex tasks, retrieve information, or
 
 ### Function/Tool Calling 
 
-Function calling is the primary way we enable Large Language Models (LLMs) to interact with tools. You will often see Function and Tool Calling used interchangeably because the 'functions' (blocks of reusable code) are the 'tools' used to carry out tasks. In order for a function's code to be run, an LLM must compare the user prompt against the functions description, and decide if the function will achieve the users desired result. The LLM will select the most appropriate function for the task and return its name and the arguments needed. 
+Function calling is the primary way we enable Large Language Models (LLMs) to interact with tools. You will often see 'Function' and 'Tool' used interchangeably because 'functions' (blocks of reusable code) are the 'tools' agents use to carry out tasks. In order for a function's code to be invoked, an LLM must compare the users request against the functions description. To do this a schema containing the descriptions of all the available functions is sent to the LLM. The LLM then selects the most appropriate function for the task and returns its name and arguments. The selected function is invoked, it's response is sent back to the LLM, which uses the information to respond to the users request. 
 
-At a high level to implement function calling for agents you will need:
+For developers to implement function calling for agents, you will need:
 
-1. **An LLM model that supports function calling:** Most LLM model providers including [AzureOpenAI](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/function-calling) support function calling. 
+1. An LLM model that supports function calling
+2. A schema containting function descriptions
+3. The code for each function described
 
-2. **Function Schema**: A structured format like JSON that contains the function name, description of what the function does, and the names and descriptions of the expected arguments.
-   Here is an example of a 'get_current_time' function description in JSON, the users prompt to find the time in San Francisco and the API call to AzureOpenAI. 
+Let's use the example of getting the current time in a city to illustrate: 
+
+- **Initialize an LLM that supports function calling:** 
+
+    Not all models support function calling, so it's important to check that the LLM you are using does. [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling) supports function calling. We can start by initiating the Azure OpenAI client. 
+
+    ```python
+    # Initialize the Azure OpenAI client
+    client = AzureOpenAI(
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
+        api_version="2024-05-01-preview"
+    )
+    ```
+
+- **Create a Function Schema**: 
+
+    Next we will define a JSON schema that contains the function name, description of what the function does, and the names and descriptions of the function parameters.
+    We will then take this schema and pass it to the client created above, along with the users request to find the time in San Francisco. Whats important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it. 
+
+    ```python
+    # Function description for the model to read
+    tools = [
+        {
+            "type": "function",
+            "function": {
+                "name": "get_current_time",
+                "description": "Get the current time in a given location",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "The city name, e.g. San Francisco",
+                        },
+                    },
+                    "required": ["location"],
+                },
+            }
+        }
+    ]
+    ```
    
     ```python
   
-   # Function description for the model to read
-      tools = [
-          {
-              "type": "function",
-              "function": {
-                  "name": "get_current_time",
-                  "description": "Get the current time in a given location",
-                  "parameters": {
-                      "type": "object",
-                      "properties": {
-                          "location": {
-                              "type": "string",
-                              "description": "The city name, e.g. San Francisco",
-                          },
-                      },
-                      "required": ["location"],
-                  },
-              }
-          }
-      ]
-  
     # Initial user message
-    messages = [{"role": "user", "content": "What's the current time in San Francisco"}] # Single function call
+    messages = [{"role": "user", "content": "What's the current time in San Francisco"}] 
   
     # First API call: Ask the model to use the function
       response = client.chat.completions.create(
@@ -82,21 +103,22 @@ At a high level to implement function calling for agents you will need:
       messages.append(response_message)
   
       print("Model's response:")  
+
       print(response_message)
   
     ```
 
-    ```python
+    ```bash
     Model's response:
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
-
-    Whats important to note is that a function/tool call is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it's selected for the     task, and the arguments that will the passed to it. 
   
-3. **The function code required to carry out the task:** Now that the LLM has chosen which function needs to be run the code that carries out the task needs to be implemented and executed.
-   In Python for the above example we could implement the function in this way.
+- **The function code required to carry out the task:** 
 
-      ```python
+    Now that the LLM has chosen which function needs to be run the code that carries out the task needs to be implemented and executed.
+    We can implement the code to get the current time in Python. We will also need to write the code to extract the name and arguments from the response_message to get the final result. 
+
+    ```python
       def get_current_time(location):
         """Get the current time for a given location"""
         print(f"get_current_time called with location: {location}")  
@@ -113,9 +135,7 @@ At a high level to implement function calling for agents you will need:
       
         print(f"No timezone data found for {location_lower}")  
         return json.dumps({"location": location, "current_time": "unknown"})
-      ```
-
-      In order to execute the code you could then run the following logic to get the expected result. 
+    ```
 
      ```python
      # Handle function calls
@@ -146,49 +166,149 @@ At a high level to implement function calling for agents you will need:
   
       return final_response.choices[0].message.content
      ```
-     ```python
+     ```bash
       get_current_time called with location: San Francisco
       Timezone found for san francisco
       The current time in San Francisco is 09:24 AM.
      ```
 
-Function Calling is at the heart of most, if not all agent tool use design, however implementing it from scratch can sometimes be challenging. As we learned in [Lesson 3]() agentic frameworks provide us with pre-built building blocks to implement tool use. 
+Function Calling is at the heart of most, if not all agent tool use design, however implementing it from scratch can sometimes be challenging. 
+<br>As we learned in [Lesson 2](../02-explore-agentic-frameworks/) agentic frameworks provide us with pre-built building blocks to implement tool use. 
  
-### Tool Use with Agentic Frameworks 
+### Tool Use Examples with Agentic Frameworks 
 
-- **[Semantic Kernel](https://learn.microsoft.com/en-us/azure/ai-services/agents/overview)**
+- ### **[Semantic Kernel](https://learn.microsoft.com/azure/ai-services/agents/overview)**
 
-  Semantic Kernel is an open-source AI framework for .NET, Python, and Java developers working with Large Language Models (LLMs). It offers pre-built components such as prompts, parsers, and memory management. Along with this, Semantic Kernel also provides access to pre-built tools through the [Open AI Assistant Agent](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/assistant-agent?pivots=programming-language-python). One the tools that is particularly helpful for data-analysis tasks and more, is the [Code Interpreter](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/examples/example-assistant-code?pivots=programming-language-python).
-  
-  The Code Interpreter tool enables the LLM to generate Python code for tasks such as creating charts or performing complex data analyses based on user queries. It leverages natural language processing (NLP), sales data from an SQLite database, and user prompts to automate code generation. The LLM-generated Python code executes within a secure sandbox environment, utilizing a restricted subset of Python to ensure safe and controlled execution. Take a look at an example of how this is implemented in just a few lines of code [here](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/step9_assistant_tool_code_interpreter.py)
-  
-- **[Azure AI Agent Service](https://learn.microsoft.com/en-us/azure/ai-services/agents/overview)**
-   
-  When using function calling with AzureOpenAI we saw that it requires defining a function schema for the LLM. Azure AI Agent Service supports this approach and also offers a more flexible option. With the Azure AI Agent Service and its Python SDK, you can define the function schema directly within the Python function’s docstring. This approach keeps the definition and implementation together, simplifying maintenance and enhancing readability.
-  
-  For example, lets imagine you've written a function that executes LLM dynamically generated SQL queries against an SQLite database. The `fetch_sales_data_using_sqlite_query` function uses a docstring to specify its signature, inputs, and outputs. The SDK parses this docstring to generate the callable function for the LLM:
-  
-  ```python
-  async def fetch_sales_data_using_sqlite_query(self: "SalesData", sqlite_query: str) -> str:
-      """
-      This function is used to answer user questions about Contoso sales data by executing SQLite queries against the database.
-  
-      :param sqlite_query: The input should be a well-formed SQLite query to extract information based on the user's question. The query result will be returned as a JSON object.
-      :return: Return data in JSON serializable format.
-      :rtype: str
-      """
+    Semantic Kernel is an open-source AI framework for .NET, Python, and Java developers working with Large Language Models (LLMs). It simplifies the process of using function calling by automatically describing your functions and their parameters to the model through a process called [serializing](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions). It also handles the back-and-forth communication between the model and your code. Another advantage of using an agentic framework like Semantic Kernel, is that it allows you to access pre-built tools like [File Search](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py) and [Code Interpreter](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py). 
+
+    The following diagram illustrates the process of function calling with Semantic Kernel:
+
+    ![function calling](./functioncalling_diagram.png)
+
+    
+    In Semantic Kernel functions/tools are called [Plugins](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/?pivots=programming-language-python). We can convert the `get_current_time` function we saw earlier into a plugin by turning it into a class with the function in it. We can also import the `kernel_function` decorator, which takes in the description of the function. When you then create a kernel with the GetCurrentTimePlugin, the kernel will automatically serialize the function and its parameters, creating the schema to send to the LLM in the process.
+
+    ```python
+    from semantic_kernel.functions import kernel_function
+
+    class GetCurrentTimePlugin:
+        async def __init__(self, location):
+            self.location = location
+
+        @kernel_function(
+            description="Get the current time for a given location"
+        )
+        def get_current_time(location: str = ""):
+            ...
+
     ```
 
-  When compared to developing with the LLM API's directly, Azure AI Agent Service provides some advantages, including:
+    ```python 
+    from semantic_kernel import Kernel
 
-  - Automatic tool calling – no need to parse a tool call, invoke the tool, and handle the response; all of this is now done server-side
-  - Securely managed data – instead of managing your own conversation state, you can rely on threads to store all the information you need
-  - Out-of-the-box tools – Tools that you can use to interact with your data sources, such as Bing, Azure AI Search, and Azure Functions.
+    # Create the kernel
+    kernel = Kernel()
+
+    # Create the plugin
+    get_current_time_plugin = GetCurrentTimePlugin(location)
+
+    # Add the plugin to the kernel
+    kernel.add_plugin(get_current_time_plugin)
+    ```
+  
+- ### **[Azure AI Agent Service](https://learn.microsoft.com/azure/ai-services/agents/overview)**
+
+    Azure AI Agent Service is a newer agentic framework that is designed to empower developers to securely build, deploy, and scale high-quality, and extensible AI agents without needing to manage the underlying compute and storage resources. It is particularly useful for enterprise applications since it is a fully managed service with enterprise grade security. 
+
+    When compared to developing with the LLM API directly, Azure AI Agent Service provides some advantages, including:
+    - Automatic tool calling – no need to parse a tool call, invoke the tool, and handle the response; all of this is now done server-side
+    - Securely managed data – instead of managing your own conversation state, you can rely on threads to store all the information you need
+    - Out-of-the-box tools – Tools that you can use to interact with your data sources, such as Bing, Azure AI Search, and Azure Functions. 
+
+    The tools available in Azure AI Agent Service can be divided into two categories:
+
+    1. Knowledge Tools:
+        - [Grounding with Bing Search](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview)
+        - [File Search](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview)
+        - [Azure AI Search](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search)
+
+    2. Action Tools:
+        - [Function Calling](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview)
+        - [Code Interpreter](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview)
+        - [OpenAI defined tools](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview)
+        - [Azure Functions](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview)
+
+    The Agent Service allows us to be able to use these tools 
+
+    <img src="./agent_service_in_action.jpg" alt="agent service in action" />
+
+    To use any of these tools with the service we create a client and define a tool or toolset. 
+    
+    ```python 
+    import os
+    from azure.ai.projects import AIProjectClient
+    from azure.identity import DefaultAzureCredential
+    from azure.ai.projects.models import ToolSet, CodeInterpreterTool
+    from azure.ai.projects.models import FilePurpose
+
+    project_client = AIProjectClient.from_connection_string(
+        credential=DefaultAzureCredential(),
+        conn_str=os.environ["PROJECT_CONNECTION_STRING"],
+    )
+
+    # Upload a file and add it to the client 
+    file = project_client.agents.upload_file_and_poll(
+        file_path="contoso_sales_data.csv", purpose=FilePurpose.AGENTS
+    )
+    print(f"Uploaded file, file ID: {file.id}")
+
+    # Initialize Code Interpreter tool and include the file ID of the file you uploaded. Then add it to the toolset. 
+    code_interpreter = code_interpreter = CodeInterpreterTool(file_ids=[file.id])
+    toolset = ToolSet()
+    toolset.add(code_interpreter)
+
+    agent = project_client.agents.create_agent(
+        model="gpt-4o-mini", name="my-agent", instructions="You are helpful agent", 
+        toolset=toolset, tool_resources=code_interpreter.resources
+    )
+    print(f"Created agent, ID: {agent.id}")
+
+    ```
+
+    ```python
+    # create a thread
+    thread = project_client.agents.create_thread()
+    print(f"Created thread, thread ID: {thread.id}")
+
+    # create a message
+    message = project_client.agents.create_message(
+        thread_id=thread.id,
+        role="user",
+        content="Could you please create bar chart in the TRANSPORTATION sector for the operating profit from the uploaded csv file and provide file to me?",
+    )
+    print(f"Created message, message ID: {message.id}")
+
+    # create and execute a run
+    run = project_client.agents.create_and_process_run(thread_id=thread.id, assistant_id=agent.id)
+    print(f"Run finished with status: {run.status}")
+
+    # print the messages from the agent
+    messages = project_client.agents.list_messages(thread_id=thread.id)
+    print(f"Messages: {messages}")
+
+    # get the most recent message from the assistant
+    last_msg = messages.get_last_text_message_by_sender("assistant")
+    if last_msg:
+        print(f"Last Message: {last_msg.text.value}")
+
+    ```
+
+
+
  
-    ![agent service in action](./agent_service_in_action.jpg)
 
-- **[Autogen](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html)**
-  TODO: Add more info here 
+
+ 
 
 
 ## What are the special considerations for using the Tool Use Design Pattern to build trustworthy AI agents?
@@ -204,5 +324,8 @@ In enterprise scenarios, data is typically extracted and transformed from operat
 
 - [Contoso Creative Writer Multi-Agent Workshop](https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop)
 - [Azure AI Agents Service Workshop](https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/)
+- [Semantic Kernel Function Calling Tutorial](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions).
+- [here](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py). 
+- [Autogen](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html)
 
     
