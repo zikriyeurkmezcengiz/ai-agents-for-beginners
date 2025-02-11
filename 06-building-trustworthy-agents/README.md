@@ -26,9 +26,12 @@ Let's first look at building safe agentic applications. Safety means that the AI
 
 For AI Agents, the system prompt is even more important as the AI Agents will need highly specific instructions to complete the tasks we have designed for them.
 
-To create scalable system prompts, we can use a meta prompting system for building one or more agents in our application: 
+To create scalable system prompts, we can use a meta prompting system for building one or more agents in our application:
 
- **Step 1: Create a Meta or Template Prompt**
+![Building a Meta Prompting System](./images/building-a-metaprompting-system.png)
+
+#### Step 1: Create a Meta or Template Prompt
+
  The meta prompt will be used by an LLM to generate the system prompts for the agents we create. We design it as a template so that we can efficiently create multiple agents if needed.
 
 Here is an example of a meta prompt we would give to the LLM:
@@ -40,7 +43,8 @@ information that you will use to provide a system prompt for.
 To create the system prompt, be descriptive as possible and provide a structure that a system using an LLM can better understand the role and responsibilites of the AI assistant. 
 ```
 
-**Step 2: Create a basic prompt**
+#### Step 2: Create a basic prompt
+
 The next step is to create a basic prompt to describe the AI Agent. You should include the role of the agent, the tasks the agent will complete, and any other responsibilities of the agent.
 
 Here is an example:
@@ -49,12 +53,13 @@ Here is an example:
 You are a travel agent for Contoso Travel with that is great at booking flights for customers. To help customers you can perform the following tasks: lookup available flights, book flights, ask for preferences in seating and times for flights, cancel any previously booked flights and alert customers on any delays or cancellations of flights.  
 ```
 
-**Step 3: Provide Basic Prompt to LLM**
+#### Step 3: Provide Basic Prompt to LLM
+
 Now we can optimize this prompt by providing the meta prompt as the system prompt and our basic prompt.
 
 This will produce a prompt that is better designed for guiding our AI agents:
 
-```plaintext
+```markdown
 **Company Name:** Contoso Travel  
 **Role:** Travel Agent Assistant
 
@@ -104,15 +109,19 @@ This AI assistant is designed to streamline the flight booking process for custo
 
 ```
 
-It is important to always review this prompt beforehand and edit any details needed. You can then continue to use these system prompts to create more prompts for different agents or make edits that may improve the existing agents. 
+#### Step 4: Iterate and Improve
+
+The value of this meta prompting system is to be able to scale creating prompts from multiple agents easier as well as improving your prompts over time. It is rare you will have a prompt that works the first time for your complete use case. Being able to make small tweaks and improvements by changing the basic prompt and running it through the system will allow you to compare and evaluate results.
 
 ## Understanding Threats  
 
 To build trustworthy AI agents, it is important to understand and mitigate the risks and threats to your AI agent. Let's look at only some of the different threats to AI agents and how you can better plan and prepare for them.
 
+![Understanding Threats](./images/understanding-threats.png)
+
 ### Task and Instruction
 
-**Description:** Attackers attempt to change the instructions or goals of the AI agent through prompting or manipulating inputs. 
+**Description:** Attackers attempt to change the instructions or goals of the AI agent through prompting or manipulating inputs.
 
 **Mitigation**: Execute validation checks and input filters to detect potentially dangerous prompts before they are processed by the AI Agent. Since these attacks typically require frequent interaction with the Agent, limiting the number of turns in a conversation is another way to prevent these types of attacks.
 

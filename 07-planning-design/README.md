@@ -19,6 +19,8 @@ After completing this lesson, you will have an understanding about:
 
 ## Defining the Overall Goal and Breaking Down a Task
 
+![Defining Goals and Tasks](./images/defining-goals-tasks.png)
+
 Most real-world tasks are too complex to tackle in a single step. An AI agent needs a concise objective to guide its planning and actions. For example, consider the goal:
 
     "Generate a 3-day travel itinerary."
@@ -192,7 +194,7 @@ e.g sample code
 
 For a more comprehensive planning do checkout Magnetic One [Blogpost](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks) for solving complex tasks.
 
-# Summary
+## Summary
 
 In this article we have looked at an example of how we can create a planner that can dynamically select the available agents defined. The output of the Planner decomposes the tasks and assigns the agents so them to be executed. It is assumed the agents has access to function/tools that are required to perform the task. In addition to the agents you can include other patterns like reflection, summarizer , round robin chat to further customise
 
