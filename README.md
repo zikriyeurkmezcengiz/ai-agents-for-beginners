@@ -55,7 +55,7 @@ Do you have suggestions or found spelling or code errors? [Raise an issue](https
 |----------------------------------------|--------------------------------------------|--------------------|
 | Intro to AI Agents and Use Cases       | [Intro to AI Agents and Use Cases](./01-intro-to-ai-agents/README.md)          | Learn More         |
 | Exploring Agentic Frameworks           | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | Learn More         |
-| Understanding Agentic Design Patterns  | [Understanding Agentic Design Patterns](./03-explore-agentic-frameworks/README.md)  | Learn More         |
+| Understanding Agentic Design Patterns  | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | Learn More         |
 | Tool Use Design Pattern                | [Tool Use Design Pattern](./04-tool-use/README.md)                    | Learn More         |
 | Agentic RAG                            | [Agentic RAG](./05-agentic-rag/README.md)                 | Learn More         |
 | Building Trustworthy AI Agents          | [Building Trustworthy AI Agents](./06-building-trustworthy-agents/README.md) | Learn More         |
