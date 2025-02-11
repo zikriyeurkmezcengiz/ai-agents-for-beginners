@@ -26,14 +26,14 @@ If this is your first time building with Generative AI models. Check out our ![G
 
 This course has code examples that use these service for Models:
 
-- [!Github Models](https://aka.ms/ai-agents-beginners/github-models)
-- [!Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry)
+- [Github Models](https://aka.ms/ai-agents-beginners/github-models)
+- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry)
 
 This coures also uses these AI Agent frameworks and services:
 
-- [!Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
-- [!Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
-- [!AutoGen](https://aka.ms/ai-agents/autogen)
+- [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
+- [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
+- [AutoGen](https://aka.ms/ai-agents/autogen)
 
 For more information on running the code for this course, go to the [!Course Setup](./00-course-setup/README.md).
 
@@ -53,16 +53,16 @@ Do you have suggestions or found spelling or code errors? [Raise an issue](https
 
 | **Lesson**                            | **Link**                                   | **Extra Learning** |
 |----------------------------------------|--------------------------------------------|--------------------|
-| Intro to AI Agents and Use Cases       | ./01-intro-to-ai-agents/README.md          | Learn More         |
-| Exploring Agentic Frameworks           | ./02-explore-agentic-frameworks/README.md  | Learn More         |
-| Understanding Agentic Design Patterns  | ./03-explore-agentic-frameworks/README.md  | Learn More         |
-| Tool Use Design Pattern                | ./04-tool-use/README.md                    | Learn More         |
-| Agentic RAG                            | ./05-agentic-rag/README.md                 | Learn More         |
-| Building Trustworty AI Agents          | ./06-building-trustworthy-agents/README.md | Learn More         |
-| Planning Design Pattern                | ./07-planning-design/README.md             | Learn More         |
-| Multi-Agent Design Pattern             | ./08-multi-agent/README.md                 | Learn More         |
-| Metacognition Design Pattern           | ./09-metacognition/README.md               | Learn More         |
-| AI Agents in Production                | ./10-ai-agents-production/README.md        | Learn More         |
+| Intro to AI Agents and Use Cases       | [Intro to AI Agents and Use Cases](./01-intro-to-ai-agents/README.md)          | Learn More         |
+| Exploring Agentic Frameworks           | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | Learn More         |
+| Understanding Agentic Design Patterns  | [Understanding Agentic Design Patterns](./03-explore-agentic-frameworks/README.md)  | Learn More         |
+| Tool Use Design Pattern                | [Tool Use Design Pattern](./04-tool-use/README.md)                    | Learn More         |
+| Agentic RAG                            | [Agentic RAG](./05-agentic-rag/README.md)                 | Learn More         |
+| Building Trustworthy AI Agents          | [Building Trustworthy AI Agents](./06-building-trustworthy-agents/README.md) | Learn More         |
+| Planning Design Pattern                | [Planning Design Pattern](./07-planning-design/README.md)             | Learn More         |
+| Multi-Agent Design Pattern             | [Muilt-Agent Design Pattern](./08-multi-agent/README.md)                 | Learn More         |
+| Metacognition Design Pattern           | [Metacognition Design Pattern](./09-metacognition/README.md)               | Learn More         |
+| AI Agents in Production                | [AI Agents in Production](./10-ai-agents-production/README.md)        | Learn More         |
 
 ## 🎒 Other Courses
 
