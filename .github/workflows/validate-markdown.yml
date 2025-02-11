@@ -112,6 +112,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Run markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v19.1.0
+        with:
+          globs: ${{ steps.changed-files.outputs.all_changed_files }}
+          separator: ","
+          fix: true
+          continue-on-error: true
 
 
 
