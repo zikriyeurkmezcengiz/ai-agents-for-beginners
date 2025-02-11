@@ -35,7 +35,7 @@ This coures also uses these AI Agent frameworks and services:
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
-For more information on running the code for this course, go to the [!Course Setup](./00-course-setup/README.md).
+For more information on running the code for this course, go to the [Course Setup](./00-course-setup/README.md).
 
 Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) to find it easier later.
 
