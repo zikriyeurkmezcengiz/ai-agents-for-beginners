@@ -53,16 +53,24 @@ if __name__ == "__main__":
 
 
 
-def get_airport_traffic(city_name: str, date_str1: str, date_str2: str, airports_data: List[Dict[str, str]]):
+def get_airport_traffic(city_name: str, date_str1: str, date_str2: str,
+                        airports_data: Optional[List[Dict[str, str]]] = None) -> Any:
     """
-    Use to lookup flight data given a specific time period (UNIX format) and airport code.
-
+    Lookup flight data for a given city and time period.
     :param city_name: The name of the city.
     :param date_str1: The start date string.
     :param date_str2: The end date string.
-    :param airports_data: The list of airport data.
-    :return: The response from the OpenSky Network API.
+    :param airports_data: Optional JSON object representing airport data.
+                          If None, it will be loaded from the local 'airports.json' file.
+    :return: The flight data from the OpenSky Network API.
     """
+    # If not provided, load airport data from file.
+    if airports_data is None:
+        dirname = os.path.dirname(__file__)
+        json_path = os.path.join(dirname, "airports.json")
+        with open(json_path, 'r') as f:
+            airports_data = json.load(f)
+
     airport_code = get_airport_code_by_city(city_name)
     if not airport_code:
         return {"error": "Invalid city name"}
@@ -82,12 +90,11 @@ def get_airport_traffic(city_name: str, date_str1: str, date_str2: str, airports
     url = f"https://opensky-network.org/api/flights/arrival?airport={airport_code}&begin={unix_time1}&end={unix_time2}"
     response = requests.get(url)
 
-    print(url)
-
     if response.status_code != 200:
         return {"error": "Failed to fetch data from OpenSky Network"}
 
-    return response.json()
+    # The API returns a list of flight objects. Each object should include a "callsign" field.
+    return response.text
 
 
 # Load airport data from JSON file
@@ -113,7 +120,7 @@ def fetch_flights(callsign: str):
     response = requests.get(url)
 
     if response.status_code != 200:
-        return {"error": "Failed to fetch data from ADSBDB"}
+        return json.dumps({"error": "Failed to fetch data from ADSBDB"})
 
     data = response.json()
     flight_route = data.get("response", {}).get("flightroute", {})
@@ -122,20 +129,20 @@ def fetch_flights(callsign: str):
     origin_airport_name = flight_route.get("origin", {}).get("name")
     destination_airport_name = flight_route.get("destination", {}).get("name")
 
-    return {
+    return json.dumps({
         "airline_name": airline_name,
         "origin_airport_name": origin_airport_name,
         "destination_airport_name": destination_airport_name
-    }
+    })
 
 
-if isinstance(callsigns, dict) and "error" in callsigns:
-    print(callsigns["error"])
-else:
-    for callsign in callsigns:
-        print(f"Callsign: {callsign}")
-        flight_details = fetch_flights(callsign)
-        print(flight_details)
+# if isinstance(callsigns, dict) and "error" in callsigns:
+#     print(callsigns["error"])
+# else:
+#     for callsign in callsigns:
+#         print(f"Callsign: {callsign}")
+#         flight_details = fetch_flights(callsign)
+#         print(flight_details)
 
 
 user_functions: Set[Callable[..., Any]] = {
