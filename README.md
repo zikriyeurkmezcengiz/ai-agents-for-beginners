@@ -24,7 +24,7 @@ If this is your first time building with Generative AI models. Check out our [Ge
 
 ### To run the code of this course
 
-This course has code examples that use these service for Models:
+This course has code examples on each lesson that has a `code_samples` foled. This code uses these service for Models:
 
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Free / Limited
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azure Account Required
