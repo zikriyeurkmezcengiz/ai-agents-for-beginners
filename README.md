@@ -29,7 +29,7 @@ This course has code examples on each lesson that has a `code_samples` foled. Th
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Free / Limited
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azure Account Required
 
-This coures also uses these AI Agent frameworks and services:
+This course also uses these AI Agent frameworks and services:
 
 - [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
@@ -37,7 +37,7 @@ This coures also uses these AI Agent frameworks and services:
 
 For more information on running the code for this course, go to the [Course Setup](./00-course-setup/README.md).
 
-Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) to find it easier later.
+Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to run the code.
 
 ## 🙏 Want to help?
 
