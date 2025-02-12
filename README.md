@@ -20,7 +20,7 @@
 
 This course has 10 lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
 
-If this is your first time building with Generative AI models. Check out our ![Generative AI For Beginners](https://aka.ms/genai-beginners) course that has 22 lessons on building with GenAI.
+If this is your first time building with Generative AI models. Check out our [Generative AI For Beginners](https://aka.ms/genai-beginners) course that has 22 lessons on building with GenAI.
 
 ### To run the code of this course
 
