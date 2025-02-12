@@ -163,7 +163,7 @@ Below is the output from the above code and you can then use this structured out
 }
 ```
 
-An example notebook with the above code sample is available [here](./demo_notebook.ipynb).
+An example notebook with the above code sample is available [here](07-autogen.ipynb).
 
 ### Iterative Planning
 
