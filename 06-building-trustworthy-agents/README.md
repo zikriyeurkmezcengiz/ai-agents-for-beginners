@@ -149,4 +149,32 @@ To build trustworthy AI agents, it is important to understand and mitigate the r
 
 **Mitigation**: One method to avoid this is to have the AI Agent operate in a limited environment, such as performing tasks in a Docker container, to prevent direct system attacks. Creating fallback mechanisms and retry logic when certain systems respond with an error is another way to prevent larger system failures.
 
-[TODO: Human in the Loop]
+## Human-in-the-Loop
+
+Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during run. Users essentially act as agent in a multi-agent system and by providing apporval or termination of the running process.
+
+![Human in The Loop](./images/human-in-the-loop.png)
+
+Here is a code snippet using AutoGen to show how this concept is implemented:
+
+```python
+
+# Create the agents.
+model_client = OpenAIChatCompletionClient(model="gpt-4o-mini")
+assistant = AssistantAgent("assistant", model_client=model_client)
+user_proxy = UserProxyAgent("user_proxy", input_func=input)  # Use input() to get user input from console.
+
+# Create the termination condition which will end the conversation when the user says "APPROVE".
+termination = TextMentionTermination("APPROVE")
+
+# Create the team.
+team = RoundRobinGroupChat([assistant, user_proxy], termination_condition=termination)
+
+# Run the conversation and stream to the console.
+stream = team.run_stream(task="Write a 4-line poem about the ocean.")
+# Use asyncio.run(...) when running in a script.
+await Console(stream)
+
+```
+
+

@@ -10,7 +10,7 @@ This lesson will cover:
 
 - What are AI Agent Frameworks and what do they enable developers to do?
 - How can teams use these to quickly prototype, iterate, and improve my agent’s capabilities?
-- What are the difference between the frameworks and tools created by Microsoft ( Autogen / Semantic Kernel / Azure AI Agent Service) 
+- What are the difference between the frameworks and tools created by Microsoft ( [Autogen](https://aka.ms/ai-agents/autogen) / [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel) / [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)) 
 - Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
 - what is Azure AI Agents service and how is this helping me?
 
