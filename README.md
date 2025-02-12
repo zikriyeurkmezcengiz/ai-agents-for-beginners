@@ -26,8 +26,8 @@ If this is your first time building with Generative AI models. Check out our ![G
 
 This course has code examples that use these service for Models:
 
-- [Github Models](https://aka.ms/ai-agents-beginners/github-models)
-- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry)
+- [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Free / Limited
+- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azure Account Required
 
 This coures also uses these AI Agent frameworks and services:
 
@@ -43,10 +43,12 @@ Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/e
 
 Do you have suggestions or found spelling or code errors? [Raise an issue](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) or [Create a pull request](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst)
 
+If you get stuck or have any questions about bulding AI Agents, join our [Azure AI Community Discord](https://discord.gg/kzRShWzttr).
+
 ## 📂 Each lesson includes
 
 - A written lesson located in the README (Videos Coming March 2025)
-- Python code samples supporting Azure AI Foundry (PAID) and Github Model (Free)
+- Python code samples supporting Azure AI Foundry and Github Models (Free)
 - Links to extra resources to continue your learning
 
 ## 🗃️ Lessons

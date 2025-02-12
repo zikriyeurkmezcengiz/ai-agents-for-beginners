@@ -84,7 +84,7 @@ In this pattern, each agent represents a user in the group chat, and messages ar
 
 This pattern can be implemented using a centralized architecture where all messages are routed through a central server, or a decentralized architecture where messages are exchanged directly.
 
-![Group chat](./assets/multi-agent.jpeg)
+![Group chat](./images/multi-agent-group-chat.png)
 
 ### Hand-off
 
@@ -94,7 +94,7 @@ Typical use cases for this pattern include customer support, task management, an
 
 In this pattern, each agent represents a task or a step in a workflow, and agents can hand off tasks to other agents based on predefined rules.
 
-![Hand off](./assets/hand-off.jpeg)
+![Hand off](./images/multi-agent-hand-off.png)
 
 ### Collaborative filtering
 
@@ -108,7 +108,7 @@ Let's take an example where a user wants a recommendation on the best stock to b
 - **Technical analysis**: Another agent could be an expert in technical analysis. 
 - **Fundamental analysis**: and another agent could be an expert in fundamental analysis. By collaborating, these agents can provide a more comprehensive recommendation to the user.  
 
-![Recommendation](./assets/recommendation.jpeg)
+![Recommendation](./images/multi-agent-filtering.png)
 
 ## Scenario: Refund process
 
