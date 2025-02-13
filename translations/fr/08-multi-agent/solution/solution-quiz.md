@@ -1,0 +1,4 @@
+A : A2 : Lorsque vous avez une charge de travail importante
+
+**Avertissement** :  
+Ce document a été traduit à l'aide de services de traduction automatisée basés sur l'IA. Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
