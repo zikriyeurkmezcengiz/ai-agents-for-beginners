@@ -243,7 +243,7 @@ A chamada de função está no coração de grande parte, se não de toda, a con
 
     The image below illustrates how you could use Azure AI Agent Service to analyze your sales data:
 
-    ![Agentic Service In Action](../../../translated_images/agent-service-in-action.jpg?WT.858cf9f67cc5c7f16ff3660d3df11c90e8cda37025bea4db5c4a59d2facce09a.pt.mc_id=academic-105485-koreyst)
+    ![Agentic Service In Action](../../../translated_images/agent-service-in-action.8c2d8aa8e9d91feeb29549b3fde529f8332b243875154d03907616a69198afbc.de.jpg?WT.mc_id=academic-105485-koreyst)
 
     To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the Python code below. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query`, ou o Interpretador de Código pré-configurado dependendo da solicitação do usuário.
 
