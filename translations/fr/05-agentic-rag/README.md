@@ -36,7 +36,7 @@ L'Agentic Retrieval-Augmented Generation (Agentic RAG) est un paradigme émergen
 
 Ce style itératif "maker-checker" est conçu pour améliorer la précision, gérer les requêtes mal formées vers des bases de données structurées (par exemple, NL2SQL) et garantir des résultats équilibrés et de haute qualité. Plutôt que de se reposer uniquement sur des chaînes de prompts soigneusement conçues, le système prend activement en charge son processus de raisonnement. Il peut réécrire des requêtes échouées, choisir différentes méthodes de récupération et intégrer plusieurs outils—tels que la recherche vectorielle dans Azure AI Search, les bases de données SQL ou des API personnalisées—avant de finaliser sa réponse. Cela élimine le besoin de cadres d'orchestration excessivement complexes. À la place, une boucle relativement simple de "Appel LLM → Utilisation d'outil → Appel LLM → …" peut produire des résultats sophistiqués et bien fondés.
 
-![Agentic RAG Core Loop](../../../translated_images/agentic-rag-core-loop.2224925a913fb3439f518bda61a40096ddf6aa432a11c9b5bba8d0d625e47b79.fr.png)
+![Agentic RAG Core Loop](../../../translated_images/agentic-rag-core-loop.2224925a913fb3439f518bda61a40096ddf6aa432a11c9b5bba8d0d625e47b79.fr.png?WT.mc_id=academic-105485-koreyst)
 
 ## Maîtriser le processus de raisonnement
 

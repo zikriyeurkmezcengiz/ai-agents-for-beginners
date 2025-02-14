@@ -24,7 +24,7 @@ La métacognition, ou "penser à penser", est un processus cognitif de haut nive
 
 La métacognition joue un rôle crucial dans la conception des agents IA pour plusieurs raisons :
 
-![Importance de la Métacognition](../../../translated_images/importance-of-metacognition.e351a5983bb745d60a1a60185391a39a6751d033c8c1948ceb6ad04eff7dbeac.fr.png)
+![Importance de la Métacognition](../../../translated_images/importance-of-metacognition.e351a5983bb745d60a1a60185391a39a6751d033c8c1948ceb6ad04eff7dbeac.fr.png?WT.mc_id=academic-105485-koreyst)
 
 - **Auto-réflexion** : Les agents peuvent évaluer leur propre performance et identifier les domaines à améliorer.
 - **Adaptabilité** : Les agents peuvent modifier leurs stratégies en fonction des expériences passées et des environnements changeants.
