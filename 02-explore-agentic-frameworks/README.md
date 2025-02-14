@@ -1,4 +1,4 @@
-# Explore Ai Agent Frameworks
+# Explore AI Agent Frameworks
 
 AI agent frameworks are software platforms designed to simplify the creation, deployment, and management of AI agents. These frameworks provide developers with pre-built components, abstractions, and tools that streamline the development of complex AI systems.
 
@@ -10,7 +10,7 @@ This lesson will cover:
 
 - What are AI Agent Frameworks and what do they enable developers to do?
 - How can teams use these to quickly prototype, iterate, and improve my agent’s capabilities?
-- What are the difference between the frameworks and tools created by Microsoft ( [Autogen](https://aka.ms/ai-agents/autogen) / [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel) / [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)) 
+- What are the difference between the frameworks and tools created by Microsoft ( [Autogen](https://aka.ms/ai-agents/autogen) / [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel) / [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service))
 - Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
 - what is Azure AI Agents service and how is this helping me?
 
@@ -258,7 +258,7 @@ Semantic Kernel consists of two things, the Semantic Kernel Agent Framework and 
 
 Let's first talk about the Semantic Kernel. It has the following core concepts:
 
-- **Connections**: This is an interface with external Ai services and data sources.
+- **Connections**: This is an interface with external AI services and data sources.
 
     ```csharp
     using Microsoft.SemanticKernel;
@@ -371,7 +371,7 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
     These facts are then stored in the memory collection `SummarizedAzureDocs`. This is a very simplified example, but you can see how you can store information in the memory for the LLM to use.
 
 So that's the basics of the Semantic Kernel framework, what about the Agent Framework?
- 
+
 ## Azure AI Agent Service
 
 Azure AI Agent Service is a more recent addition, introduced at Microsoft Ignite 2024. It allows for the development and deployment of AI agents with more flexible models, such as directly calling open-source LLMs like Llama 3, Mistral, and Cohere.
