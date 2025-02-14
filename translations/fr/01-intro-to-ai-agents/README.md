@@ -34,7 +34,7 @@ Décomposons cette définition en parties plus simples :
   - **Capteurs** - Les environnements contiennent des informations et fournissent des retours. Les Agents IA utilisent des capteurs pour recueillir et interpréter ces informations sur l'état actuel de l'environnement. Dans l'exemple de l'agent de réservation, le système de réservation peut fournir des informations comme la disponibilité des hôtels ou les prix des vols.
   - **Actionneurs** - Une fois que l'Agent IA reçoit l'état actuel de l'environnement, il détermine quelle action effectuer pour modifier cet environnement en fonction de la tâche actuelle. Pour l'agent de réservation, cela pourrait être de réserver une chambre disponible pour l'utilisateur.
 
-![Qu'est-ce qu'un Agent IA ?](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.fr.mc_id=academic-105485-koreyst)
+![Qu'est-ce qu'un Agent IA ?](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.fr.png?WT.mc_id=academic-105485-koreyst)
 
 **Modèles de Langage de Grande Taille** - Le concept d'agents existait avant la création des LLMs. L'avantage de construire des Agents IA avec des LLMs réside dans leur capacité à interpréter le langage humain et les données. Cette capacité leur permet d'interpréter les informations environnementales et de définir un plan pour modifier l'environnement.
 
@@ -64,7 +64,7 @@ Dans la section précédente, nous avons utilisé l'exemple de l'Agent de Voyage
 
 Examinons maintenant les types de cas d'utilisation pour lesquels les Agents IA sont les mieux adaptés :
 
-![Quand utiliser les Agents IA ?](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.fr.mc_id=academic-105485-koreyst)
+![Quand utiliser les Agents IA ?](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.fr.png?WT.mc_id=academic-105485-koreyst)
 
 - **Problèmes Ouverts** - permettant au LLM de déterminer les étapes nécessaires pour accomplir une tâche, car elles ne peuvent pas toujours être codées en dur dans un flux de travail.
 - **Processus Multi-Étapes** - tâches nécessitant un certain niveau de complexité, où l'Agent IA doit utiliser des outils ou des informations sur plusieurs itérations plutôt que sur une seule récupération.

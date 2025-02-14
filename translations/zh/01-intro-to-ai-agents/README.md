@@ -35,7 +35,7 @@ AI代理是通过为 **大语言模型（LLMs）** 提供 **工具** 和 **知�
   - **传感器** - 环境提供信息和反馈。AI代理使用传感器来收集和解释有关环境当前状态的信息。在旅游预订代理的例子中，旅游预订系统可以提供酒店可用性或航班价格等信息。
   - **执行器** - 一旦AI代理接收到环境的当前状态信息，它会根据当前任务决定执行什么操作以改变环境。例如，旅游预订代理可能为用户预订一个可用的房间。
 
-![什么是AI代理？](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.zh.mc_id=academic-105485-koreyst)
+![什么是AI代理？](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.zh.png?WT.mc_id=academic-105485-koreyst)
 
 **大语言模型** - 在大语言模型出现之前，代理的概念已经存在。利用LLMs构建AI代理的优势在于它们能够解释人类语言和数据。这种能力使LLMs能够解释环境信息并制定改变环境的计划。
 
@@ -65,7 +65,7 @@ AI代理是通过为 **大语言模型（LLMs）** 提供 **工具** 和 **知�
 
 让我们来看一下AI代理最适合使用的用例类型：
 
-![何时使用AI代理？](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.zh.mc_id=academic-105485-koreyst)
+![何时使用AI代理？](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.zh.png?WT.mc_id=academic-105485-koreyst)
 
 - **开放性问题** - 允许LLM决定完成任务所需的步骤，因为这些步骤无法始终硬编码到工作流中。
 - **多步骤流程** - 需要一定复杂度的任务，AI代理需要在多个回合中使用工具或信息，而不是单次检索。

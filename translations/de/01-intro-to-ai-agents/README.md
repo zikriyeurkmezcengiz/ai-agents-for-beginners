@@ -34,7 +34,7 @@ Lassen Sie uns diese Definition in kleinere Teile zerlegen:
   - **Sensoren** – Umgebungen enthalten Informationen und geben Rückmeldungen. KI-Agenten nutzen Sensoren, um diese Informationen über den aktuellen Zustand der Umgebung zu sammeln und zu interpretieren. Im Beispiel des Reisebuchungs-Agenten könnte das Buchungssystem Informationen wie Hotelverfügbarkeit oder Flugpreise liefern.
   - **Aktuatoren** – Sobald der KI-Agent den aktuellen Zustand der Umgebung erhält, entscheidet er, welche Aktion für die jeweilige Aufgabe ausgeführt werden soll, um die Umgebung zu verändern. Im Fall des Reisebuchungs-Agenten könnte dies bedeuten, ein verfügbares Zimmer für den Benutzer zu buchen.
 
-![Was sind KI-Agenten?](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.de.mc_id=academic-105485-koreyst)
+![Was sind KI-Agenten?](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.de.png?WT.mc_id=academic-105485-koreyst)
 
 **Große Sprachmodelle** – Das Konzept von Agenten existierte bereits vor der Entwicklung von LLMs. Der Vorteil beim Aufbau von KI-Agenten mit LLMs liegt in ihrer Fähigkeit, menschliche Sprache und Daten zu interpretieren. Diese Fähigkeit ermöglicht es LLMs, Umgebungsinformationen zu verstehen und einen Plan zur Veränderung der Umgebung zu definieren.
 

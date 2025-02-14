@@ -34,7 +34,7 @@ AIエージェントは、**大規模言語モデル（LLM）** に **ツール�
   - **センサー** - 環境には情報があり、フィードバックを提供します。AIエージェントはセンサーを使用して、環境の現在の状態に関する情報を収集・解釈します。旅行予約エージェントの例では、ホテルの空室状況や航空券の価格などの情報を旅行予約システムから取得します。
   - **アクチュエーター** - AIエージェントが環境の現在の状態を受け取った後、そのタスクに応じて環境を変化させるためにどのようなアクションを実行するかを決定します。旅行予約エージェントの場合、ユーザーのために空室を予約するアクションが該当します。
 
-![What Are AI Agents?](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.ja.mc_id=academic-105485-koreyst)
+![What Are AI Agents?](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.ja.png?WT.mc_id=academic-105485-koreyst)
 
 **大規模言語モデル** - エージェントの概念自体はLLMが誕生する以前から存在していましたが、LLMを用いたAIエージェント構築の利点は、人間の言語やデータを解釈する能力にあります。この能力により、LLMは環境情報を解釈し、環境を変化させるための計画を立てることができます。
 
@@ -64,7 +64,7 @@ AIエージェントの一般的な定義を理解したところで、特定の
 
 次に、AIエージェントが最適に使用されるユースケースの種類を見てみましょう：
 
-![When to use AI Agents?](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.ja.mc_id=academic-105485-koreyst)
+![When to use AI Agents?](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.ja.png?WT.mc_id=academic-105485-koreyst)
 
 - **オープンエンドな問題** - ワークフローに常にハードコードできないため、LLMがタスクを完了するために必要なステップを判断する必要がある場合。
 - **複数ステップのプロセス** - ツールや情報を複数のターンにわたって使用する必要がある、ある程度の複雑さを持つタスク。

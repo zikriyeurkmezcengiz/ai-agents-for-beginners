@@ -35,7 +35,7 @@
   - **感測器** - 環境提供信息和反饋。代理使用感測器來收集並解釋這些信息，了解環境的當前狀態。在旅行預訂代理的例子中，感測器可能從系統中獲取酒店空房信息或機票價格。
   - **執行器** - 當代理接收到環境的當前狀態後，會決定採取哪些行動來改變環境。例如，旅行預訂代理可能會為用戶預訂一間可用的房間。
 
-![什麼是人工智能代理？](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.hk.mc_id=academic-105485-koreyst)
+![什麼是人工智能代理？](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.hk.png?WT.mc_id=academic-105485-koreyst)
 
 **大型語言模型** - 在 LLM 出現之前，代理的概念已經存在。使用 LLM 構建代理的優勢在於其能夠解釋人類語言和數據的能力。這種能力讓 LLM 可以解釋環境信息並制定改變環境的計劃。
 
@@ -65,7 +65,7 @@
 
 讓我們看看人工智能代理最適合的應用場景類型：
 
-![何時使用人工智能代理？](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.hk.mc_id=academic-105485-koreyst)
+![何時使用人工智能代理？](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.hk.png?WT.mc_id=academic-105485-koreyst)
 
 - **開放性問題** - 當任務所需的步驟無法總是硬編碼進工作流程時，允許 LLM 自行決定完成任務所需的步驟。
 - **多步驟流程** - 當任務需要一定的複雜性，代理需要通過多次互動使用工具或信息，而非一次性檢索時。

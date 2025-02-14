@@ -34,7 +34,7 @@ Desglosaremos esta definición en partes más pequeñas:
   - **Sensores** - Los entornos tienen información y proporcionan retroalimentación. Los Agentes de IA usan sensores para recopilar e interpretar esta información sobre el estado actual del entorno. En el ejemplo del Agente de Reservas de Viajes, el sistema de reservas podría proporcionar información como la disponibilidad de hoteles o precios de vuelos.
   - **Actuadores** - Una vez que el Agente de IA recibe el estado actual del entorno, para la tarea en curso, el agente determina qué acción realizar para cambiar el entorno. Para el agente de reservas, podría ser reservar una habitación disponible para el usuario.
 
-![¿Qué son los Agentes de IA?](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.es.mc_id=academic-105485-koreyst)
+![¿Qué son los Agentes de IA?](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.es.png?WT.mc_id=academic-105485-koreyst)
 
 **Modelos de Lenguaje Extensos** - El concepto de agentes existía antes de la creación de los LLMs. La ventaja de construir Agentes de IA con LLMs es su capacidad para interpretar el lenguaje humano y los datos. Esta capacidad permite a los LLMs interpretar la información del entorno y definir un plan para cambiarlo.
 
@@ -64,7 +64,7 @@ En la sección anterior, utilizamos el caso de uso del Agente de Viajes para exp
 
 Veamos los tipos de casos de uso para los que los Agentes de IA son más adecuados:
 
-![¿Cuándo usar Agentes de IA?](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.es.mc_id=academic-105485-koreyst)
+![¿Cuándo usar Agentes de IA?](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.es.png?WT.mc_id=academic-105485-koreyst)
 
 - **Problemas Abiertos** - Permitir que el LLM determine los pasos necesarios para completar una tarea porque no siempre se puede codificar de manera rígida en un flujo de trabajo.
 - **Procesos de Múltiples Pasos** - Tareas que requieren un nivel de complejidad en el que el Agente de IA necesita usar herramientas o información en múltiples interacciones en lugar de una sola recuperación.

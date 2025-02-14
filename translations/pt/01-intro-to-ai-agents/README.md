@@ -34,7 +34,7 @@ Vamos dividir essa definição em partes menores:
   - **Sensores** - Os ambientes possuem informações e fornecem feedback. Agentes de IA usam sensores para coletar e interpretar essas informações sobre o estado atual do ambiente. No exemplo do Agente de Reservas de Viagens, o sistema de reservas pode fornecer informações como disponibilidade de hotéis ou preços de passagens aéreas.
   - **Atuadores** - Depois que o Agente de IA recebe o estado atual do ambiente, ele determina qual ação realizar para alterar o ambiente em relação à tarefa atual. No caso do Agente de Reservas de Viagens, isso pode ser reservar um quarto disponível para o usuário.
 
-![O que são Agentes de IA?](../../../translated_images/what-are-ai-agents.png?WT.7f2607783e984be0cfb6dd064ad20389d37cf6d1d28bc5d5a3c648ef353bde89.pt.mc_id=academic-105485-koreyst)
+![O que são Agentes de IA?](../../../translated_images/what-are-ai-agents.125520f55950b252a429b04a9f41e0152d4dafa1f1bd9081f4f574631acb759e.pt.png?WT.mc_id=academic-105485-koreyst)
 
 **Modelos de Linguagem de Grande Escala (LLMs)** - O conceito de agentes existia antes da criação dos LLMs. A vantagem de construir Agentes de IA com LLMs é sua capacidade de interpretar linguagem humana e dados. Essa habilidade permite que os LLMs interpretem informações do ambiente e definam um plano para alterar o ambiente.
 
@@ -64,7 +64,7 @@ Na seção anterior, usamos o caso de uso do Agente de Viagens para explicar com
 
 Vamos analisar os tipos de casos de uso que são mais adequados para Agentes de IA:
 
-![Quando usar Agentes de IA?](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.pt.mc_id=academic-105485-koreyst)
+![Quando usar Agentes de IA?](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.pt.png?WT.mc_id=academic-105485-koreyst)
 
 - **Problemas Abertos** - permitindo que o LLM determine os passos necessários para completar uma tarefa, pois nem sempre é possível codificar isso diretamente em um fluxo de trabalho.
 - **Processos com Múltiplas Etapas** - tarefas que exigem um nível de complexidade em que o Agente de IA precisa usar ferramentas ou informações ao longo de várias interações, em vez de uma única busca.
