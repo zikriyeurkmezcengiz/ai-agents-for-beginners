@@ -68,7 +68,7 @@ If you get stuck or have any questions about bulding AI Agents, join our [Azure 
 
 ## 🗃️ Lessons
 
-| **Lesson **                            | **Link**                                   |
+| **Lesson**                            | **Link**                                   |
 |----------------------------------------|--------------------------------------------|
 | Intro to AI Agents and Use Cases       | [Link](./01-intro-to-ai-agents/README.md)          |
 | Exploring Agentic Frameworks           | [Link](./02-explore-agentic-frameworks/README.md)  |
