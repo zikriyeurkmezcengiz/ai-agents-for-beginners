@@ -6,9 +6,9 @@ As soon as you start working on a project that involves multiple agents, you wil
 
 In this lesson, we're looking to answer the following questions:
 
-- What are the scenarios where multi-agents are applicable to? 
-- What are the advantages of using multi-agents over just one singular agent doing multiple tasks? 
-- What are the building blocks of implementing the multi-agent design pattern? 
+- What are the scenarios where multi-agents are applicable to?
+- What are the advantages of using multi-agents over just one singular agent doing multiple tasks?
+- What are the building blocks of implementing the multi-agent design pattern?
 - How do we have visibility to how the multiple agents are interacting with each other
 
 ## Learning Goals
@@ -143,8 +143,6 @@ There's quite a few agents listed above both for the specific refund process but
 
 ## Assignment
 
-What's a good assignment for this lesson?
-
 Design a multi-agent system for a customer support process. Identify the agents involved in the process, their roles and responsibilities, and how they interact with each other. Consider both agents specific to the customer support process and general agents that can be used in other parts of your business.
 
 > Have a think before you read the solution below, you may need more agents than you think.
@@ -171,6 +169,5 @@ In this lesson, we've looked at the multi-agent design pattern, including the sc
 
 ## Additional resources
 
-- [Autogen design patterns](https://microsoft.github.io/autogen/0.4.0.dev4/user-guide/core-user-guide/design-patterns/index.html)
+- [AutoGen design patterns](https://microsoft.github.io/autogen/0.4.0.dev4/user-guide/core-user-guide/design-patterns/index.html)
 - [Agentic design patterns](https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/)
-
