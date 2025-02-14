@@ -1,4 +1,3 @@
-```markdown
 # Agentes de IA para Iniciantes - Um Curso
 
 ![IA Generativa para Iniciantes](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.pt.mc_id=academic-105485-koreyst)
@@ -16,6 +15,19 @@
 [![Estrelas no GitHub](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
+
+## 🌐 Suporte a Múltiplos Idiomas
+
+| Idioma              | Código | Link para README Traduzido                            | Última Atualização |
+|---------------------|--------|------------------------------------------------------|--------------------|
+| Chinês (Simplificado) | zh    | [Tradução para Chinês](../zh/README.md) | 2025-02-13        |
+| Chinês (Tradicional) | tw    | [Tradução para Chinês](../tw/README.md) | 2025-02-13        |
+| Chinês (Hong Kong)  | hk    | [Tradução para Chinês](../hk/README.md) | 2025-02-13        |
+| Francês            | fr    | [Tradução para Francês](../fr/README.md) | 2025-02-13        |
+| Japonês            | ja    | [Tradução para Japonês](../ja/README.md) | 2025-02-13        |
+| Coreano            | ko    | [Tradução para Coreano](../ko/README.md) | 2025-02-13        |
+| Português          | pt    | [Tradução para Português](../pt/README.md) | 2025-02-13        |
+| Espanhol           | es    | [Tradução para Espanhol](../es/README.md) | 2025-02-13        |
 
 ## 🌱 Começando
 

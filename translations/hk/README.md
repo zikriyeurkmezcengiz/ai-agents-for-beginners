@@ -1,4 +1,3 @@
-```markdown
 # 初學者 AI Agents 課程
 
 ![Generative AI For Beginners](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.hk.mc_id=academic-105485-koreyst)
@@ -16,6 +15,19 @@
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)  
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
+
+## 🌐 多語言支援
+
+| 語言                 | 代碼 | 翻譯後的 README 連結                                   | 最後更新日期 |
+|----------------------|------|---------------------------------------------------------|--------------|
+| 簡體中文            | zh   | [中文翻譯](../zh/README.md)                | 2025-02-13   |
+| 繁體中文            | tw   | [中文翻譯](../tw/README.md)                | 2025-02-13   |
+| 香港繁體中文        | hk   | [中文翻譯](../hk/README.md)                | 2025-02-13   |
+| 法語                | fr   | [法語翻譯](../fr/README.md)                | 2025-02-13   |
+| 日語                | ja   | [日語翻譯](../ja/README.md)                | 2025-02-13   |
+| 韓語                | ko   | [韓語翻譯](../ko/README.md)                | 2025-02-13   |
+| 葡萄牙語            | pt   | [葡萄牙語翻譯](../pt/README.md)            | 2025-02-13   |
+| 西班牙語            | es   | [西班牙語翻譯](../es/README.md)            | 2025-02-13   |
 
 ## 🌱 快速開始
 

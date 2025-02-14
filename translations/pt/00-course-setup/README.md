@@ -1,4 +1,3 @@
-```markdown
 # Configuração do Curso
 
 ## Introdução

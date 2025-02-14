@@ -1,9 +1,8 @@
-```markdown
-# 初心者向けAIエージェント - コース
+# 初心者向け AI エージェント - コース
 
-![初心者向け生成AI](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.ja.mc_id=academic-105485-koreyst)
+![Generative AI For Beginners](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.ja.mc_id=academic-105485-koreyst)
 
-## AIエージェントを構築するために必要な知識を学べる10のレッスン
+## AIエージェントを作成するために必要なすべてを学べる10のレッスン
 
 [![GitHub license](https://img.shields.io/github/license/microsoft/ai-agents-for-beginners.svg)](https://github.com/microsoft/ai-agents-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)
@@ -17,79 +16,91 @@
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
 
-## 🌱 始めるにあたって
+## 🌐 多言語対応
 
-このコースでは、AIエージェントを構築するための基礎を学べる10のレッスンを提供しています。各レッスンは独立したトピックを扱っているので、好きな場所から始めてください！
+| 言語                  | コード | 翻訳されたREADMEへのリンク                              | 最終更新日 |
+|-----------------------|--------|---------------------------------------------------------|------------|
+| 中国語（簡体字）       | zh     | [Chinese Translation](../zh/README.md)      | 2025-02-13 |
+| 中国語（繁体字）       | tw     | [Chinese Translation](../tw/README.md)      | 2025-02-13 |
+| フランス語            | fr     | [French Translation](../fr/README.md)       | 2025-02-13 |
+| 日本語                | ja     | [Japanese Translation](./README.md)     | 2025-02-13 |
+| 韓国語                | ko     | [Korean Translation](../ko/README.md)       | 2025-02-13 |
+| スペイン語            | es     | [Spanish Translation](../es/README.md)      | 2025-02-13 |
 
-もし生成AIモデルを使った構築が初めてであれば、21のレッスンが含まれる[初心者向け生成AIコース](https://aka.ms/genai-beginners)をご覧ください。
+> **Note:**
+> これらの翻訳は、オープンソースの[co-op-translator](https://github.com/Azure/co-op-translator)を使用して自動生成されています。そのため、誤りや不正確な箇所が含まれている可能性があります。重要な情報については、元のテキストを参照するか、専門の人間翻訳を依頼してください。翻訳の貢献や更新を希望される場合は、リポジトリをご覧いただき、簡単なコマンドで貢献できます。
 
-### このコースのコードを実行するには
+## 🌱 始めるには
 
-各レッスンには `code_samples` フォルダ内にコード例が含まれています。このコードでは以下のモデルサービスを使用しています：
+このコースでは、AIエージェント構築の基礎を学ぶための10のレッスンを提供しています。それぞれのレッスンは独立したトピックを扱っているので、好きなところから始めてください！
+
+初めて生成AIモデルを使用する場合は、21のレッスンで構成された[Generative AI For Beginners](https://aka.ms/genai-beginners)コースをチェックしてください。
+
+### コースのコードを実行するには
+
+このコースには、各レッスンに`code_samples`フォルダが含まれるコード例があります。このコードでは以下のモデルサービスを使用します：
 
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - 無料 / 制限あり
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azureアカウントが必要
 
-また、このコースでは以下のAIエージェントフレームワークやサービスも使用しています：
+また、このコースでは以下のAIエージェントフレームワークとサービスを使用します：
 
 - [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
-このコースのコードの実行に関する詳細は、[コースセットアップ](./00-course-setup/README.md)をご覧ください。
+コースのコードを実行する方法についての詳細は、[Course Setup](./00-course-setup/README.md)をご覧ください。
 
-このリポジトリに[スター (🌟) を付ける](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst)のを忘れずに、また[フォーク](https://github.com/microsoft/ai-agents-for-beginners/fork)してコードを実行してください。
+リポジトリを[スター (🌟)](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst)したり、[フォーク](https://github.com/microsoft/ai-agents-for-beginners/fork)してコードを実行することをお忘れなく。
 
-## 🙏 サポートしたいですか？
+## 🙏 貢献したいですか？
 
-提案やスペルミス、コードの誤りを見つけた場合は、[Issueを作成](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst)するか、[プルリクエストを作成](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst)してください。
+提案がある、またはスペルミスやコードのエラーを見つけた場合は、[問題を報告する](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst)か、[プルリクエストを作成する](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst)ことでお知らせください。
 
-AIエージェントの構築で行き詰まったり、質問がある場合は、[Azure AI Community Discord](https://discord.gg/kzRShWzttr)に参加してください。
+AIエージェントの構築で行き詰まったり質問がある場合は、[Azure AI Community Discord](https://discord.gg/kzRShWzttr)に参加してください。
 
-## 📂 各レッスンに含まれる内容
+## 📂 各レッスンには以下が含まれます
 
-- READMEに記載されたレッスン内容（動画は2025年3月公開予定）
-- Azure AI FoundryやGithub Models（無料）をサポートするPythonコードサンプル
-- 学習を続けるための追加リソースへのリンク
+- READMEに記載されたレッスン内容（ビデオは2025年3月公開予定）
+- Azure AI FoundryとGithub Models（無料）をサポートするPythonコードサンプル
+- 学習を継続するための追加リソースへのリンク
 
 ## 🗃️ レッスン一覧
 
-| **レッスン**                           | **リンク**                                  | **追加学習**       |
-|----------------------------------------|---------------------------------------------|--------------------|
-| AIエージェントの概要とユースケース      | [AIエージェントの概要とユースケース](./01-intro-to-ai-agents/README.md)          | Learn More         |
-| エージェンティックフレームワークの探求 | [エージェンティックフレームワークの探求](./02-explore-agentic-frameworks/README.md)  | Learn More         |
-| エージェンティックデザインパターンの理解 | [エージェンティックデザインパターンの理解](./03-agentic-design-patterns/README.md)  | Learn More         |
-| ツール利用デザインパターン             | [ツール利用デザインパターン](./04-tool-use/README.md)                    | Learn More         |
-| エージェンティックRAG                  | [エージェンティックRAG](./05-agentic-rag/README.md)                 | Learn More         |
-| 信頼できるAIエージェントの構築         | [信頼できるAIエージェントの構築](./06-building-trustworthy-agents/README.md) | Learn More         |
-| 計画デザインパターン                  | [計画デザインパターン](./07-planning-design/README.md)             | Learn More         |
-| マルチエージェントデザインパターン     | [マルチエージェントデザインパターン](./08-multi-agent/README.md)                 | Learn More         |
+| **レッスン**                            | **リンク**                                   | **追加学習**       |
+|----------------------------------------|--------------------------------------------|--------------------|
+| AIエージェントとユースケースの紹介      | [Intro to AI Agents and Use Cases](./01-intro-to-ai-agents/README.md)          | Learn More         |
 ```
-| メタ認知デザインパターン           | [Metacognition Design Pattern](./09-metacognition/README.md)               | 詳細を見る         |
-| プロダクション環境でのAIエージェント | [AI Agents in Production](./10-ai-agents-production/README.md)        | 詳細を見る         |
+| エージェントフレームワークの探求           | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | 詳しく見る         |
+| エージェントデザインパターンの理解          | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | 詳しく見る         |
+| ツール使用デザインパターン                | [Tool Use Design Pattern](./04-tool-use/README.md)                    | 詳しく見る         |
+| エージェントRAG                            | [Agentic RAG](./05-agentic-rag/README.md)                 | 詳しく見る         |
+| 信頼できるAIエージェントの構築             | [Building Trustworthy AI Agents](./06-building-trustworthy-agents/README.md) | 詳しく見る         |
+| プランニングデザインパターン              | [Planning Design Pattern](./07-planning-design/README.md)             | 詳しく見る         |
+| マルチエージェントデザインパターン         | [Muilt-Agent Design Pattern](./08-multi-agent/README.md)                 | 詳しく見る         |
+| メタ認知デザインパターン                  | [Metacognition Design Pattern](./09-metacognition/README.md)               | 詳しく見る         |
+| 本番環境でのAIエージェント                | [AI Agents in Production](./10-ai-agents-production/README.md)        | 詳しく見る         |
 
 ## 🎒 その他のコース
 
-私たちのチームでは、他にもさまざまなコースを提供しています！ぜひチェックしてみてください：
+私たちのチームでは他にもコースを提供しています！ぜひチェックしてください：
 
 - [Generative AI for Beginners](https://aka.ms/genai-beginners)
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 
-## コントリビューションについて
+## コントリビューション
 
-このプロジェクトでは、貢献や提案を歓迎しています。ほとんどのコントリビューションでは、コントリビューター ライセンス契約 (CLA) に同意する必要があります。この契約では、貢献を利用する権利を私たちに許可すること、そして実際にその権利を与えることを宣言します。詳細は <https://cla.opensource.microsoft.com> をご覧ください。
+このプロジェクトでは、貢献や提案を歓迎しています。ほとんどの貢献には、Contributor License Agreement (CLA) に同意する必要があります。CLAに同意することで、あなたがその貢献を行う権利を有し、またその貢献を当方が使用する権利を付与することを宣言します。詳細については、<https://cla.opensource.microsoft.com> をご覧ください。
 
-プルリクエストを送信すると、CLA ボットが自動的に CLA を提供する必要があるかを判断し、PR に適切な装飾を行います（例: ステータスチェックやコメント）。ボットが提供する指示に従うだけで大丈夫です。このプロセスは、CLA を使用するすべてのリポジトリで一度だけ行えば済みます。
+プルリクエストを送信すると、CLAボットが自動的にCLAの提供が必要かどうかを判断し、PRに適切なステータス（例：ステータスチェック、コメント）を付けます。ボットの指示に従うだけでOKです。CLAは、当方のCLAを使用しているすべてのリポジトリで一度だけ提供すれば済みます。
 
-このプロジェクトは [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) を採用しています。
-詳細については、[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) をご覧いただくか、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。
+このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) を採用しています。詳細については、[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) をご覧いただくか、追加の質問やコメントがある場合は [opencode@microsoft.com](mailto:opencode@microsoft.com) にご連絡ください。
 
 ## 商標について
 
-このプロジェクトには、プロジェクト、製品、またはサービスに関連する商標やロゴが含まれている場合があります。Microsoft の商標やロゴの使用は、[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general) に従い、認可された方法でのみ行う必要があります。このプロジェクトの改変版で Microsoft の商標やロゴを使用する場合、混乱を招いたり、Microsoft の支援を暗示したりしないように注意してください。
-サードパーティの商標やロゴの使用については、それぞれのサードパーティのポリシーに従ってください。
+このプロジェクトには、プロジェクト、製品、またはサービスに関連する商標やロゴが含まれている場合があります。Microsoftの商標やロゴの使用は、[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general) に従う必要があります。また、Microsoft商標やロゴを改変したバージョンで使用する場合、混乱を引き起こしたりMicrosoftのスポンサーシップを示唆するような使用をしてはいけません。第三者の商標やロゴの使用については、それぞれの第三者のポリシーに従う必要があります。
 
 **免責事項**:  
-本書類は、機械翻訳AIサービスを使用して翻訳されています。正確さを期すよう努めておりますが、自動翻訳には誤りや不正確な部分が含まれる場合があります。元の言語で作成された原本を信頼できる情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤った解釈について、当方は一切の責任を負いかねます。
+本書類は、機械ベースのAI翻訳サービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。元の言語で記載された原本を信頼できる情報源としてご参照ください。重要な情報については、専門の人間による翻訳をお勧めします。本翻訳の使用に起因する誤解や誤認について、当社は一切の責任を負いかねます。

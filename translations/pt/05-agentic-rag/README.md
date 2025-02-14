@@ -1,4 +1,3 @@
-```markdown
 # Agentic RAG
 
 Esta lição oferece uma visão abrangente do Agentic Retrieval-Augmented Generation (Agentic RAG), um paradigma emergente de IA onde grandes modelos de linguagem (LLMs) planejam autonomamente seus próximos passos enquanto buscam informações de fontes externas. Diferente dos padrões estáticos de "recuperar e depois ler", o Agentic RAG envolve chamadas iterativas ao LLM, intercaladas com chamadas de ferramentas ou funções e saídas estruturadas. O sistema avalia os resultados, refina consultas, invoca ferramentas adicionais se necessário e continua esse ciclo até alcançar uma solução satisfatória.

@@ -1,4 +1,3 @@
-```markdown
 # Princípios de Design de Agentes de IA
 
 ## Introdução

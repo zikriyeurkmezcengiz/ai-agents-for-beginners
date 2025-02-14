@@ -1,51 +1,50 @@
-```markdown
-# 도구 사용 디자인 패턴  
+# 도구 사용 설계 패턴  
 
 ## 소개
 
-이 강의에서는 다음 질문에 답하고자 합니다:
+이 강의에서는 다음 질문들에 답하려고 합니다:
 
-- 도구 사용 디자인 패턴이란 무엇인가요?
+- 도구 사용 설계 패턴이란 무엇인가요?
 - 이 패턴이 적용될 수 있는 사용 사례는 무엇인가요?
-- 디자인 패턴을 구현하는 데 필요한 요소/구성 요소는 무엇인가요?
-- 신뢰할 수 있는 AI 에이전트를 구축하기 위해 도구 사용 디자인 패턴을 사용할 때 특별히 고려해야 할 점은 무엇인가요?
+- 이 설계 패턴을 구현하기 위해 필요한 요소/구성 요소는 무엇인가요?
+- 신뢰할 수 있는 AI 에이전트를 구축하기 위해 도구 사용 설계 패턴을 사용할 때의 특별한 고려사항은 무엇인가요?
 
 ## 학습 목표
 
 이 강의를 완료한 후, 여러분은 다음을 할 수 있습니다:
 
-- 도구 사용 디자인 패턴과 그 목적을 정의할 수 있습니다.
-- 도구 사용 디자인 패턴이 적용 가능한 사용 사례를 식별할 수 있습니다.
-- 디자인 패턴 구현에 필요한 핵심 요소를 이해할 수 있습니다.
-- 이 디자인 패턴을 사용하는 AI 에이전트의 신뢰성을 보장하기 위한 고려 사항을 인식할 수 있습니다.
+- 도구 사용 설계 패턴과 그 목적을 정의합니다.
+- 도구 사용 설계 패턴이 적용 가능한 사용 사례를 식별합니다.
+- 이 설계 패턴을 구현하는 데 필요한 핵심 요소를 이해합니다.
+- 이 설계 패턴을 사용하는 AI 에이전트에서 신뢰성을 보장하기 위한 고려사항을 인식합니다.
 
-## 도구 사용 디자인 패턴이란 무엇인가요?
+## 도구 사용 설계 패턴이란 무엇인가요?
 
-**도구 사용 디자인 패턴**은 LLM이 특정 목표를 달성하기 위해 외부 도구와 상호작용할 수 있도록 하는 데 초점을 맞춥니다. 도구는 에이전트가 작업을 수행하기 위해 실행할 수 있는 코드입니다. 도구는 계산기와 같은 간단한 함수일 수도 있고, 주식 가격 조회나 날씨 예보와 같은 타사 서비스에 대한 API 호출일 수도 있습니다. AI 에이전트의 맥락에서, 도구는 **모델이 생성한 함수 호출**에 따라 에이전트가 실행하도록 설계됩니다.
+**도구 사용 설계 패턴**은 LLM(Large Language Models)이 특정 목표를 달성하기 위해 외부 도구와 상호작용할 수 있도록 하는 데 중점을 둡니다. 도구는 작업을 수행하기 위해 에이전트가 실행할 수 있는 코드입니다. 도구는 계산기와 같은 간단한 함수일 수도 있고, 주식 가격 조회나 날씨 예보와 같은 타사 서비스의 API 호출일 수도 있습니다. AI 에이전트의 맥락에서, 도구는 **모델이 생성한 함수 호출**에 응답하여 에이전트가 실행할 수 있도록 설계됩니다.
 
 ## 이 패턴이 적용될 수 있는 사용 사례는 무엇인가요?
 
-AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, 정보를 검색하거나, 결정을 내릴 수 있습니다. 도구 사용 디자인 패턴은 데이터베이스, 웹 서비스, 코드 인터프리터와 같은 외부 시스템과 동적으로 상호작용해야 하는 시나리오에서 자주 사용됩니다. 이 능력은 다음과 같은 다양한 사용 사례에서 유용합니다:
+AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, 정보를 검색하거나, 결정을 내릴 수 있습니다. 도구 사용 설계 패턴은 데이터베이스, 웹 서비스 또는 코드 해석기와 같은 외부 시스템과 동적으로 상호작용해야 하는 시나리오에서 자주 사용됩니다. 이 능력은 다음과 같은 다양한 사용 사례에서 유용합니다:
 
-- **동적 정보 검색:** 에이전트가 외부 API나 데이터베이스를 쿼리하여 최신 데이터를 가져올 수 있습니다(예: SQLite 데이터베이스를 쿼리하여 데이터 분석 수행, 주식 가격 또는 날씨 정보 가져오기).
-- **코드 실행 및 해석:** 에이전트가 코드를 실행하거나 스크립트를 실행하여 수학 문제를 해결하거나, 보고서를 생성하거나, 시뮬레이션을 수행할 수 있습니다.
-- **워크플로 자동화:** 작업 스케줄러, 이메일 서비스, 데이터 파이프라인과 같은 도구를 통합하여 반복적이거나 다단계 워크플로를 자동화할 수 있습니다.
-- **고객 지원:** 에이전트가 CRM 시스템, 티켓 플랫폼 또는 지식 베이스와 상호작용하여 사용자 질문을 해결할 수 있습니다.
-- **콘텐츠 생성 및 편집:** 에이전트가 문법 검사기, 텍스트 요약기 또는 콘텐츠 안전 평가 도구와 같은 도구를 활용하여 콘텐츠 생성 작업을 지원할 수 있습니다.
+- **동적 정보 검색:** 에이전트는 외부 API나 데이터베이스를 쿼리하여 최신 데이터를 가져올 수 있습니다(예: SQLite 데이터베이스를 쿼리하여 데이터 분석, 주식 가격 또는 날씨 정보 검색).
+- **코드 실행 및 해석:** 에이전트는 수학 문제를 해결하거나, 보고서를 생성하거나, 시뮬레이션을 수행하기 위해 코드나 스크립트를 실행할 수 있습니다.
+- **워크플로 자동화:** 작업 스케줄러, 이메일 서비스, 데이터 파이프라인과 같은 도구를 통합하여 반복적이거나 다단계 워크플로를 자동화합니다.
+- **고객 지원:** 에이전트는 CRM 시스템, 티켓 발급 플랫폼 또는 지식 기반과 상호작용하여 사용자 문의를 해결할 수 있습니다.
+- **콘텐츠 생성 및 편집:** 에이전트는 문법 검사기, 텍스트 요약기 또는 콘텐츠 안전성 평가기와 같은 도구를 활용하여 콘텐츠 생성 작업을 지원할 수 있습니다.
 
-## 도구 사용 디자인 패턴을 구현하는 데 필요한 요소/구성 요소는 무엇인가요?
+## 이 설계 패턴을 구현하기 위해 필요한 요소/구성 요소는 무엇인가요?
 
 ### 함수/도구 호출
 
-함수 호출은 대규모 언어 모델(LLM)이 도구와 상호작용할 수 있도록 하는 주요 방법입니다. '함수'와 '도구'라는 용어는 종종 상호 교환적으로 사용됩니다. '함수'(재사용 가능한 코드 블록)는 에이전트가 작업을 수행하기 위해 사용하는 '도구'이기 때문입니다. 함수의 코드를 호출하려면, LLM이 사용자의 요청을 함수 설명과 비교해야 합니다. 이를 위해 사용 가능한 모든 함수의 설명이 포함된 스키마가 LLM에 전송됩니다. 그런 다음 LLM은 작업에 가장 적합한 함수를 선택하고 함수 이름과 인수를 반환합니다. 선택된 함수가 호출되고, 그 응답이 다시 LLM에 전달되며, LLM은 이 정보를 사용하여 사용자 요청에 응답합니다.
+함수 호출은 LLM이 도구와 상호작용할 수 있도록 하는 주요 방법입니다. '함수'와 '도구'라는 용어는 종종 혼용되는데, 이는 '함수'(재사용 가능한 코드 블록)가 에이전트가 작업을 수행하기 위해 사용하는 '도구'이기 때문입니다. 함수의 코드가 호출되기 위해서는 LLM이 사용자 요청을 함수 설명과 비교해야 합니다. 이를 위해 사용 가능한 모든 함수의 설명을 포함한 스키마가 LLM에 전달됩니다. LLM은 작업에 가장 적합한 함수를 선택하고 함수 이름과 인수를 반환합니다. 선택된 함수가 호출되고, 그 응답이 LLM에 다시 전달되어 사용자의 요청에 응답합니다.
 
-에이전트에 대해 함수 호출을 구현하려면 다음이 필요합니다:
+에이전트를 위한 함수 호출을 구현하려면 다음이 필요합니다:
 
 1. 함수 호출을 지원하는 LLM 모델
-2. 함수 설명이 포함된 스키마
+2. 함수 설명을 포함한 스키마
 3. 설명된 각 함수의 코드
 
-다음은 특정 도시의 현재 시간을 얻는 예제를 사용하여 설명합니다:
+도시의 현재 시간을 가져오는 예제를 사용해 보겠습니다:
 
 - **함수 호출을 지원하는 LLM 초기화:**
 
@@ -62,8 +61,7 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
 
 - **함수 스키마 생성:**
 
-    다음으로 함수 이름, 함수가 수행하는 작업에 대한 설명, 함수 매개변수의 이름 및 설명을 포함하는 JSON 스키마를 정의합니다.
-    그런 다음 이 스키마를 위에서 생성한 클라이언트와 함께 사용자의 요청(예: 샌프란시스코의 시간을 찾기)에 전달합니다. 여기서 중요한 점은 **도구 호출**이 반환된다는 점이며, 이는 질문에 대한 최종 답변이 아닙니다. 앞서 언급했듯이, LLM은 작업에 대해 선택한 함수 이름과 전달될 인수를 반환합니다.
+    다음으로, 함수 이름, 함수가 수행하는 작업에 대한 설명, 함수 매개변수의 이름과 설명을 포함하는 JSON 스키마를 정의합니다. 그런 다음 이 스키마를 위에서 생성한 클라이언트와 함께 사용자의 요청(예: 샌프란시스코의 시간을 찾기 위해)과 함께 전달합니다. 중요한 점은 **도구 호출**이 반환된다는 것이며, **최종 답변**이 아니라는 것입니다. 앞서 언급했듯이, LLM은 작업에 대해 선택된 함수 이름과 전달될 인수를 반환합니다.
 
     ```python
     # Function description for the model to read
@@ -116,10 +114,9 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-- **작업을 수행하는 데 필요한 함수 코드:**
+- **작업을 수행하기 위한 함수 코드:**
 
-    이제 LLM이 실행해야 할 함수를 선택했으므로, 작업을 수행할 코드를 구현하고 실행해야 합니다.
-    Python으로 현재 시간을 가져오는 코드를 구현할 수 있습니다. 또한, response_message에서 함수 이름과 인수를 추출하여 최종 결과를 얻는 코드를 작성해야 합니다.
+    이제 LLM이 실행할 함수를 선택했으므로, 작업을 수행할 코드를 구현하고 실행해야 합니다. Python으로 현재 시간을 가져오는 코드를 구현할 수 있습니다. 또한 `response_message`에서 이름과 인수를 추출하여 최종 결과를 얻는 코드를 작성해야 합니다.
 
     ```python
       def get_current_time(location):
@@ -176,20 +173,20 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
       The current time in San Francisco is 09:24 AM.
      ```
 
-함수 호출은 대부분, 아니면 모든 에이전트 도구 사용 설계의 핵심입니다. 그러나 이를 처음부터 구현하는 것은 때로는 어려울 수 있습니다.
-[2강](../../../02-explore-agentic-frameworks)에서 배운 것처럼, 에이전틱 프레임워크는 도구 사용을 구현하기 위한 사전 구축된 구성 요소를 제공합니다.
+함수 호출은 대부분의, 아니면 모든 에이전트 도구 사용 설계의 핵심에 있지만, 이를 처음부터 구현하는 것은 때로 도전적일 수 있습니다.  
+[Lesson 2](../../../02-explore-agentic-frameworks)에서 배운 것처럼 에이전트 프레임워크는 도구 사용을 구현하기 위한 사전 구축된 구성 요소를 제공합니다.
 
-### 에이전틱 프레임워크를 활용한 도구 사용 예제
+### 에이전트 프레임워크를 활용한 도구 사용 예제
 
 - ### **[Semantic Kernel](https://learn.microsoft.com/azure/ai-services/agents/overview)**
 
-    Semantic Kernel은 대규모 언어 모델(LLM)을 사용하는 .NET, Python, Java 개발자를 위한 오픈 소스 AI 프레임워크입니다. 함수 호출을 사용하는 과정을 단순화하며, 함수와 매개변수를 모델에 자동으로 설명하는 [직렬화](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions) 과정을 통해 이를 수행합니다. 또한, 모델과 코드 간의 상호작용을 처리합니다. Semantic Kernel과 같은 에이전틱 프레임워크를 사용하면 [파일 검색](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py) 및 [코드 인터프리터](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py)와 같은 사전 구축된 도구에 액세스할 수 있습니다.
+    Semantic Kernel은 LLM(Large Language Models)을 사용하는 .NET, Python, Java 개발자를 위한 오픈소스 AI 프레임워크입니다. 이 프레임워크는 [직렬화](https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions)라는 과정을 통해 함수와 매개변수를 모델에 자동으로 설명하여 함수 호출 과정을 간소화합니다. 또한, 모델과 코드 간의 통신을 자동으로 처리합니다. Semantic Kernel과 같은 에이전트 프레임워크를 사용하는 또 다른 장점은 [파일 검색](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py) 및 [코드 해석기](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py)와 같은 사전 구축된 도구를 사용할 수 있다는 점입니다.
 
-    아래 다이어그램은 Semantic Kernel을 사용한 함수 호출 프로세스를 보여줍니다:
+    다음 다이어그램은 Semantic Kernel에서의 함수 호출 프로세스를 보여줍니다:
 
     ![function calling](../../../translated_images/functioncalling-diagram.b5493ea5154ad8e3e4940d2e36a49101eec1398948e5d1039942203b4f5a4209.ko.png)
 
-    Semantic Kernel에서 함수/도구는 [플러그인](https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python)으로 불립니다. `get_current_time` function we saw earlier into a plugin by turning it into a class with the function in it. We can also import the `kernel_function` 데코레이터를 사용하여 함수 설명을 전달할 수 있습니다. 그런 다음 GetCurrentTimePlugin으로 커널을 생성하면, 커널은 함수와 매개변수를 자동으로 직렬화하여 LLM에 보낼 스키마를 생성합니다.
+    Semantic Kernel에서 함수/도구는 [플러그인](https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python)이라고 불립니다. `get_current_time` function we saw earlier into a plugin by turning it into a class with the function in it. We can also import the `kernel_function` 데코레이터를 사용하여 함수 설명을 전달할 수 있습니다. 그런 다음 GetCurrentTimePlugin과 함께 커널을 생성하면 커널이 함수와 매개변수를 자동으로 직렬화하여 LLM에 보낼 스키마를 생성합니다.
 
     ```python
     from semantic_kernel.functions import kernel_function
@@ -221,27 +218,27 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
   
 - ### **[Azure AI Agent Service](https://learn.microsoft.com/azure/ai-services/agents/overview)**
 
-    Azure AI Agent Service는 개발자가 고품질의 확장 가능한 AI 에이전트를 안전하게 구축, 배포 및 확장할 수 있도록 설계된 최신 에이전틱 프레임워크입니다. 기본 컴퓨팅 및 스토리지 리소스를 관리할 필요 없이 사용할 수 있으며, 특히 엔터프라이즈 애플리케이션에 유용합니다. 이는 완전 관리형 서비스로 엔터프라이즈급 보안을 제공합니다.
+    Azure AI Agent Service는 개발자가 고품질의 확장 가능한 AI 에이전트를 안전하게 구축, 배포, 확장할 수 있도록 설계된 새로운 에이전트 프레임워크입니다. 이 서비스는 기본 컴퓨팅 및 스토리지 리소스를 관리할 필요가 없기 때문에 특히 엔터프라이즈 애플리케이션에 유용합니다. 
 
-    LLM API를 직접 사용하는 것과 비교했을 때, Azure AI Agent Service는 다음과 같은 이점을 제공합니다:
-  - 자동 도구 호출 – 도구 호출을 구문 분석하거나 도구를 호출하고 응답을 처리할 필요가 없습니다. 이 모든 것이 서버 측에서 처리됩니다.
-  - 안전하게 관리되는 데이터 – 대화 상태를 직접 관리하는 대신, 스레드를 사용하여 필요한 모든 정보를 저장할 수 있습니다.
-  - 기본 제공 도구 – Bing, Azure AI Search, Azure Functions와 같은 데이터 소스와 상호작용할 수 있는 도구를 제공합니다.
+    LLM API를 직접 사용하는 것과 비교했을 때, Azure AI Agent Service는 다음과 같은 장점을 제공합니다:
+  - 자동 도구 호출 – 도구 호출을 구문 분석하고, 도구를 호출하며, 응답을 처리할 필요가 없음; 모든 작업이 서버 측에서 처리됨
+  - 안전하게 관리되는 데이터 – 대화 상태를 직접 관리하는 대신, 스레드를 사용하여 필요한 모든 정보를 저장 가능
+  - 기본 제공 도구 – Bing, Azure AI Search, Azure Functions와 같은 데이터 소스와 상호작용할 수 있는 도구 사용 가능
 
     Azure AI Agent Service에서 사용할 수 있는 도구는 두 가지 범주로 나뉩니다:
 
     1. 지식 도구:
-        - [Bing 검색을 통한 그라운딩](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview)
+        - [Bing 검색을 통한 정보 기반](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview)
         - [파일 검색](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview)
         - [Azure AI Search](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search)
 
-    2. 실행 도구:
+    2. 액션 도구:
         - [함수 호출](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview)
-        - [코드 인터프리터](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview)
+        - [코드 해석기](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview)
         - [OpenAI 정의 도구](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview)
         - [Azure Functions](https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview)
 
-    Agent Service를 사용하면 `toolset`. It also utilizes `threads` which keep track of the history of messages from a particular conversation.
+    Agent Service를 사용하면 사용자 요청에 따라 `toolset`. It also utilizes `threads` which keep track of the history of messages from a particular conversation.
 
     Imagine you are a sales agent at a company called Contoso. You want to develop a conversational agent that can answer questions about your sales data.
 
@@ -249,7 +246,7 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
 
     ![Agentic Service In Action](../../../translated_images/agent-service-in-action.jpg?WT.858cf9f67cc5c7f16ff3660d3df11c90e8cda37025bea4db5c4a59d2facce09a.ko.mc_id=academic-105485-koreyst)
 
-    To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the Python code below. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query` 또는 사용자 요청에 따라 사전 구축된 코드 인터프리터와 같은 도구를 함께 사용할 수 있습니다.
+    To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the Python code below. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query` 또는 사전 구축된 코드 해석기를 함께 사용할 수 있습니다.
 
     ```python 
     import os
@@ -279,11 +276,11 @@ AI 에이전트는 도구를 활용하여 복잡한 작업을 완료하거나, �
     )
     ```
 
-## 신뢰할 수 있는 AI 에이전트를 구축하기 위해 도구 사용 디자인 패턴을 사용할 때 특별히 고려해야 할 점은 무엇인가요?
+## 신뢰할 수 있는 AI 에이전트를 구축하기 위해 도구 사용 설계 패턴을 사용할 때의 특별한 고려사항은 무엇인가요?
 
-LLM이 동적으로 생성한 SQL과 관련된 일반적인 우려 사항은 보안 문제, 특히 SQL 삽입 또는 데이터베이스 삭제나 손상과 같은 악의적인 작업의 위험입니다. 이러한 우려는 타당하지만, 데이터베이스 액세스 권한을 적절히 구성함으로써 효과적으로 완화할 수 있습니다. 대부분의 데이터베이스에서는 데이터베이스를 읽기 전용으로 구성하는 것이 포함됩니다. PostgreSQL이나 Azure SQL과 같은 데이터베이스 서비스의 경우, 앱은 읽기 전용(SELECT) 역할이 할당되어야 합니다.
+LLM이 동적으로 생성한 SQL과 관련된 일반적인 우려 사항은 SQL 삽입이나 데이터베이스 삭제 또는 조작과 같은 악의적인 작업의 위험입니다. 이러한 우려는 타당하지만, 데이터베이스 액세스 권한을 적절히 구성하면 효과적으로 완화할 수 있습니다. 대부분의 데이터베이스에서는 데이터베이스를 읽기 전용으로 구성하는 것이 포함됩니다. PostgreSQL 또는 Azure SQL과 같은 데이터베이스 서비스의 경우, 앱에 읽기 전용(SELECT) 역할을 할당해야 합니다.
 
-앱을 안전한 환경에서 실행하면 보호 수준이 더욱 향상됩니다. 엔터프라이즈 시나리오에서는 데이터를 운영 시스템에서 읽기 전용 데이터베이스나 데이터 웨어하우스로 추출 및 변환하여 사용자 친화적인 스키마로 저장하는 경우가 많습니다. 이러한 접근 방식은 데이터를 안전하게 유지하고, 성능 및 접근성을 최적화하며, 앱이 제한된 읽기 전용 액세스를 가지도록 보장합니다.
+앱을 안전한 환경에서 실행하면 보호 수준이 더욱 강화됩니다. 엔터프라이즈 시나리오에서는 데이터를 읽기 전용 데이터베이스 또는 사용자 친화적인 스키마를 갖춘 데이터 웨어하우스로 변환하여 운영 시스템에서 데이터를 추출하는 경우가 일반적입니다. 이러한 접근 방식은 데이터를 안전하게 유지하고, 성능과 접근성을 최적화하며, 앱이 제한된 읽기 전용 액세스만 가지도록 보장합니다.
 
 ## 추가 자료
 
@@ -295,4 +292,4 @@ LLM이 동적으로 생성한 SQL과 관련된 일반적인 우려 사항은 보
 ```
 
 **면책 조항**:  
-이 문서는 AI 기반 기계 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원어로 작성된 원본 문서를 신뢰할 수 있는 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 기계 기반 AI 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서(원어로 작성된 문서)를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

@@ -16,6 +16,20 @@
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
 
+## 🌐 Multi-Language Support
+
+| Language             | Code | Link to Translated README                               | Last Updated |
+|----------------------|------|---------------------------------------------------------|--------------|
+| Chinese (Simplified) | zh   | [Chinese Translation](./translations/zh/README.md)      | 2025-02-13   |
+| Chinese (Traditional)| tw   | [Chinese Translation](./translations/tw/README.md)      | 2025-02-13   |
+| Chinese (Hong Kong)  | hk   | [Chinese (Hong Kong) Translation](./translations/hk/README.md) | 2025-02-13   |
+| French               | fr   | [French Translation](./translations/fr/README.md)       | 2025-02-13   |
+| Japanese             | ja   | [Japanese Translation](./translations/ja/README.md)     | 2025-02-13   |
+| Korean               | ko   | [Korean Translation](./translations/ko/README.md)       | 2025-02-13   |
+| Portuguese           | pt   | [Portuguese Translation](./translations/pt/README.md)   | 2025-02-13   |
+| Spanish              | es   | [Spanish Translation](./translations/es/README.md)      | 2025-02-13   |
+
+
 ## 🌱 Getting Started
 
 This course has 10 lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!

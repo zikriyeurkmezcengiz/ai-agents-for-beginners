@@ -1,4 +1,3 @@
-```markdown
 # Metacognição em Agentes de IA
 
 ## Introdução
