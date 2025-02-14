@@ -28,6 +28,7 @@
 | Korean               | ko   | [Korean Translation](./translations/ko/README.md)       | 2025-02-13   |
 | Portuguese           | pt   | [Portuguese Translation](./translations/pt/README.md)   | 2025-02-13   |
 | Spanish              | es   | [Spanish Translation](./translations/es/README.md)      | 2025-02-13   |
+| German               | de   | [German Translation](./translations/de/README.md)       | 2025-02-13   |
 
 
 ## 🌱 Getting Started
