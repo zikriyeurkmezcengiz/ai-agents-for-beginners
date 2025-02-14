@@ -1,4 +1,3 @@
-```markdown
 # Agentic RAG
 
 Diese Lektion bietet einen umfassenden Überblick über Agentic Retrieval-Augmented Generation (Agentic RAG), ein aufstrebendes KI-Paradigma, bei dem große Sprachmodelle (LMs) eigenständig ihre nächsten Schritte planen, während sie Informationen aus externen Quellen abrufen. Im Gegensatz zu statischen Mustern des Abrufens und Lesens umfasst Agentic RAG iterative Aufrufe an das LLM, unterbrochen durch Werkzeug- oder Funktionsaufrufe und strukturierte Ausgaben. Das System bewertet Ergebnisse, verfeinert Abfragen, ruft bei Bedarf zusätzliche Werkzeuge auf und setzt diesen Zyklus fort, bis eine zufriedenstellende Lösung erreicht ist.
