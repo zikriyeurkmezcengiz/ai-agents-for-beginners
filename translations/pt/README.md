@@ -106,7 +106,7 @@ entre em contato com [opencode@microsoft.com](mailto:opencode@microsoft.com) par
 ## Marcas Registradas
 
 Este projeto pode conter marcas registradas ou logotipos de projetos, produtos ou serviços. O uso autorizado de marcas registradas ou logotipos da Microsoft está sujeito e deve seguir as 
-[Diretrizes de Marca e Logotipo da Microsoft](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
+[Diretrizes de Marca e Logotipo da Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 O uso de marcas registradas ou logotipos da Microsoft em versões modificadas deste projeto não deve causar confusão ou implicar patrocínio da Microsoft.
 Qualquer uso de marcas registradas ou logotipos de terceiros está sujeito às políticas desses terceiros.
 

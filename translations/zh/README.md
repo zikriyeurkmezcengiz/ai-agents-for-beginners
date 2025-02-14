@@ -101,7 +101,7 @@
 
 ## 商标声明
 
-本项目可能包含项目、产品或服务的商标或徽标。使用 Microsoft 商标或徽标需获得授权，并必须遵循 [Microsoft 的商标和品牌指南](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)。  
+本项目可能包含项目、产品或服务的商标或徽标。使用 Microsoft 商标或徽标需获得授权，并必须遵循 [Microsoft 的商标和品牌指南](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)。  
 在修改版本的项目中使用 Microsoft 商标或徽标不得引起混淆或暗示 Microsoft 的赞助。  
 任何对第三方商标或徽标的使用均需遵守该第三方的政策。
 

@@ -193,7 +193,7 @@ pprint(json.loads(response_content))
     # .. re-plan and send the tasks to respective agents
     ```
 
-より包括的な計画については、複雑なタスクを解決するためのMagnetic Oneに関する[ブログ記事](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks)をご覧ください。
+より包括的な計画については、複雑なタスクを解決するためのMagnetic Oneに関する[ブログ記事](https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks)をご覧ください。
 
 ## まとめ
 
