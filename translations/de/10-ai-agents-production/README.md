@@ -1,4 +1,3 @@
-```markdown
 # KI-Agenten in der Produktion
 
 ## Einführung

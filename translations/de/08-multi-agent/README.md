@@ -1,4 +1,3 @@
-```markdown
 # Multi-Agent-Designmuster
 
 Sobald Sie an einem Projekt arbeiten, das mehrere Agenten umfasst, müssen Sie das Multi-Agent-Designmuster in Betracht ziehen. Es ist jedoch nicht sofort ersichtlich, wann der Wechsel zu mehreren Agenten sinnvoll ist und welche Vorteile dies bietet.  

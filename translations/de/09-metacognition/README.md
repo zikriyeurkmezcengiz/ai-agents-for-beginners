@@ -1,4 +1,3 @@
-```markdown
 # Metakognition bei KI-Agenten
 
 ## Einführung
