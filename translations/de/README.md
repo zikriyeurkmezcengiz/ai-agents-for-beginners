@@ -63,7 +63,6 @@ Falls Sie nicht weiterkommen oder Fragen zum Erstellen von KI-Agenten haben, tre
 | Vertrauenswürdige KI-Agenten entwickeln | [Vertrauenswürdige KI-Agenten entwickeln](./06-building-trustworthy-agents/README.md) | Mehr erfahren              |
 | Planungs-Designmuster                  | [Planungs-Designmuster](./07-planning-design/README.md)             | Mehr erfahren              |
 | Multi-Agent-Designmuster               | [Multi-Agent-Designmuster](./08-multi-agent/README.md)                 | Mehr erfahren              |
-```
 | Metakognition Design Pattern           | [Metakognition Design Pattern](./09-metacognition/README.md)               | Mehr erfahren      |
 | KI-Agenten in der Produktion           | [KI-Agenten in der Produktion](./10-ai-agents-production/README.md)        | Mehr erfahren      |
 

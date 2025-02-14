@@ -70,7 +70,6 @@
 | **課程**                             | **連結**                                   | **延伸學習**     |
 |--------------------------------------|--------------------------------------------|------------------|
 | AI Agents 與應用場景介紹             | [Intro to AI Agents and Use Cases](./01-intro-to-ai-agents/README.md) | 繼續學習         |
-```
 | 探索 Agentic 框架                     | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | 了解更多         |
 | 理解 Agentic 設計模式                 | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | 了解更多         |
 | 工具使用設計模式                     | [Tool Use Design Pattern](./04-tool-use/README.md)                    | 了解更多         |

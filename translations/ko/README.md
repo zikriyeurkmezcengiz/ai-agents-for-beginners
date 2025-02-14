@@ -79,7 +79,6 @@ AI 에이전트를 구축하는 데 어려움을 겪거나 질문이 있으시�
 | 신뢰할 수 있는 AI 에이전트 구축하기      | [Building Trustworthy AI Agents](./06-building-trustworthy-agents/README.md) | Learn More         |
 | 계획 디자인 패턴                       | [Planning Design Pattern](./07-planning-design/README.md)             | Learn More         |
 | 다중 에이전트 디자인 패턴              | [Muilt-Agent Design Pattern](./08-multi-agent/README.md)                 | Learn More         |
-```
 | 메타인지 설계 패턴 | [Metacognition Design Pattern](./09-metacognition/README.md) | 더 알아보기 |
 | AI 에이전트 프로덕션 활용 | [AI Agents in Production](./10-ai-agents-production/README.md) | 더 알아보기 |
 

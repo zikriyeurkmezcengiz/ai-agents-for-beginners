@@ -70,7 +70,6 @@ Si vous êtes bloqué ou avez des questions sur la création d'Agents IA, rejoig
 | **Leçon**                            | **Lien**                                   | **Apprentissage Supplémentaire** |
 |---------------------------------------|--------------------------------------------|-----------------------------------|
 | Introduction aux Agents IA et Cas d'Utilisation | [Introduction aux Agents IA et Cas d'Utilisation](./01-intro-to-ai-agents/README.md) | En savoir plus                   |
-```
 | Explorer les cadres agentiques         | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | En savoir plus     |
 | Comprendre les modèles de conception agentiques | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | En savoir plus     |
 | Modèle de conception pour l'utilisation d'outils | [Tool Use Design Pattern](./04-tool-use/README.md)                    | En savoir plus     |

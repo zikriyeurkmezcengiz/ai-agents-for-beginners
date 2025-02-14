@@ -70,7 +70,6 @@ AIエージェントの構築で行き詰まったり質問がある場合は、
 | **レッスン**                            | **リンク**                                   | **追加学習**       |
 |----------------------------------------|--------------------------------------------|--------------------|
 | AIエージェントとユースケースの紹介      | [Intro to AI Agents and Use Cases](./01-intro-to-ai-agents/README.md)          | Learn More         |
-```
 | エージェントフレームワークの探求           | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | 詳しく見る         |
 | エージェントデザインパターンの理解          | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | 詳しく見る         |
 | ツール使用デザインパターン                | [Tool Use Design Pattern](./04-tool-use/README.md)                    | 詳しく見る         |

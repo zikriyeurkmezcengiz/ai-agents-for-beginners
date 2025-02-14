@@ -76,7 +76,6 @@ Se você ficar preso ou tiver dúvidas sobre como construir Agentes de IA, junte
 | Construindo Agentes de IA Confiáveis   | [Construindo Agentes de IA Confiáveis](./06-building-trustworthy-agents/README.md) | Saiba Mais           |
 | Padrão de Design de Planejamento      | [Padrão de Design de Planejamento](./07-planning-design/README.md)             | Saiba Mais               |
 | Padrão de Design Multi-Agente         | [Padrão de Design Multi-Agente](./08-multi-agent/README.md)                    | Saiba Mais               |
-```
 | Padrão de Design de Metacognição        | [Padrão de Design de Metacognição](./09-metacognition/README.md)            | Saiba Mais         |
 | Agentes de IA em Produção               | [Agentes de IA em Produção](./10-ai-agents-production/README.md)            | Saiba Mais         |
 

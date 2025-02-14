@@ -70,7 +70,6 @@ Si te quedas atascado o tienes preguntas sobre cómo construir Agentes de IA, ú
 | **Lección**                          | **Enlace**                                   | **Aprendizaje Adicional** |
 |--------------------------------------|----------------------------------------------|---------------------------|
 | Introducción a Agentes de IA y Casos de Uso | [Introducción a Agentes de IA y Casos de Uso](./01-intro-to-ai-agents/README.md) | Aprende Más               |
-```
 | Explorando Marcos Agénticos            | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | Aprende Más        |
 | Entendiendo Patrones de Diseño Agéntico | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | Aprende Más        |
 | Patrón de Diseño para Uso de Herramientas | [Tool Use Design Pattern](./04-tool-use/README.md)                    | Aprende Más        |

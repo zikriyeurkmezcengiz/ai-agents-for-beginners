@@ -76,7 +76,6 @@
 | 建立值得信任嘅 AI Agents               | [Building Trustworthy AI Agents](./06-building-trustworthy-agents/README.md) | Learn More         |
 | 計劃設計模式                         | [Planning Design Pattern](./07-planning-design/README.md)             | Learn More         |
 | 多 Agent 設計模式                    | [Muilt-Agent Design Pattern](./08-multi-agent/README.md)                 | Learn More         |
-```
 | 元認知設計模式           | [Metacognition Design Pattern](./09-metacognition/README.md)               | 了解更多         |
 | 生產中的 AI 代理         | [AI Agents in Production](./10-ai-agents-production/README.md)        | 了解更多         |
 

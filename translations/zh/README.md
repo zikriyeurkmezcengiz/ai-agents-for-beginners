@@ -70,7 +70,6 @@
 | **课程**                             | **链接**                                   | **额外学习资源**   |
 |-------------------------------------|------------------------------------------|--------------------|
 | AI 代理简介及应用场景               | [AI 代理简介及应用场景](./01-intro-to-ai-agents/README.md) | 了解更多           |
-```
 | 探索 Agentic 框架                | [Exploring Agentic Frameworks](./02-explore-agentic-frameworks/README.md)  | 了解更多         |
 | 理解 Agentic 设计模式            | [Understanding Agentic Design Patterns](./03-agentic-design-patterns/README.md)  | 了解更多         |
 | 工具使用设计模式                 | [Tool Use Design Pattern](./04-tool-use/README.md)                    | 了解更多         |
