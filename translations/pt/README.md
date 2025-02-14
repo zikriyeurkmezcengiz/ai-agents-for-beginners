@@ -1,6 +1,6 @@
 # Agentes de IA para Iniciantes - Um Curso
 
-![IA Generativa para Iniciantes](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.pt.mc_id=academic-105485-koreyst)
+![IA Generativa para Iniciantes](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.pt.png?WT.mc_id=academic-105485-koreyst)
 
 ## 10 Aulas ensinando tudo o que você precisa saber para começar a construir Agentes de IA
 

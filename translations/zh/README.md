@@ -1,6 +1,6 @@
 # 初学者的 AI 代理课程
 
-![生成式 AI 入门](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.zh.mc_id=academic-105485-koreyst)
+![生成式 AI 入门](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.zh.png?WT.mc_id=academic-105485-koreyst)
 
 ## 10 节课程，教您从零开始构建 AI 代理的一切知识
 

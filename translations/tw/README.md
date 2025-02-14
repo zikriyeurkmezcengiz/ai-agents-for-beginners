@@ -1,6 +1,6 @@
 # 初學者的 AI Agents 課程
 
-![Generative AI For Beginners](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.tw.mc_id=academic-105485-koreyst)
+![Generative AI For Beginners](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.tw.png?WT.mc_id=academic-105485-koreyst)
 
 ## 10 堂課教你從零開始建立 AI Agents 所需的一切
 

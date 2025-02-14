@@ -1,7 +1,6 @@
-```markdown
 # KI-Agenten für Anfänger - Ein Kurs
 
-![Generative KI für Anfänger](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.de.mc_id=academic-105485-koreyst)
+![Generative KI für Anfänger](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.de.png?WT.mc_id=academic-105485-koreyst)
 
 ## 10 Lektionen, die alles lehren, was Sie wissen müssen, um KI-Agenten zu entwickeln
 

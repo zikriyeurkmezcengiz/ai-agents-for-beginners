@@ -1,6 +1,6 @@
 # Agents IA pour Débutants - Un Cours
 
-![IA Générative pour Débutants](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.fr.mc_id=academic-105485-koreyst)
+![IA Générative pour Débutants](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.fr.png?WT.mc_id=academic-105485-koreyst)
 
 ## 10 Leçons pour apprendre tout ce qu'il faut savoir pour commencer à créer des Agents IA
 

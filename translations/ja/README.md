@@ -1,6 +1,6 @@
 # 初心者向け AI エージェント - コース
 
-![Generative AI For Beginners](../../translated_images/repo-thumbnail.png?WT.fdac25c1519629ab59bee7fe82d0b3de40ab27e68637ca37cfa5d0b9ca7389b8.ja.mc_id=academic-105485-koreyst)
+![Generative AI For Beginners](../../translated_images/repo-thumbnail.fdd5f487bb7274d4a08459d76907ec4914de268c99637e9af082b1d3eb0730e2.ja.png?WT.mc_id=academic-105485-koreyst)
 
 ## AIエージェントを作成するために必要なすべてを学べる10のレッスン
 
