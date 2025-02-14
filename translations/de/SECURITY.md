@@ -1,4 +1,3 @@
-```markdown
 # Sicherheit
 
 Microsoft nimmt die Sicherheit unserer Softwareprodukte und -dienstleistungen ernst, einschließlich aller Quellcode-Repositories, die über unsere GitHub-Organisationen verwaltet werden. Dazu gehören [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) und [Xamarin](https://github.com/xamarin).

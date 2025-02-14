@@ -1,4 +1,3 @@
-```markdown
 # Microsoft Open Source Verhaltenskodex
 
 Dieses Projekt hat den [Microsoft Open Source Verhaltenskodex](https://opensource.microsoft.com/codeofconduct/) übernommen.
