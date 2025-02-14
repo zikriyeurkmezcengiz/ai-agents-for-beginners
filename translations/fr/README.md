@@ -104,7 +104,7 @@ contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute que
 ## Marques déposées
 
 Ce projet peut contenir des marques ou des logos pour des projets, produits ou services. L'utilisation autorisée des marques ou logos Microsoft est soumise aux
-[Directives sur les marques et logos de Microsoft](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
+[Directives sur les marques et logos de Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 L'utilisation des marques ou logos Microsoft dans des versions modifiées de ce projet ne doit pas prêter à confusion ou impliquer un parrainage par Microsoft.
 Toute utilisation de marques ou logos de tiers est soumise aux politiques de ces tiers.
 

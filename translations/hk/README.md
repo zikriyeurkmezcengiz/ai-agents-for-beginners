@@ -99,7 +99,7 @@
 
 ## 商標
 
-呢個項目可能包含項目、產品或者服務嘅商標或者標誌。使用 Microsoft 商標或者標誌必須遵守並符合 [Microsoft 商標及品牌指南](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)。喺修改版本嘅項目中使用 Microsoft 商標或者標誌唔可以引起混淆或者暗示係 Microsoft 嘅贊助。任何使用第三方商標或者標誌嘅行為需要遵守第三方嘅政策。
+呢個項目可能包含項目、產品或者服務嘅商標或者標誌。使用 Microsoft 商標或者標誌必須遵守並符合 [Microsoft 商標及品牌指南](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)。喺修改版本嘅項目中使用 Microsoft 商標或者標誌唔可以引起混淆或者暗示係 Microsoft 嘅贊助。任何使用第三方商標或者標誌嘅行為需要遵守第三方嘅政策。
 
 **免責聲明**:  
 本文件是使用機器翻譯人工智能服務翻譯的。我們雖然致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文語言的文件作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對於使用本翻譯而引起的任何誤解或誤譯概不負責。

@@ -100,7 +100,7 @@
 
 ## 商標
 
-此專案可能包含專案、產品或服務的商標或標誌。經授權使用 Microsoft 商標或標誌需遵循 [Microsoft 的商標與品牌指南](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)。修改版專案中使用 Microsoft 商標或標誌不得引起混淆或暗示 Microsoft 的贊助。任何第三方商標或標誌的使用則需遵守該第三方的政策。
+此專案可能包含專案、產品或服務的商標或標誌。經授權使用 Microsoft 商標或標誌需遵循 [Microsoft 的商標與品牌指南](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)。修改版專案中使用 Microsoft 商標或標誌不得引起混淆或暗示 Microsoft 的贊助。任何第三方商標或標誌的使用則需遵守該第三方的政策。
 
 **免責聲明**：  
 本文檔是使用基於機器的人工智能翻譯服務翻譯的。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤讀概不負責。
