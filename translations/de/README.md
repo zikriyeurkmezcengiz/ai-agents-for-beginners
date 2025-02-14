@@ -93,7 +93,7 @@ kontaktieren Sie [opencode@microsoft.com](mailto:opencode@microsoft.com) bei zus
 ## Marken
 
 Dieses Projekt kann Marken oder Logos für Projekte, Produkte oder Dienstleistungen enthalten. Die autorisierte Nutzung von 
-Microsoft-Marken oder -Logos unterliegt den [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general) 
+Microsoft-Marken oder -Logos unterliegt den [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) 
 und muss diesen folgen. Die Nutzung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder 
 eine Microsoft-Sponsoring implizieren. Jegliche Nutzung von Marken oder Logos Dritter unterliegt den Richtlinien der jeweiligen Drittanbieter.
 

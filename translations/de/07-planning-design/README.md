@@ -193,7 +193,7 @@ Beispiel-Code:
     # .. re-plan and send the tasks to respective agents
     ```
 
-Für eine umfassendere Planung lies dir den Magnetic One [Blogpost](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks) durch, der die Lösung komplexer Aufgaben beschreibt.
+Für eine umfassendere Planung lies dir den Magnetic One [Blogpost](https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks) durch, der die Lösung komplexer Aufgaben beschreibt.
 
 ## Zusammenfassung
 
