@@ -1,4 +1,3 @@
-```markdown
 # Padrões de Design para Multiagentes
 
 Assim que você começar a trabalhar em um projeto que envolve múltiplos agentes, será necessário considerar o padrão de design para multiagentes. No entanto, pode não ser imediatamente claro quando mudar para um sistema multiagente e quais são as vantagens disso.
