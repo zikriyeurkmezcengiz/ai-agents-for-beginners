@@ -37,10 +37,10 @@ To create scalable system prompts, we can use a meta prompting system for buildi
 Here is an example of a meta prompt we would give to the LLM:
 
 ```plaintext
-You are an expert at creating AI agent assitants. 
-You will be provided a company name, role, responsibilites and other
+You are an expert at creating AI agent assistants. 
+You will be provided a company name, role, responsibilities and other
 information that you will use to provide a system prompt for.
-To create the system prompt, be descriptive as possible and provide a structure that a system using an LLM can better understand the role and responsibilites of the AI assistant. 
+To create the system prompt, be descriptive as possible and provide a structure that a system using an LLM can better understand the role and responsibilities of the AI assistant. 
 ```
 
 #### Step 2: Create a basic prompt
@@ -151,7 +151,7 @@ To build trustworthy AI agents, it is important to understand and mitigate the r
 
 ## Human-in-the-Loop
 
-Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during run. Users essentially act as agent in a multi-agent system and by providing apporval or termination of the running process.
+Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during run. Users essentially act as agent in a multi-agent system and by providing approval or termination of the running process.
 
 ![Human in The Loop](./images/human-in-the-loop.png)
 
@@ -177,4 +177,12 @@ await Console(stream)
 
 ```
 
+## Conclusion
 
+Building trustworthy AI agents requires careful design, robust security measures, and continuous iteration. By implementing structured meta prompting systems, understanding potential threats, and applying mitigation strategies, developers can create AI agents that are both safe and effective. Additionally, incorporating a human-in-the-loop approach ensures that AI agents remain aligned with user needs while minimizing risks. As AI continues to evolve, maintaining a proactive stance on security, privacy, and ethical considerations will be key to fostering trust and reliability in AI-driven systems.
+
+## Additional Resources
+
+- [Responsible AI overview](https://learn.microsoft.com/azure/ai-studio/responsible-use-of-ai-overview)
+-[Evaluation of generative AI models and AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai)
+- [Safety system messages](https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message?context=%2Fazure%2Fai-studio%2Fcontext%2Fcontext&tabs=top-techniques)
