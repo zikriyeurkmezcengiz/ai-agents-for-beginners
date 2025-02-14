@@ -264,7 +264,7 @@ AIエージェントはツールを活用して、複雑なタスクを完了し
     # Initialize function calling agent with the fetch_sales_data_using_sqlite_query function and adding it to the toolset
     fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
     toolset = ToolSet()
-    toolset.add(fetch_data_function)
+    toolset.add(fetch_data_function)11c90e8cda37025bea4db5c4a59d
 
     # Initialize Code Interpreter tool and adding it to the toolset. 
     code_interpreter = code_interpreter = CodeInterpreterTool()
