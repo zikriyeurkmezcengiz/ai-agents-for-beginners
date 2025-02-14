@@ -86,7 +86,7 @@ If you get stuck or have any questions about bulding AI Agents, join our [Azure 
 Our team produces other courses! Check out:
 
 - [Generative AI for Beginners](https://aka.ms/genai-beginners)
-- [Generative AI for Beginngers - .NET](https://aka.ms/genainet)
+- [Generative AI for Beginners - .NET](https://aka.ms/genainet)
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
