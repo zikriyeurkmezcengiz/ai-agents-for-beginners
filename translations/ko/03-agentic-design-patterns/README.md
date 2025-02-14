@@ -27,7 +27,7 @@ AI 에이전트 시스템을 구축하는 방법에는 여러 가지가 있습�
 
 ## 에이전트 설계 원칙
 
-![에이전트 설계 원칙](../../../translated_images/agentic-design-principles.png?WT.19d6373397ba872c62b9237a927d1261a67e21e7c8e83274e53494a65e520a08.ko.mc_id=academic-105485-koreyst)
+![에이전트 설계 원칙](../../../translated_images/translated_images/agentic-design-principles.9f32a64bb6e2aa5a1bdffb70111aa724058bc248b1a3dd3c6661344015604cff.ko.png?WT.mc_id=academic-105485-koreyst)
 
 ### 에이전트 (공간)
 
