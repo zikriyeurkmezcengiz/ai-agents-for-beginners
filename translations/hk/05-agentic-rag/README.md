@@ -124,7 +124,7 @@
 - [為 RAG 添加主動層](https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U)
 - [知識助理的未來：Jerry Liu](https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s)
 - [如何構建主動式 RAG 系統](https://www.youtube.com/watch?v=AOSjiXP1jmQ)
-- [使用 Azure AI Foundry Agent Service 擴展你的 AI 代理](https://ignite.microsoft.com/en-US/sessions/BRK102?source=sessions)
+- [使用 Azure AI Foundry Agent Service 擴展你的 AI 代理](https://ignite.microsoft.com/sessions/BRK102?source=sessions)
 
 ### 學術論文
 

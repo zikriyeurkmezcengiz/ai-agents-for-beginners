@@ -342,14 +342,14 @@ Semantic Kernel 包含两部分：Semantic Kernel Agent Framework 和 Semantic K
     ```csharp
     var facts = new Dictionary<string,string>();
     facts.Add(
-        "Azure Machine Learning; https://learn.microsoft.com/en-us/azure/machine-learning/",
+        "Azure Machine Learning; https://learn.microsoft.com/azure/machine-learning/",
         @"Azure Machine Learning is a cloud service for accelerating and
         managing the machine learning project lifecycle. Machine learning professionals,
         data scientists, and engineers can use it in their day-to-day workflows"
     );
     
     facts.Add(
-        "Azure SQL Service; https://learn.microsoft.com/en-us/azure/azure-sql/",
+        "Azure SQL Service; https://learn.microsoft.com/azure/azure-sql/",
         @"Azure SQL is a family of managed, secure, and intelligent products
         that use the SQL Server database engine in the Azure cloud."
     );

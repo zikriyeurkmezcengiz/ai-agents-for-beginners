@@ -124,7 +124,7 @@ Agentic RAG stellt eine natürliche Weiterentwicklung in der Art und Weise dar, 
 - [Agentische Ebenen zu RAG hinzufügen](https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U)
 - [Die Zukunft von Wissensassistenten: Jerry Liu](https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s)
 - [Wie man Agentic RAG-Systeme baut](https://www.youtube.com/watch?v=AOSjiXP1jmQ)
-- [Verwendung des Azure AI Foundry Agent Service zur Skalierung deiner KI-Agenten](https://ignite.microsoft.com/en-US/sessions/BRK102?source=sessions)
+- [Verwendung des Azure AI Foundry Agent Service zur Skalierung deiner KI-Agenten](https://ignite.microsoft.com/sessions/BRK102?source=sessions)
 
 ### Wissenschaftliche Arbeiten
 

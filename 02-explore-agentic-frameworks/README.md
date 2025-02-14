@@ -343,14 +343,14 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
     ```csharp
     var facts = new Dictionary<string,string>();
     facts.Add(
-        "Azure Machine Learning; https://learn.microsoft.com/en-us/azure/machine-learning/",
+        "Azure Machine Learning; https://learn.microsoft.com/azure/machine-learning/",
         @"Azure Machine Learning is a cloud service for accelerating and
         managing the machine learning project lifecycle. Machine learning professionals,
         data scientists, and engineers can use it in their day-to-day workflows"
     );
     
     facts.Add(
-        "Azure SQL Service; https://learn.microsoft.com/en-us/azure/azure-sql/",
+        "Azure SQL Service; https://learn.microsoft.com/azure/azure-sql/",
         @"Azure SQL is a family of managed, secure, and intelligent products
         that use the SQL Server database engine in the Azure cloud."
     );
@@ -479,5 +479,5 @@ For Autogen and Semantic Kernel, you can also integrate with Azure services, but
 - [1] - [Azure Agent Service](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357)
 - [2] - [Semantic Kernel and Autogen](https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/)
 - [3] - [Semantic Kernel Agent Framework](https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp)
-- [4] - [Azure AI Agent service](https://learn.microsoft.com/en-us/azure/ai-services/agents/overview)
+- [4] - [Azure AI Agent service](https://learn.microsoft.com/azure/ai-services/agents/overview)
 - [5] - [Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution](https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121)

@@ -124,7 +124,7 @@ Agentic RAG 代表了 AI 系統處理複雜數據密集型任務的一種自然�
 - [為 RAG 添加代理層](https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U)
 - [知識助理的未來：Jerry Liu](https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s)
 - [如何構建 Agentic RAG 系統](https://www.youtube.com/watch?v=AOSjiXP1jmQ)
-- [使用 Azure AI Foundry Agent Service 擴展您的 AI 代理](https://ignite.microsoft.com/en-US/sessions/BRK102?source=sessions)
+- [使用 Azure AI Foundry Agent Service 擴展您的 AI 代理](https://ignite.microsoft.com/sessions/BRK102?source=sessions)
 
 ### 學術論文
 

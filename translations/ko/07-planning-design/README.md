@@ -193,7 +193,7 @@ pprint(json.loads(response_content))
     # .. re-plan and send the tasks to respective agents
     ```
 
-더 포괄적인 계획에 대해 알아보려면 복잡한 작업 해결을 위한 Magnetic One [블로그 글](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks)을 확인하세요.
+더 포괄적인 계획에 대해 알아보려면 복잡한 작업 해결을 위한 Magnetic One [블로그 글](https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks)을 확인하세요.
 
 ## 요약
 
