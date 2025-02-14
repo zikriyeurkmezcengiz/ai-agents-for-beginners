@@ -27,7 +27,7 @@ Nach Abschluss dieses Kapitels wirst du in der Lage sein:
 
 ## Die Prinzipien des Agenten-Designs
 
-![Agenten-Design-Prinzipien](../../../translated_images/translated_images/agentic-design-principles.9f32a64bb6e2aa5a1bdffb70111aa724058bc248b1a3dd3c6661344015604cff.de.png?WT.mc_id=academic-105485-koreyst)
+![Agenten-Design-Prinzipien](../../../translated_images/agentic-design-principles.9f32a64bb6e2aa5a1bdffb70111aa724058bc248b1a3dd3c6661344015604cff.de.png?WT.mc_id=academic-105485-koreyst)
 
 ### Agent (Raum)
 

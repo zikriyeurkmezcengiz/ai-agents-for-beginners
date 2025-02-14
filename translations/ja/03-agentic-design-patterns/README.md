@@ -27,7 +27,7 @@ AIエージェントシステムを構築する方法はさまざまです。生
 
 ## エージェント設計の原則
 
-![エージェント設計の原則](../../../translated_images/translated_images/agentic-design-principles.9f32a64bb6e2aa5a1bdffb70111aa724058bc248b1a3dd3c6661344015604cff.ja.png?WT.mc_id=academic-105485-koreyst)
+![エージェント設計の原則](../../../translated_images/agentic-design-principles.9f32a64bb6e2aa5a1bdffb70111aa724058bc248b1a3dd3c6661344015604cff.ja.png?WT.mc_id=academic-105485-koreyst)
 
 ### エージェント（空間）
 
