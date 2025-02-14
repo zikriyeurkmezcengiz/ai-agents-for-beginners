@@ -64,7 +64,7 @@ Im vorherigen Abschnitt haben wir das Beispiel eines Reisebuchungs-Agenten genut
 
 Schauen wir uns die Arten von Anwendungsfällen an, für die sich KI-Agenten am besten eignen:
 
-![Wann sollten KI-Agenten eingesetzt werden?](../../../translated_images/when-to-use-ai-agents.png?WT.1681e3f19611f820ee4331ab494b50ebc6f09b2fb4df3a5f4dac5458316263ad.de.mc_id=academic-105485-koreyst)
+![Wann sollten KI-Agenten eingesetzt werden?](../../../translated_images/when-to-use-ai-agents.912b9a02e9e0e2af45a3e24faa4e912e334ec23f21f0cf5cb040b7e899b09cd0.de.png?WT.mc_id=academic-105485-koreyst)
 
 - **Offene Problemstellungen** – Ermöglicht dem LLM, die notwendigen Schritte zur Erledigung einer Aufgabe zu bestimmen, da diese nicht immer fest in einen Arbeitsablauf programmiert werden können.
 - **Mehrstufige Prozesse** – Aufgaben, die ein gewisses Maß an Komplexität erfordern, bei denen der KI-Agent Werkzeuge oder Informationen über mehrere Schritte hinweg nutzen muss, anstatt sie in einem einzigen Schritt abzurufen.  
