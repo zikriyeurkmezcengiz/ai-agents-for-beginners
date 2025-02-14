@@ -109,7 +109,7 @@ from pprint import pprint
 messages = [
     SystemMessage(content="""You are an planner agent.
     Your job is to decide which agents to run based on the user's request.
-    Below are the available agents specialised in different tasks:
+    Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
     - HotelBooking: For booking hotels and providing hotel information
     - CarRental: For booking cars and providing car rental information
@@ -132,7 +132,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-Below is the output from the above code and you can then use this structured output to route to `assigned_agent` and summarise the travel plan to end user
+Below is the output from the above code and you can then use this structured output to route to `assigned_agent` and summarize the travel plan to the end user.
 
 ```json
 {
@@ -179,14 +179,14 @@ e.g sample code
     messages = [
         SystemMessage(content="""You are a planner agent to optimize the 
         Your job is to decide which agents to run based on the user's request.
-        Below are the available agents specialised in different tasks:
+        Below are the available agents specialized in different tasks:
         - FlightBooking: For booking flights and providing flight information
         - HotelBooking: For booking hotels and providing hotel information
         - CarRental: For booking cars and providing car rental information
         - ActivitiesBooking: For booking activities and providing activity information
         - DestinationInfo: For providing information about destinations
         - DefaultAgent: For handling general requests""", source="system"),
-        UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
+        UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
         AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
     ]
     # .. re-plan and send the tasks to respective agents
@@ -196,10 +196,8 @@ For a more comprehensive planning do checkout Magnetic One [Blogpost](https://ww
 
 ## Summary
 
-In this article we have looked at an example of how we can create a planner that can dynamically select the available agents defined. The output of the Planner decomposes the tasks and assigns the agents so them to be executed. It is assumed the agents has access to function/tools that are required to perform the task. In addition to the agents you can include other patterns like reflection, summarizer , round robin chat to further customise
+In this article we have looked at an example of how we can create a planner that can dynamically select the available agents defined. The output of the Planner decomposes the tasks and assigns the agents so them to be executed. It is assumed the agents has access to function/tools that are required to perform the task. In addition to the agents you can include other patterns like reflection, summarizer, and round robin chat to further customize.
 
 ## Additional Resources
 
-* Using o1 reasoning models have proved quite adavnaced in planning complex tasks - TODO: Share example?
-
-* Autogen Magentic One - A Generalist multi agent system for solving complex task and has achieved impressive results on multiple challenging agentic benchmarks. Reference: [autogen-magentic-one](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one). In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.
+* AutoGen Magentic One - A Generalist multi agent system for solving complex task and has achieved impressive results on multiple challenging agentic benchmarks. Reference: [autogen-magentic-one](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one). In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.

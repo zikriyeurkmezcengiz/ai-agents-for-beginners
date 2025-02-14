@@ -29,10 +29,10 @@ AI Agents are **systems** that enable **Large Language Models(LLMs)** to **perfo
 
 Let's break this definition into smaller parts:
 
-- **System** - It's important to think about agents not as just a single component but as a system of many components.At the basic level, the components of an AI Agent are:
+- **System** - It's important to think about agents not as just a single component but as a system of many components. At the basic level, the components of an AI Agent are:
   - **Environment** - The defined space where the AI Agent is operating. For example, if we had a travel booking AI Agent, the environment could be the travel booking system that the AI Agent uses to complete tasks.
   - **Sensors** - Environments have information and provide feedback. AI Agents use sensors to gather and interpret this information about the current state of the environment. In the Travel Booking Agent example, the travel booking system can provide information such as hotel availability or flight prices.
-  - **Actuators** - Once the AI Agent receives the current state of the environment, For the current task the agent determines what action to perform to change the environment. For the travel booking agent, it might be to book an available room for the user.
+  - **Actuators** - Once the AI Agent receives the current state of the environment, for the current task the agent determines what action to perform to change the environment. For the travel booking agent, it might be to book an available room for the user.
 
 ![What Are AI Agents?](./images/what-are-ai-agents.png?WT.mc_id=academic-105485-koreyst)
 
@@ -60,7 +60,7 @@ Now that we have a general definition of AI Agents, let us look at some specific
 
 ## When to Use AI Agents
 
-In the earlier section, we used the Travel Agent use-case to explain how the different type of agents can be used in different scenarios of travel booking. We will contiue to use this application througout the course.
+In the earlier section, we used the Travel Agent use-case to explain how the different type of agents can be used in different scenarios of travel booking. We will continue to use this application throughout the course.
 
 Let's look at they types of use cases that AI Agents are best used for:
 

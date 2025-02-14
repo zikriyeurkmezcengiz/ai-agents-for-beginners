@@ -26,7 +26,7 @@ The **Tool Use Design Pattern** focuses on giving LLMs the ability to interact w
 
 AI Agents can leverage tools to complete complex tasks, retrieve information, or make decisions. The tool use design pattern is often used in scenarios requiring dynamic interaction with external systems, such as databases, web services, or code interpreters. This ability is useful for a number of different use cases including:
 
-- **Dynamic Information Retrieval:** Agents can query external APIs or databases to fetch up-to-date data (e.g., quering an SQLite database for data analysis, fetching stock prices or weather information).
+- **Dynamic Information Retrieval:** Agents can query external APIs or databases to fetch up-to-date data (e.g., querying a SQLite database for data analysis, fetching stock prices or weather information).
 - **Code Execution and Interpretation:** Agents can execute code or scripts to solve mathematical problems, generate reports, or perform simulations.
 - **Workflow Automation:** Automating repetitive or multi-step workflows by integrating tools like task schedulers, email services, or data pipelines.
 - **Customer Support:** Agents can interact with CRM systems, ticketing platforms, or knowledge bases to resolve user queries.
@@ -41,7 +41,7 @@ Function calling is the primary way we enable Large Language Models (LLMs) to in
 For developers to implement function calling for agents, you will need:
 
 1. An LLM model that supports function calling
-2. A schema containting function descriptions
+2. A schema containing function descriptions
 3. The code for each function described
 
 Let's use the example of getting the current time in a city to illustrate:
@@ -255,7 +255,7 @@ As we learned in [Lesson 2](../02-explore-agentic-frameworks/) agentic framework
     import os
     from azure.ai.projects import AIProjectClient
     from azure.identity import DefaultAzureCredential
-    from fecth_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fecth_sales_data_functions.py file.
+    from fecth_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fetch_sales_data_functions.py file.
     from azure.ai.projects.models import ToolSet, FunctionTool, CodeInterpreterTool
 
     project_client = AIProjectClient.from_connection_string(
