@@ -318,7 +318,7 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
     kernel.ImportFunctions(nativeFunctions, plugInName);
     ```
 
-- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invoke the necessary functions to carry out the task. Here' an example of such a plan:
+- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invokes the necessary functions to carry out the task. Here's an example of such a plan:
 
     ```csharp
     string planDefinition = "Read content from a local file and summarize the content.";
@@ -446,11 +446,11 @@ Let's see if we can help you by going through some common use cases:
 >
 > A: AutoGen is specifically designed for event-driven, distributed agentic applications, making it well-suited for automating code generation and data analysis tasks. It provides the necessary tools and capabilities to build complex multi-agent systems efficiently.
 
->Q: Sounds like Azure AI Agent Service could work here too, it tools like code generation and more?
+>Q: Sounds like Azure AI Agent Service could work here too, it has tools for code generation and more?
 >
 > A: Yes, Azure AI Agent Service also supports code generation and data analysis tasks, but it may be more suitable for enterprise applications that require secure, scalable, and flexible AI agent deployment. AutoGen is more focused on event-driven, distributed agentic applications and advanced multi-agent design patterns.
 
-> Q: so you are saying if I want to go enterprise, I should go with Azure AI Agent Service?
+> Q: So you are saying if I want to go enterprise, I should go with Azure AI Agent Service?
 >
 > A: Yes, Azure AI Agent Service is designed for enterprise applications that require secure, scalable, and flexible AI agent deployment. It offers stronger enterprise security mechanisms and data storage methods, making it suitable for enterprise use cases.
 
