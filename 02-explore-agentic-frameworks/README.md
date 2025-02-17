@@ -106,7 +106,7 @@ Behind the scenes, i.e recognizes the tool to call, what arguments it already ha
         "type": "function",
         "function": {
             "name": "BookTravelPlugin-book_flight",
-            "arguments": "{\n\"location\": \"New York\",\n\"date\": \"15th July\"\n}"
+            "arguments": "{\n\"location\": \"New York\",\n\"date\": \"\"\n}"
         }
     }
 ]
