@@ -4,13 +4,14 @@ AI agent frameworks are software platforms designed to simplify the creation, de
 
 These frameworks help developers focus on the unique aspects of their applications by providing standardized approaches to common challenges in AI agent development. They enhance scalability, accessibility, and efficiency in building AI systems.
 
-## Introduction
+## Introduction 
 
 This lesson will cover:
 
 - What are AI Agent Frameworks and what do they enable developers to do?
 - How can teams use these to quickly prototype, iterate, and improve my agent’s capabilities?
-- What are the difference between the frameworks and tools created by Microsoft ( [AutoGen](https://aka.ms/ai-agents/autogen){target="_blank"} / [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel){target="_blank"} / [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service){target="_blank"}) 
+
+- What are the differences between the frameworks and tools created by Microsoft <a href="https://aka.ms/ai-agents/autogen" target="_blank">AutoGen</a>, <a href="https://aka.ms/ai-agents-beginners/semantic-kernel" target="_blank">Semantic Kernel</a>, and <a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent 
 - Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
 - What is Azure AI Agents service and how is this helping me?
 
