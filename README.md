@@ -34,12 +34,11 @@
 ## 🌱 Getting Started
 
 This course has 10 lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
-
-If this is your first time building with Generative AI models. Check out our [Generative AI For Beginners](https://aka.ms/genai-beginners) course that has 21 lessons on building with GenAI.
+If this is your first time building with Generative AI models, check out our [Generative AI For Beginners](https://aka.ms/genai-beginners) course, which includes 21 lessons on building with GenAI.
 
 ### To run the code of this course
 
-This course has code examples on each lesson that has a `code_samples` folder. You can [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to create a your own copy.  
+Each lesson in this course includes code examples, which can be found in the code_samples folder. You can [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to create your own copy.  
 
 The code uses these service for Models:
 
