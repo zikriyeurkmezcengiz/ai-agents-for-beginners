@@ -164,7 +164,7 @@ pprint(json.loads(response_content))
 }
 ```
 
-上記コードの例を含むノートブックは[こちら](../../../07-planning-design/07-autogen.ipynb)から利用できます。
+上記コードの例を含むノートブックは[こちら](../../../07-planning-design/code_samples/07-autogen.ipynb)から利用できます。
 
 ### 繰り返し計画
 

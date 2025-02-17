@@ -16,27 +16,18 @@
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
 
-## 🌐 Multi-Language Support
-
-| Language             | Code | Link to Translated README                               | Last Updated |
-|----------------------|------|---------------------------------------------------------|--------------|
-| Chinese (Simplified) | zh   | [Chinese Translation](./translations/zh/README.md)      | 2025-02-13   |
-| Chinese (Traditional)| tw   | [Chinese Translation](./translations/tw/README.md)      | 2025-02-13   |
-| Chinese (Hong Kong)  | hk   | [Chinese (Hong Kong) Translation](./translations/hk/README.md) | 2025-02-13   |
-| French               | fr   | [French Translation](./translations/fr/README.md)       | 2025-02-13   |
-| Japanese             | ja   | [Japanese Translation](./translations/ja/README.md)     | 2025-02-13   |
-| Korean               | ko   | [Korean Translation](./translations/ko/README.md)       | 2025-02-13   |
-| Portuguese           | pt   | [Portuguese Translation](./translations/pt/README.md)   | 2025-02-13   |
-| Spanish              | es   | [Spanish Translation](./translations/es/README.md)      | 2025-02-13   |
-| German               | de   | [German Translation](./translations/de/README.md)       | 2025-02-13   |
-
 
 ## 🌱 Getting Started
 
 This course has 10 lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
+
+There is multi-language support for this course. Go to our [available languages here](#-multi-language-support). 
+
 If this is your first time building with Generative AI models, check out our [Generative AI For Beginners](https://aka.ms/genai-beginners) course, which includes 21 lessons on building with GenAI.
 
-### To run the code of this course
+Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to run the code.
+
+### What You Need 
 
 Each lesson in this course includes code examples, which can be found in the code_samples folder. You can [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to create your own copy.  
 
@@ -52,8 +43,6 @@ This course also uses the following AI Agent frameworks and services from Micros
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
 For more information on running the code for this course, go to the [Course Setup](./00-course-setup/README.md).
-
-Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to run the code.
 
 ## 🙏 Want to help?
 
@@ -81,6 +70,20 @@ If you get stuck or have any questions about bulding AI Agents, join our [Azure 
 | Multi-Agent Design Pattern             | [Link](./08-multi-agent/README.md)                 |
 | Metacognition Design Pattern           | [Link](./09-metacognition/README.md)               |
 | AI Agents in Production                | [Link](./10-ai-agents-production/README.md)        |
+
+## 🌐 Multi-Language Support
+
+| Language             | Code | Link to Translated README                               | Last Updated |
+|----------------------|------|---------------------------------------------------------|--------------|
+| Chinese (Simplified) | zh   | [Chinese Translation](./translations/zh/README.md)      | 2025-02-13   |
+| Chinese (Traditional)| tw   | [Chinese Translation](./translations/tw/README.md)      | 2025-02-13   |
+| Chinese (Hong Kong)  | hk   | [Chinese (Hong Kong) Translation](./translations/hk/README.md) | 2025-02-13   |
+| French               | fr   | [French Translation](./translations/fr/README.md)       | 2025-02-13   |
+| Japanese             | ja   | [Japanese Translation](./translations/ja/README.md)     | 2025-02-13   |
+| Korean               | ko   | [Korean Translation](./translations/ko/README.md)       | 2025-02-13   |
+| Portuguese           | pt   | [Portuguese Translation](./translations/pt/README.md)   | 2025-02-13   |
+| Spanish              | es   | [Spanish Translation](./translations/es/README.md)      | 2025-02-13   |
+| German               | de   | [German Translation](./translations/de/README.md)       | 2025-02-13   |
 
 ## 🎒 Other Courses
 

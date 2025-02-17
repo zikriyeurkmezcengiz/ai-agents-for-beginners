@@ -164,7 +164,7 @@ pprint(json.loads(response_content))
 }
 ```
 
-你可以喺呢度搵到包含上述代碼示例嘅 notebook：[07-autogen.ipynb](../../../07-planning-design/07-autogen.ipynb)。
+你可以喺呢度搵到包含上述代碼示例嘅 notebook：[07-autogen.ipynb](../../../07-planning-design/code_samples/07-autogen.ipynb)。
 
 ### 迭代規劃
 
