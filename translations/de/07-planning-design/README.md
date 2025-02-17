@@ -164,7 +164,7 @@ Im Anschluss daran zeigt die Ausgabe des obigen Codes, wie diese strukturierte A
 }
 ```
 
-Ein Beispiel-Notebook mit dem obigen Codebeispiel ist [hier](../../../07-planning-design/07-autogen.ipynb) verfügbar.
+Ein Beispiel-Notebook mit dem obigen Codebeispiel ist [hier](../../../07-planning-design/code_samples/07-autogen.ipynb) verfügbar.
 
 ### Iterative Planung
 
