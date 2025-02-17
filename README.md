@@ -40,12 +40,12 @@ If this is your first time building with Generative AI models, check out our [Ge
 
 Each lesson in this course includes code examples, which can be found in the code_samples folder. You can [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to create your own copy.  
 
-The code uses these service for Models:
+The code example in these exercise, utilise Azure AI Foundry and GitHub Model Catalogs for interacting with Language Models:
 
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Free / Limited
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azure Account Required
 
-This course also uses these AI Agent frameworks and services:
+This course also uses the following AI Agent frameworks and services from Microsoft:
 
 - [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
