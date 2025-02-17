@@ -63,16 +63,67 @@ Frameworks like LangChain and Microsoft Semantic Kernel offer pre-built componen
 
 **Example code**. Let's look at an example of how you can use a pre-built parser to extract information from user input:
 
-```python
-from langchain import Parser
+```csharp
 
-parser = Parser()
-user_input = "Book a flight from New York to London on July 15th"
+// Semantic Kernel example
 
-parsed_data = parser.parse(user_input)
+ChatHistory chatHistory = [];
+chatHistory.AddUserMessage("I'd like to go To New York");
 
-print(parsed_data)
-# Output: {'origin': 'New York', 'destination': 'London', 'date': 'July 15th'}
+// Define a plugin that contains the function to book travel
+public class BookTravelPlugin(
+    IPizzaService pizzaService,
+    IUserContext userContext,
+    IPaymentService paymentService)
+{
+
+    [KernelFunction("book_flight")]
+    [Description("Book travel given location and date")]
+    public async Task<Booking> BookFlight(
+        DateTime date,
+        string location,
+    )
+    {
+        // book travel given date,location
+    }
+}
+
+IKernelBuilder kernelBuilder = new KernelBuilder();
+kernelBuilder..AddAzureOpenAIChatCompletion(
+    deploymentName: "NAME_OF_YOUR_DEPLOYMENT",
+    apiKey: "YOUR_API_KEY",
+    endpoint: "YOUR_AZURE_ENDPOINT"
+);
+kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel");
+Kernel kernel = kernelBuilder.Build();
+
+/*
+Behind the scenes, i.e recognizes the tool to call, what arguments it already has (location) and what it needs (date)
+{
+
+"tool_calls": [
+    {
+        "id": "call_abc123",
+        "type": "function",
+        "function": {
+            "name": "BookTravelPlugin-book_flight",
+            "arguments": "{\n\"location\": \"New York\",\n\"date\": \"\"\n}"
+        }
+    }
+]
+*/
+
+ChatResponse response = await chatCompletion.GetChatMessageContentAsync(
+    chatHistory,
+    executionSettings: openAIPromptExecutionSettings,
+    kernel: kernel)
+
+
+Console.WriteLine(response);
+chatHistory.AddAssistantMessage(response);
+
+// AI Response: "Before I can book your flight, I need to know your departure date. When are you planning to travel?"
+// I.e above it figures out the tool to call, what arguments it already has (location) and what it needs (date) from the user input, at this point it ends up asking the user for the missing information
 ```
 
 What you can see from this example is how you can leverage a pre-built parser to extract key information from user input, such as the origin, destination, and date of a flight booking request. This modular approach allows you to focus on the high-level logic.
@@ -477,8 +528,9 @@ For AutoGen and Semantic Kernel, you can also integrate with Azure services, but
 
 ## References
 
-- <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure Agent Service</a>
-- <a href="https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/" target="_blank">Semantic Kernel and AutoGen</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel Agent Framework</a>
-- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
-- <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
+
+- [1] - [Azure Agent Service](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357){target="_blank"}
+- [2] - [Semantic Kernel and AutoGen](https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/){target="_blank"}
+- [3] - [Semantic Kernel Agent Framework](https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp){target="_blank"}
+- [4] - [Azure AI Agent service](https://learn.microsoft.com/azure/ai-services/agents/overview){target="_blank"}
+- [5] - [Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution](https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121){target="_blank"}
