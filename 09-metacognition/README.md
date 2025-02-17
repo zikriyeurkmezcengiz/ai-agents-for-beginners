@@ -14,11 +14,8 @@ After completing this lesson, you'll be able to:
 
 ## Introduction to Metacognition
 
-Metacognition refers to the higher-order cognitive processes that involve thinking about one’s own thinking. For AI agents, this means being able to evaluate and adjust their actions based on self-awareness and past experiences. Metacognition, or "thinking about thinking," is an important concept in the development of agentic AI systems. It involves AI systems being aware of their own internal processes and being able to monitor, regulate, and adapt their behavior accordingly.
- 
-Much like we do when we read the room or look a problem.  This self-awareness can help AI systems make better decisions, identify errors, and improve their performance over time- again linking back to turing test and the debate over is AI going to take over..
- 
- 
+Metacognition refers to the higher-order cognitive processes that involve thinking about one’s own thinking. For AI agents, this means being able to evaluate and adjust their actions based on self-awareness and past experiences. Metacognition, or "thinking about thinking," is an important concept in the development of agentic AI systems. It involves AI systems being aware of their own internal processes and being able to monitor, regulate, and adapt their behavior accordingly. Much like we do when we read the room or look a problem.  This self-awareness can help AI systems make better decisions, identify errors, and improve their performance over time- again linking back to turing test and the debate over is AI going to take over.
+
 In the context of agentic AI systems, metacognition can help address several challenges, such as:
 - Transparency: Ensuring that AI systems can explain their reasoning and decisions.
 - Reasoning: Enhancing the ability of AI systems to synthesize information and make sound decisions.
@@ -27,14 +24,12 @@ In the context of agentic AI systems, metacognition can help address several cha
 
 ### What is Metacognition?
 
-Metacognition, or "thinking about thinking," is a higher-order cognitive process that involves self-awareness and self-regulation of one's cognitive processes. In the realm of AI, metacognition empowers agents to evaluate and adapt their strategies and actions, leading to improved problem-solving and decision-making capabilities. By understanding metacognition, you can design AI agents that are not only more intelligent but also more adaptable and efficient.
+Metacognition, or "thinking about thinking," is a higher-order cognitive process that involves self-awareness and self-regulation of one's cognitive processes. In the realm of AI, metacognition empowers agents to evaluate and adapt their strategies and actions, leading to improved problem-solving and decision-making capabilities. By understanding metacognition, you can design AI agents that are not only more intelligent but also more adaptable and efficient. In true metacognition, you’d see the AI explicitly reasoning about its own reasoning. 
 
-In true metacognition, you’d see the AI explicitly reasoning about its own reasoning. That could look like:
-Keeping track of how or why it chose a certain route e.g. “I prioritized cheaper flights because… I might be missing out on direct flights, so let me re-check.”.
-
-Noting that it made mistakes because it over-relied on user preferences from last time, so it modifies its decision-making strategy not just the final recommendation.
-
-Diagnosing patterns like, “Whenever I see the user mention ‘too crowded,’ I should not only remove certain attractions but also reflect that my method of picking ‘top attractions’ is flawed if I always rank by popularity.”
+Eample: “I prioritized cheaper flights because… I might be missing out on direct flights, so let me re-check.”.
+Keeping track of how or why it chose a certain route.
+- Noting that it made mistakes because it over-relied on user preferences from last time, so it modifies its decision-making strategy not just the final recommendation.
+- Diagnosing patterns like, “Whenever I see the user mention ‘too crowded,’ I should not only remove certain attractions but also reflect that my method of picking ‘top attractions’ is flawed if I always rank by popularity.”
 
 ### Importance of Metacognition in AI Agents
 
