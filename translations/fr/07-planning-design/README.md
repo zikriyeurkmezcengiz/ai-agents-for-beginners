@@ -163,7 +163,7 @@ Voici la sortie du code ci-dessus, que vous pouvez ensuite utiliser pour router 
 }
 ```
 
-Un exemple de notebook contenant cet extrait de code est disponible [ici](../../../07-planning-design/07-autogen.ipynb).
+Un exemple de notebook contenant cet extrait de code est disponible [ici](../../../07-planning-design/code_samples/07-autogen.ipynb).
 
 ### Planification Itérative
 
