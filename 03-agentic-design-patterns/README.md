@@ -36,7 +36,7 @@ This is the environment in which the agent operates. These principles inform how
 - **Connecting, not collapsing** – help connect people to other people, events, and actionable knowledge to enable collaboration and connection.
 - Agents help connect events, knowledge, and people.
 - Agents bring people closer together. They are not designed to replace or belittle people.
-- **Easily accessible yet occasionally invisible** – agent largely operate in the background and only nudges us when it is relevant and appropriate.
+- **Easily accessible yet occasionally invisible** – agent largely operates in the background and only nudges us when it is relevant and appropriate.
   - Agent is easily discoverable and accessible for authorized users on any device or platform.
   - Agent supports multimodal inputs and outputs (sound, voice, text, etc.).
   - Agent can seamlessly transition between foreground and background; between proactive and reactive, depending on its sensing of user needs.
