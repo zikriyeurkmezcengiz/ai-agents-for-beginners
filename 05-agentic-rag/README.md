@@ -102,7 +102,7 @@ As these systems become more autonomous in their reasoning, governance and trans
 - **Bias Control and Balanced Retrieval:** Developers can tune retrieval strategies to ensure balanced, representative data sources are considered, and regularly audit outputs to detect bias or skewed patterns using custom models for advanced data science organizations using Azure Machine Learning.
 - **Human Oversight and Compliance:** For sensitive tasks, human review remains essential. Agentic RAG doesn’t replace human judgment in high-stakes decisions—it augments it by delivering more thoroughly vetted options.
 
-Having tools that provide a clear record of actions is essential. Without them, debugging a multi-step process can be very difficult. See below example from Literal AI (company behind Chainlit) for an Agent run:
+Having tools that provide a clear record of actions is essential. Without them, debugging a multi-step process can be very difficult. See the following example from Literal AI (company behind Chainlit) for an Agent run:
 
 ![AgentRunExample](./images/AgentRunExample.png)
 

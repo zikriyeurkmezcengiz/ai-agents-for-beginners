@@ -45,7 +45,7 @@ This modular approach also allows for incremental enhancements. For instance, yo
 
 Large Language Models (LLMs) can generate structured output (e.g. JSON) that is easier for downstream agents or services to parse and process. This is especially useful in a multi-agent context, where we can action these tasks after the planning output is received. Refer to this <a href="https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/cookbook/structured-output-agent.html" target="_blank">blogpost</a> for a quick overview.
 
-Below is an example Python snippet that demonstrates a simple planning agent decomposing a goal into subtasks and generating a structured plan:
+The following Python snippet demonstrates a simple planning agent decomposing a goal into subtasks and generating a structured plan:
 
 ### Planning Agent with Multi-Agent Orchestration
 
@@ -57,7 +57,7 @@ The planner then:
 * Lists Agents and Their Tools: The agent registry holds a list of agents (e.g., for flight, hotel, car rental, and activities) along with the functions or tools they offer.
 * Routes the Plan to the Respective Agents: Depending on the number of subtasks, the planner either sends the message directly to a dedicated agent (for single-task scenarios) or coordinates via a group chat manager for multi-agent collaboration.
 * Summarizes the Outcome: Finally, the planner summarizes the generated plan for clarity.
-Below is the Python code sample illustrating these steps:
+The following Python code sample illustrates these steps:
 
 ```python
 
@@ -132,7 +132,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-Below is the output from the above code and you can then use this structured output to route to `assigned_agent` and summarize the travel plan to the end user.
+What follows is the output from the previous code and you can then use this structured output to route to `assigned_agent` and summarize the travel plan to the end user.
 
 ```json
 {
@@ -163,7 +163,7 @@ Below is the output from the above code and you can then use this structured out
 }
 ```
 
-An example notebook with the above code sample is available [here](07-autogen.ipynb).
+An example notebook with the previous code sample is available [here](07-autogen.ipynb).
 
 ### Iterative Planning
 

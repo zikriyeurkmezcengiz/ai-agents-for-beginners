@@ -116,7 +116,7 @@ Consider a scenario where a customer is trying to get refund for a product, ther
 
 **Agents specific for the refund process**:
 
-Below are some agents that could be involved in the refund process:
+Following there are some agents that could be involved in the refund process:
 
 - **Customer agent**: This agent represents the customer and is responsible for initiating the refund process.
 - **Seller agent**: This agent represents the seller and is responsible for processing the refund.
@@ -139,13 +139,13 @@ These agents can be used by other parts of your business.
 - **Security agent**: This agent represents the security process and is responsible for ensuring the security of the refund process.
 - **Quality agent**: This agent represents the quality process and is responsible for ensuring the quality of the refund process.
 
-There's quite a few agents listed above both for the specific refund process but also for the general agents that can be used in other parts of your business. Hopefully this gives you an idea on how you can decide on which agents to use in your multi agent system.
+There's quite a few agents listed previously both for the specific refund process but also for the general agents that can be used in other parts of your business. Hopefully this gives you an idea on how you can decide on which agents to use in your multi agent system.
 
 ## Assignment
 
 Design a multi-agent system for a customer support process. Identify the agents involved in the process, their roles and responsibilities, and how they interact with each other. Consider both agents specific to the customer support process and general agents that can be used in other parts of your business.
 
-> Have a think before you read the solution below, you may need more agents than you think.
+> Have a think before you read the following solution, you may need more agents than you think.
 
 > TIP: Think about the different stages of the customer support process and also consider agents needed for any system.
 
