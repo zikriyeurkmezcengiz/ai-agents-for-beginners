@@ -4,13 +4,14 @@ AI agent frameworks are software platforms designed to simplify the creation, de
 
 These frameworks help developers focus on the unique aspects of their applications by providing standardized approaches to common challenges in AI agent development. They enhance scalability, accessibility, and efficiency in building AI systems.
 
-## Introduction
+## Introduction 
 
 This lesson will cover:
 
 - What are AI Agent Frameworks and what do they enable developers to do?
 - How can teams use these to quickly prototype, iterate, and improve my agent’s capabilities?
-- What are the difference between the frameworks and tools created by Microsoft ( [AutoGen](https://aka.ms/ai-agents/autogen){target="_blank"} / [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel){target="_blank"} / [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service){target="_blank"}) 
+
+- What are the differences between the frameworks and tools created by Microsoft <a href="https://aka.ms/ai-agents/autogen" target="_blank">AutoGen</a>, <a href="https://aka.ms/ai-agents-beginners/semantic-kernel" target="_blank">Semantic Kernel</a>, and <a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent 
 - Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
 - What is Azure AI Agents service and how is this helping me?
 
@@ -30,7 +31,7 @@ Traditional AI Frameworks can help you integrate AI into your apps and make thes
 - **Personalization**: AI can analyze user behavior and preferences to provide personalized recommendations, content, and experiences.
 Example: Streaming services like Netflix use AI to suggest movies and shows based on viewing history, enhancing user engagement and satisfaction.
 - **Automation and Efficiency**: AI can automate repetitive tasks, streamline workflows, and improve operational efficiency.
-Example: Customer service apps use AI-powered chat bots to handle common inquiries, reducing response times and freeing up human agents for more complex issues.
+Example: Customer service apps use AI-powered chatbots to handle common inquiries, reducing response times and freeing up human agents for more complex issues.
 - **Enhanced User Experience**: AI can improve the overall user experience by providing intelligent features such as voice recognition, natural language processing, and predictive text.
 Example: Virtual assistants like Siri and Google Assistant use AI to understand and respond to voice commands, making it easier for users to interact with their devices.
 
@@ -46,7 +47,7 @@ So in summary, agents allow you to do more, to take automation to the next level
 
 ## How to quickly prototype, iterate, and improve the agent’s capabilities?
 
-This is fast moving landscape, but there are some things that are common across most AI Agent Frameworks that can help you quickly prototype and iterate namely module components, collaborative tools, and real-time learning. Let's dive into these:
+This is a fast-moving landscape, but there are some things that are common across most AI Agent Frameworks that can help you quickly prototype and iterate namely module components, collaborative tools, and real-time learning. Let's dive into these:
 
 - **Use Modular Components**: AI Frameworks offer pre-built components such as prompts, parsers, and memory management.
 - **Leverage Collaborative Tools**: Design agents with specific roles and tasks, enabling them to test and refine collaborative workflows.
@@ -62,16 +63,67 @@ Frameworks like LangChain and Microsoft Semantic Kernel offer pre-built componen
 
 **Example code**. Let's look at an example of how you can use a pre-built parser to extract information from user input:
 
-```python
-from langchain import Parser
+```csharp
 
-parser = Parser()
-user_input = "Book a flight from New York to London on July 15th"
+// Semantic Kernel example
 
-parsed_data = parser.parse(user_input)
+ChatHistory chatHistory = [];
+chatHistory.AddUserMessage("I'd like to go To New York");
 
-print(parsed_data)
-# Output: {'origin': 'New York', 'destination': 'London', 'date': 'July 15th'}
+// Define a plugin that contains the function to book travel
+public class BookTravelPlugin(
+    IPizzaService pizzaService,
+    IUserContext userContext,
+    IPaymentService paymentService)
+{
+
+    [KernelFunction("book_flight")]
+    [Description("Book travel given location and date")]
+    public async Task<Booking> BookFlight(
+        DateTime date,
+        string location,
+    )
+    {
+        // book travel given date,location
+    }
+}
+
+IKernelBuilder kernelBuilder = new KernelBuilder();
+kernelBuilder..AddAzureOpenAIChatCompletion(
+    deploymentName: "NAME_OF_YOUR_DEPLOYMENT",
+    apiKey: "YOUR_API_KEY",
+    endpoint: "YOUR_AZURE_ENDPOINT"
+);
+kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel");
+Kernel kernel = kernelBuilder.Build();
+
+/*
+Behind the scenes, i.e recognizes the tool to call, what arguments it already has (location) and what it needs (date)
+{
+
+"tool_calls": [
+    {
+        "id": "call_abc123",
+        "type": "function",
+        "function": {
+            "name": "BookTravelPlugin-book_flight",
+            "arguments": "{\n\"location\": \"New York\",\n\"date\": \"\"\n}"
+        }
+    }
+]
+*/
+
+ChatResponse response = await chatCompletion.GetChatMessageContentAsync(
+    chatHistory,
+    executionSettings: openAIPromptExecutionSettings,
+    kernel: kernel)
+
+
+Console.WriteLine(response);
+chatHistory.AddAssistantMessage(response);
+
+// AI Response: "Before I can book your flight, I need to know your departure date. When are you planning to travel?"
+// I.e above it figures out the tool to call, what arguments it already has (location) and what it needs (date) from the user input, at this point it ends up asking the user for the missing information
 ```
 
 What you can see from this example is how you can leverage a pre-built parser to extract key information from user input, such as the origin, destination, and date of a flight booking request. This modular approach allows you to focus on the high-level logic.
@@ -139,11 +191,11 @@ Open-source framework developed by Microsoft Research's AI Frontiers Lab. Focuse
 
 AutoGen is built around the core concept of agents, which are autonomous entities that can perceive their environment, make decisions, and take actions to achieve specific goals. Agents communicate through asynchronous messages, allowing them to work independently and in parallel, enhancing system scalability and responsiveness.
 
-Agents are based on the [actor model](https://en.wikipedia.org/wiki/Actor_model){target="_blank"}. Which according to Wikipedia states that an actor is _the basic building block of concurrent computation. In response to a message it receives, an actor can: make local decisions, create more actors, send more messages, and determine how to respond to the next message received_.
+<a href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">Agents are based on the actor model</a>. According to Wikipedia, an actor is _the basic building block of concurrent computation. In response to a message it receives, an actor can: make local decisions, create more actors, send more messages, and determine how to respond to the next message received_.
 
 **Use Cases**: Automating code generation, data analysis tasks, and building custom agents for planning and research functions.
 
-Here's some important core concepts of AutoGen:
+Here are some important core concepts of AutoGen:
 
 - **Agents**. An agent is a software entity that: 
   - **Communicates via messages**, these messages can be synchronous or asynchronous.
@@ -241,16 +293,16 @@ Here's some important core concepts of AutoGen:
     Above we have a `GroupChatManager` that is registered with the runtime. This manager is responsible for coordinating the interactions between different types of agents, such as writers, illustrators, editors, and users.
 
 - **Agent Runtime**. The framework provides a runtime environment, enabling communication between agents, manages their identities and lifecycles, and enforce security and privacy boundaries. This means that you can run your agents in a secure and controlled environment, ensuring that they can interact safely and efficiently. There are two runtimes of interest:
-  - **Stand-alone runtime**. This is a good choice for single-process applications where all agents are implemented in the same programming language and runs in the same process. Here's an illustration of how it works:
+  - **Stand-alone runtime**. This is a good choice for single-process applications where all agents are implemented in the same programming language and run in the same process. Here's an illustration of how it works:
   
-      ![Stand-alone runtime](https://microsoft.github.io/autogen/stable/_images/architecture-standalone.svg){target="_blank"}   
+    <a href="https://microsoft.github.io/autogen/stable/_images/architecture-standalone.svg" target="_blank">Stand-alone runtime</a>   
 Application stack
 
     *agents communicate via messages through the runtime, and the runtime manages the lifecycle of agents*
 
-  - **Distributed agent runtime**, is suitable for multi-process applications where agents may be implemented in different programming languages and running on different machine. Here's an illustration of how it works:
+  - **Distributed agent runtime**, is suitable for multi-process applications where agents may be implemented in different programming languages and running on different machines. Here's an illustration of how it works:
   
-      ![Distributed runtime](https://microsoft.github.io/autogen/stable/_images/architecture-distributed.svg){target="_blank"}
+    <a href="https://microsoft.github.io/autogen/stable/_images/architecture-distributed.svg" target="_blank">Distributed runtime</a>
 
 ## Semantic Kernel + Agent Framework
 
@@ -318,7 +370,7 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
     kernel.ImportFunctions(nativeFunctions, plugInName);
     ```
 
-- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invoke the necessary functions to carry out the task. Here' an example of such a plan:
+- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invokes the necessary functions to carry out the task. Here's an example of such a plan:
 
     ```csharp
     string planDefinition = "Read content from a local file and summarize the content.";
@@ -446,11 +498,11 @@ Let's see if we can help you by going through some common use cases:
 >
 > A: AutoGen is specifically designed for event-driven, distributed agentic applications, making it well-suited for automating code generation and data analysis tasks. It provides the necessary tools and capabilities to build complex multi-agent systems efficiently.
 
->Q: Sounds like Azure AI Agent Service could work here too, it tools like code generation and more?
+>Q: Sounds like Azure AI Agent Service could work here too, it has tools for code generation and more?
 >
 > A: Yes, Azure AI Agent Service also supports code generation and data analysis tasks, but it may be more suitable for enterprise applications that require secure, scalable, and flexible AI agent deployment. AutoGen is more focused on event-driven, distributed agentic applications and advanced multi-agent design patterns.
 
-> Q: so you are saying if I want to go enterprise, I should go with Azure AI Agent Service?
+> Q: So you are saying if I want to go enterprise, I should go with Azure AI Agent Service?
 >
 > A: Yes, Azure AI Agent Service is designed for enterprise applications that require secure, scalable, and flexible AI agent deployment. It offers stronger enterprise security mechanisms and data storage methods, making it suitable for enterprise use cases.
 
@@ -476,8 +528,8 @@ For AutoGen and Semantic Kernel, you can also integrate with Azure services, but
 
 ## References
 
-- [1] - [Azure Agent Service](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357){target="_blank"}
-- [2] - [Semantic Kernel and AutoGen](https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/){target="_blank"}
-- [3] - [Semantic Kernel Agent Framework](https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp){target="_blank"}
-- [4] - [Azure AI Agent service](https://learn.microsoft.com/azure/ai-services/agents/overview){target="_blank"}
-- [5] - [Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution](https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121){target="_blank"}
+- <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure Agent Service</a>
+- <a href="https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/" target="_blank">Semantic Kernel and AutoGen</a>
+- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel Agent Framework</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
+- <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
