@@ -163,7 +163,7 @@ A continuación, se muestra la salida del código anterior, que luego puedes usa
 }
 ```
 
-Un notebook de ejemplo con el código anterior está disponible [aquí](../../../07-planning-design/07-autogen.ipynb).
+Un notebook de ejemplo con el código anterior está disponible [aquí](../../../07-planning-design/code_samples/07-autogen.ipynb).
 
 ### Planificación Iterativa
 

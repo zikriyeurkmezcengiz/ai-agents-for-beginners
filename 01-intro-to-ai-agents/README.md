@@ -2,7 +2,7 @@
 
 Welcome to the "AI Agents for Beginners" course! This course gives you fundamental knowledge and applied samples for building with AI Agents.
 
-Join the [Azure AI Discord Community](https://discord.gg/kzRShWzttr) to meet other learners, and AI Agent Builders and ask any questions you have on this course.
+Join the <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Discord Community</a> to meet other learners, and AI Agent Builders and ask any questions you have on this course.
 
 To start this course, we begin by getting a better understanding of what AI Agents are and how we can use them in the applications and workflows we build.
 
@@ -60,9 +60,9 @@ Now that we have a general definition of AI Agents, let us look at some specific
 
 ## When to Use AI Agents
 
-In the earlier section, we used the Travel Agent use-case to explain how the different type of agents can be used in different scenarios of travel booking. We will continue to use this application throughout the course.
+In the earlier section, we used the Travel Agent use-case to explain how the different types of agents can be used in different scenarios of travel booking. We will continue to use this application throughout the course.
 
-Let's look at they types of use cases that AI Agents are best used for:
+Let's look at the types of use cases that AI Agents are best used for:
 
 ![When to use AI Agents?](./images/when-to-use-ai-agents.png?WT.mc_id=academic-105485-koreyst)
 
