@@ -60,9 +60,9 @@ Now that we have a general definition of AI Agents, let us look at some specific
 
 ## When to Use AI Agents
 
-In the earlier section, we used the Travel Agent use-case to explain how the different type of agents can be used in different scenarios of travel booking. We will continue to use this application throughout the course.
+In the earlier section, we used the Travel Agent use-case to explain how the different types of agents can be used in different scenarios of travel booking. We will continue to use this application throughout the course.
 
-Let's look at they types of use cases that AI Agents are best used for:
+Let's look at the types of use cases that AI Agents are best used for:
 
 ![When to use AI Agents?](./images/when-to-use-ai-agents.png?WT.mc_id=academic-105485-koreyst)
 
