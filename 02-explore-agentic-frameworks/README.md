@@ -31,7 +31,7 @@ Traditional AI Frameworks can help you integrate AI into your apps and make thes
 - **Personalization**: AI can analyze user behavior and preferences to provide personalized recommendations, content, and experiences.
 Example: Streaming services like Netflix use AI to suggest movies and shows based on viewing history, enhancing user engagement and satisfaction.
 - **Automation and Efficiency**: AI can automate repetitive tasks, streamline workflows, and improve operational efficiency.
-Example: Customer service apps use AI-powered chat bots to handle common inquiries, reducing response times and freeing up human agents for more complex issues.
+Example: Customer service apps use AI-powered chatbots to handle common inquiries, reducing response times and freeing up human agents for more complex issues.
 - **Enhanced User Experience**: AI can improve the overall user experience by providing intelligent features such as voice recognition, natural language processing, and predictive text.
 Example: Virtual assistants like Siri and Google Assistant use AI to understand and respond to voice commands, making it easier for users to interact with their devices.
 
@@ -47,7 +47,7 @@ So in summary, agents allow you to do more, to take automation to the next level
 
 ## How to quickly prototype, iterate, and improve the agent’s capabilities?
 
-This is fast moving landscape, but there are some things that are common across most AI Agent Frameworks that can help you quickly prototype and iterate namely module components, collaborative tools, and real-time learning. Let's dive into these:
+This is a fast-moving landscape, but there are some things that are common across most AI Agent Frameworks that can help you quickly prototype and iterate namely module components, collaborative tools, and real-time learning. Let's dive into these:
 
 - **Use Modular Components**: AI Frameworks offer pre-built components such as prompts, parsers, and memory management.
 - **Leverage Collaborative Tools**: Design agents with specific roles and tasks, enabling them to test and refine collaborative workflows.
@@ -195,7 +195,7 @@ AutoGen is built around the core concept of agents, which are autonomous entitie
 
 **Use Cases**: Automating code generation, data analysis tasks, and building custom agents for planning and research functions.
 
-Here's some important core concepts of AutoGen:
+Here are some important core concepts of AutoGen:
 
 - **Agents**. An agent is a software entity that: 
   - **Communicates via messages**, these messages can be synchronous or asynchronous.
@@ -293,14 +293,14 @@ Here's some important core concepts of AutoGen:
     Above we have a `GroupChatManager` that is registered with the runtime. This manager is responsible for coordinating the interactions between different types of agents, such as writers, illustrators, editors, and users.
 
 - **Agent Runtime**. The framework provides a runtime environment, enabling communication between agents, manages their identities and lifecycles, and enforce security and privacy boundaries. This means that you can run your agents in a secure and controlled environment, ensuring that they can interact safely and efficiently. There are two runtimes of interest:
-  - **Stand-alone runtime**. This is a good choice for single-process applications where all agents are implemented in the same programming language and runs in the same process. Here's an illustration of how it works:
+  - **Stand-alone runtime**. This is a good choice for single-process applications where all agents are implemented in the same programming language and run in the same process. Here's an illustration of how it works:
   
     <a href="https://microsoft.github.io/autogen/stable/_images/architecture-standalone.svg" target="_blank">Stand-alone runtime</a>   
 Application stack
 
     *agents communicate via messages through the runtime, and the runtime manages the lifecycle of agents*
 
-  - **Distributed agent runtime**, is suitable for multi-process applications where agents may be implemented in different programming languages and running on different machine. Here's an illustration of how it works:
+  - **Distributed agent runtime**, is suitable for multi-process applications where agents may be implemented in different programming languages and running on different machines. Here's an illustration of how it works:
   
     <a href="https://microsoft.github.io/autogen/stable/_images/architecture-distributed.svg" target="_blank">Distributed runtime</a>
 
@@ -370,7 +370,7 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
     kernel.ImportFunctions(nativeFunctions, plugInName);
     ```
 
-- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invoke the necessary functions to carry out the task. Here' an example of such a plan:
+- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invoke the necessary functions to carry out the task. Here's an example of such a plan:
 
     ```csharp
     string planDefinition = "Read content from a local file and summarize the content.";
