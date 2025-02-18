@@ -15,7 +15,7 @@ To begin, please clone or fork the GitHub Repository. This will make your own ve
 
 This can be done by clicking link to [fork the repo](https://github.com/microsoft/ai-agents-for-beginners/fork){target="_blank"}.
 
-You should now have your own forked version of this course like below:
+You should now have your own forked version of this course in the following link:
 
 ![Forked Repo](./images/forked-repo.png)
 
@@ -37,7 +37,7 @@ Copy your new token that you have just created. You will now add this to your `.
 
 ## Add this to your Environment Variables 
 
-To create your `.env` file run the below command in your terminal:
+To create your `.env` file run the following command in your terminal:
 
 ```bash
 cp .env.example .env

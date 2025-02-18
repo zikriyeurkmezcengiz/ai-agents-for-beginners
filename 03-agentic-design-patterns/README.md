@@ -69,7 +69,7 @@ These are the key elements in the core of an agent’s design.
 
 ## The Guidelines To Implement These Principles
 
-When you’re using the above design principles, use the following guidelines:
+When you’re using the previous design principles, use the following guidelines:
 
 1. **Transparency**: Inform the user that AI is involved, how it functions (including past actions), and how to give feedback and modify the system.
 2. **Control**: Enable the user to customize, specify preferences and personalize, and have control over the system and its attributes (including the ability to forget).

@@ -98,7 +98,7 @@ kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel");
 Kernel kernel = kernelBuilder.Build();
 
 /*
-Behind the scenes, i.e recognizes the tool to call, what arguments it already has (location) and what it needs (date)
+Behind the scenes, it recognizes the tool to call, what arguments it already has (location) and what it needs (date)
 {
 
 "tool_calls": [
@@ -123,7 +123,7 @@ Console.WriteLine(response);
 chatHistory.AddAssistantMessage(response);
 
 // AI Response: "Before I can book your flight, I need to know your departure date. When are you planning to travel?"
-// I.e above it figures out the tool to call, what arguments it already has (location) and what it needs (date) from the user input, at this point it ends up asking the user for the missing information
+// That is, in the previous code it figures out the tool to call, what arguments it already has (location) and what it needs (date) from the user input, at this point it ends up asking the user for the missing information
 ```
 
 What you can see from this example is how you can leverage a pre-built parser to extract key information from user input, such as the origin, destination, and date of a flight booking request. This modular approach allows you to focus on the high-level logic.
@@ -171,7 +171,7 @@ stream = team.run_stream(task="Analyze data", max_turns=10)
 await Console(stream)
 ```
 
-What you see in above code is how you can create a task that involves multiple agents working together to analyze data. Each agent performs a specific function, and the task is executed by coordinating the agents to achieve the desired outcome. By creating dedicated agents with specialized roles, you can improve task efficiency and performance.
+What you see in the previous code is how you can create a task that involves multiple agents working together to analyze data. Each agent performs a specific function, and the task is executed by coordinating the agents to achieve the desired outcome. By creating dedicated agents with specialized roles, you can improve task efficiency and performance.
 
 ### Learn in Real-Time
 
@@ -225,7 +225,7 @@ Here are some important core concepts of AutoGen:
             print(f"{self.id.type} responded: {response.chat_message.content}")
     ```
     
-    In above code, `MyAssistant` has been created and inherits from `RoutedAgent`. It has a message handler that prints the content of the message and then sends a response using the `AssistantAgent` delegate. Especially note how we assign to `self._delegate` an instance of `AssistantAgent` which is a pre-built agent that can handle chat completions.
+    In the previous code, `MyAssistant` has been created and inherits from `RoutedAgent`. It has a message handler that prints the content of the message and then sends a response using the `AssistantAgent` delegate. Especially note how we assign to `self._delegate` an instance of `AssistantAgent` which is a pre-built agent that can handle chat completions.
 
 
     Let's let AutoGen know about this agent type and kick off the program next:
@@ -240,7 +240,7 @@ Here are some important core concepts of AutoGen:
     await runtime.send_message(MyMessageType("Hello, World!"), AgentId("my_agent", "default"))
     ```
 
-    Above the agents is registered with the runtime and then a message is sent to the agent resulting in the below output:
+    In the previous code the agents are registered with the runtime and then a message is sent to the agent resulting in the following output:
 
     ```text
     # Output from the console:
@@ -290,7 +290,7 @@ Here are some important core concepts of AutoGen:
     )
     ```
 
-    Above we have a `GroupChatManager` that is registered with the runtime. This manager is responsible for coordinating the interactions between different types of agents, such as writers, illustrators, editors, and users.
+    In the previous code we have a `GroupChatManager` that is registered with the runtime. This manager is responsible for coordinating the interactions between different types of agents, such as writers, illustrators, editors, and users.
 
 - **Agent Runtime**. The framework provides a runtime environment, enabling communication between agents, manages their identities and lifecycles, and enforce security and privacy boundaries. This means that you can run your agents in a secure and controlled environment, ensuring that they can interact safely and efficiently. There are two runtimes of interest:
   - **Stand-alone runtime**. This is a good choice for single-process applications where all agents are implemented in the same programming language and run in the same process. Here's an illustration of how it works:
@@ -470,7 +470,7 @@ Azure AI Agent Service has the following core concepts:
     print(f"Messages: {messages}")
     ```
 
-    In the above code, a thread is created. Thereafter, a message is sent to the thread. By calling `create_and_process_run`, the agent is asked to perform work on the thread. Finally, the messages are fetched and logged to see the agent's response. The messages indicate the progress of the conversation between the user and the agent. It's also important to understand that the messages can be of different types such as text, image, or file, that is the agents work has resulted in for example an image or a text response for example. As a developer, you can then use this information to further process the response or present it to the user.
+    In the previous code, a thread is created. Thereafter, a message is sent to the thread. By calling `create_and_process_run`, the agent is asked to perform work on the thread. Finally, the messages are fetched and logged to see the agent's response. The messages indicate the progress of the conversation between the user and the agent. It's also important to understand that the messages can be of different types such as text, image, or file, that is the agents work has resulted in for example an image or a text response for example. As a developer, you can then use this information to further process the response or present it to the user.
 
 - **Integrates with other AI frameworks**. Azure AI Agent service can interact with other frameworks like AutoGen and Semantic Kernel, which means you can build part of your app in one of these frameworks and for example using the Agent service as an orchestrator or you can build everything in the Agent service.
 

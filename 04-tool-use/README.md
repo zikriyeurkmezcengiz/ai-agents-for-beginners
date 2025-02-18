@@ -80,7 +80,7 @@ Let's use the example of getting the current time in a city to illustrate:
 1. **Create a Function Schema**:
 
     Next we will define a JSON schema that contains the function name, description of what the function does, and the names and descriptions of the function parameters.
-    We will then take this schema and pass it to the client created above, along with the users request to find the time in San Francisco. Whats important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it. 
+    We will then take this schema and pass it to the client created previously, along with the users request to find the time in San Francisco. Whats important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it. 
 
     ```python
     # Function description for the model to read
@@ -265,11 +265,11 @@ The Agent Service allows us to be able to use these tools together as a `toolset
 
 Imagine you are a sales agent at a company called Contoso. You want to develop a conversational agent that can answer questions about your sales data.
 
-The image below illustrates how you could use Azure AI Agent Service to analyze your sales data:
+The following image illustrates how you could use Azure AI Agent Service to analyze your sales data:
 
 ![Agentic Service In Action](./images/agent-service-in-action.jpg?WT.mc_id=academic-105485-koreyst)
 
-To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the Python code below. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query`, or the pre-built Code Interpreter depending on the user request.
+To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the following Python code. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query`, or the pre-built Code Interpreter depending on the user request.
 
 ```python 
 import os
