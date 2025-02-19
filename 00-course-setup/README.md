@@ -13,7 +13,7 @@ This lesson will cover how to run the code samples of this course.
 
 To begin, please clone or fork the GitHub Repository. This will make your own version of the course material so that you can run, test and tweak the code!
 
-This can be done by clicking link to [fork the repo](https://github.com/microsoft/ai-agents-for-beginners/fork){target="_blank"}.
+This can be done by clicking link to <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">fork the repo</a>
 
 You should now have your own forked version of this course in the following link:
 
