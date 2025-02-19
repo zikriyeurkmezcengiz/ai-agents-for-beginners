@@ -25,7 +25,7 @@ Currently this course uses the Github Models Marketplace to offer free access to
 
 To access this service, you will need to create a GitHub Personal Access Token.
 
-This can be done by going to your [Personal Access Tokens settings](https://github.com/settings/personal-access-tokens){target="_blank"} in your GitHub Account.
+This can be done by going to your <a href="https://github.com/settings/personal-access-tokens" target="_blank">Personal Access Tokens settings</a> in your GitHub Account.
 
 Select the `Fine-grained tokens` options on the left side of your screen.
 
@@ -61,8 +61,4 @@ This should install the required Python packages.
 
 You are now ready to run the code of this code, happy learning more about the world of AI Agents!
 
-If you have any issue running this setup, hop into our [Azure AI Community Discord](https://discord.gg/kzRShWzttr){target="_blank"} or [create an issue](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst){target="_blank"}.
-
-
-
-
+If you have any issue running this setup, hop into our <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> or <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">create an issue</a>.
