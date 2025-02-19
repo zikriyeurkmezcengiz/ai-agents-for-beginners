@@ -36,7 +36,7 @@ AI Agents can leverage tools to complete complex tasks, retrieve information, or
 
 ## What are the elements/building blocks needed to implement the tool use design pattern?
 
-These building blocks allow the AI agent to perform a wide range of task. Let's look at the key elements needed to implement the Tool Use Design Pattern:
+These building blocks allow the AI agent to perform a wide range of tasks. Let's look at the key elements needed to implement the Tool Use Design Pattern:
 
 - **Function/Tool Calling**: This is the primary way to enable LLMs to interact with tools. Functions or tools are blocks of reusable code that agents use to carry out tasks. These can range from simple functions like a calculator to API calls to third-party services such as stock price lookups or weather forecasts1.
 
@@ -50,7 +50,7 @@ These building blocks allow the AI agent to perform a wide range of task. Let's 
 
 - **Content Generation and Editing: Agents can leverage tools like grammar checkers, text summarizers, or content safety evaluators to assist with content creation tasks**.
 
-Next, let's look Function/Tool Calling in more detail.
+Next, let's look at Function/Tool Calling in more detail.
  
 ### Function/Tool Calling
 
@@ -80,7 +80,7 @@ Let's use the example of getting the current time in a city to illustrate:
 1. **Create a Function Schema**:
 
     Next we will define a JSON schema that contains the function name, description of what the function does, and the names and descriptions of the function parameters.
-    We will then take this schema and pass it to the client created previously, along with the users request to find the time in San Francisco. Whats important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it. 
+    We will then take this schema and pass it to the client created previously, along with the users request to find the time in San Francisco. What's important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it. 
 
     ```python
     # Function description for the model to read
