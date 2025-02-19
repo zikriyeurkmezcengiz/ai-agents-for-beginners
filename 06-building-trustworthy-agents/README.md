@@ -151,7 +151,7 @@ To build trustworthy AI agents, it is important to understand and mitigate the r
 
 ## Human-in-the-Loop
 
-Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during run. Users essentially act as agent in a multi-agent system and by providing approval or termination of the running process.
+Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during the run. Users essentially act as agents in a multi-agent system and by providing approval or termination of the running process.
 
 ![Human in The Loop](./images/human-in-the-loop.png)
 
