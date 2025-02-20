@@ -1,0 +1,60 @@
+site_name: "AI Agents for Beginners"
+site_url: https://microsoft.github.io/ai-agents-for-beginners
+site_author: Microsoft
+site_description: >-
+ Learn to build, evaluate, and deploy AI agents with this beginner's guide.
+
+# Repository ..................................................
+repo_name: microsoft/ai-agents-for-beginners
+repo_url: https://github.com/microsoft/ai-agents-for-beginners
+
+# Copyright ...................................................
+copyright: >
+  Copyright &copy; 2025 - present Microsoft
+
+# Configuration ...............................................
+theme:
+  name: jekyll-theme-slate
+  font:
+    code: Roboto Mono  # Monospaced
+    text: Roboto       # Regular
+  language: en
+
+  # Theme Modes ...............................................
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-2
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference 
+  
+  # Theme Features ...............................................
+  features:
+    - navigation.instant
+    - navigation.expand             # sidebar collapsible sections open
+    - navigation.instant.progress   # load progress indicator
+    - navigation.tracking           # tracks anchor tags in URL
+    - navigation.tabs               # tabbed on desktop, single in mobile    
+    - navigation.tabs.sticky        # tabs stick when scrolling down
+    - navigation.path               # add breadcrumbs
+    - navigation.top
+    - toc.follow
+    - navigation.footer
+    - content.code.copy             # allow copy-paste from codeblocks
+    - content.tabs.link             # Ensures site-wide switch to same tab name
