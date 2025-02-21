@@ -75,6 +75,7 @@ Let's look at each of these aspects more in detail.
 ## Multi-Agent Patterns
 
 Let's dive into some concrete patterns we can use to create multi-agent apps. Here are some interesting patterns worth considering:
+
 ### Group chat
 
 This pattern is useful when you want to create a group chat application where multiple agents can communicate with each other. Typical use cases for this pattern include team collaboration, customer support, and social networking.
