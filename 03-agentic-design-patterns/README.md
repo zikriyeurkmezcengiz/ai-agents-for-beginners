@@ -27,7 +27,7 @@ After completing this lesson, you will be able to:
 
 ## The Agentic Design Principles
 
-![Agentic Design Principles](./images/agentic-design-principles.png?WT.mc_id=academic-105485-koreyst)
+![Agentic Design Principles](./images/agentic-design-principles.png)
 
 ### Agent (Space)
 
