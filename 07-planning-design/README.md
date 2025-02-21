@@ -57,7 +57,7 @@ The planner then:
 * Lists Agents and Their Tools: The agent registry holds a list of agents (e.g., for flight, hotel, car rental, and activities) along with the functions or tools they offer.
 * Routes the Plan to the Respective Agents: Depending on the number of subtasks, the planner either sends the message directly to a dedicated agent (for single-task scenarios) or coordinates via a group chat manager for multi-agent collaboration.
 * Summarizes the Outcome: Finally, the planner summarizes the generated plan for clarity.
-  The following Python code sample illustrates these steps:
+The following Python code sample illustrates these steps:
 
 ```python
 
