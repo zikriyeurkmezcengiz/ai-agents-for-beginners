@@ -4,18 +4,18 @@
 
 This lesson will cover
 
-- Defining a clear overall goal and breaking a complex task into manageable tasks.
-- Leveraging structured output for more reliable and machine-readable responses.
-- Applying an event-driven approach to handle dynamic tasks and unexpected inputs.
+* Defining a clear overall goal and breaking a complex task into manageable tasks.
+* Leveraging structured output for more reliable and machine-readable responses.
+* Applying an event-driven approach to handle dynamic tasks and unexpected inputs.
 
 ## Learning Goals
 
 After completing this lesson, you will have an understanding about:
 
-- Identify and set an overall goal for an AI agent, ensuring it clearly knows what needs to be achieved.
-- Decompose a complex task into manageable subtasks and organize them into a logical sequence.
-- Equip agents with the right tools (e.g., search tools or data analytics tools), decide when and how they are used, and handle unexpected situations that arise.
-- Evaluate subtask outcomes, measure performance, and iterate on actions to improve the final output.
+* Identify and set an overall goal for an AI agent, ensuring it clearly knows what needs to be achieved.
+* Decompose a complex task into manageable subtasks and organize them into a logical sequence.
+* Equip agents with the right tools (e.g., search tools or data analytics tools), decide when and how they are used, and handle unexpected situations that arise.
+* Evaluate subtask outcomes, measure performance, and iterate on actions to improve the final output.
 
 ## Defining the Overall Goal and Breaking Down a Task
 
@@ -32,10 +32,10 @@ While it is simple to state, it still needs refinement. The clearer the goal, th
 Large or intricate tasks become more manageable when split into smaller, goal-oriented subtasks.
 For the travel itinerary example, you could decompose the goal into:
 
-- Flight Booking
-- Hotel Booking
-- Car Rental
-- Personalization
+* Flight Booking
+* Hotel Booking
+* Car Rental
+* Personalization
 
 Each subtask can then be tackled by dedicated agents or processes. One agent might specialize in searching for the best flight deals, another focuses on hotel bookings, and so on. A coordinating or “downstream” agent can then compile these results into one cohesive itinerary to the end user.
 
@@ -53,10 +53,10 @@ In this example, a Semantic Router Agent receives a user request (e.g., "I need 
 
 The planner then:
 
-- Receives the Hotel Plan: The planner takes the user’s message and, based on a system prompt (including available agent details), generates a structured travel plan.
-- Lists Agents and Their Tools: The agent registry holds a list of agents (e.g., for flight, hotel, car rental, and activities) along with the functions or tools they offer.
-- Routes the Plan to the Respective Agents: Depending on the number of subtasks, the planner either sends the message directly to a dedicated agent (for single-task scenarios) or coordinates via a group chat manager for multi-agent collaboration.
-- Summarizes the Outcome: Finally, the planner summarizes the generated plan for clarity.
+* Receives the Hotel Plan: The planner takes the user’s message and, based on a system prompt (including available agent details), generates a structured travel plan.
+* Lists Agents and Their Tools: The agent registry holds a list of agents (e.g., for flight, hotel, car rental, and activities) along with the functions or tools they offer.
+* Routes the Plan to the Respective Agents: Depending on the number of subtasks, the planner either sends the message directly to a dedicated agent (for single-task scenarios) or coordinates via a group chat manager for multi-agent collaboration.
+* Summarizes the Outcome: Finally, the planner summarizes the generated plan for clarity.
   The following Python code sample illustrates these steps:
 
 ```python
@@ -136,30 +136,30 @@ What follows is the output from the previous code and you can then use this stru
 
 ```json
 {
-  "is_greeting": "False",
-  "main_task": "Plan a family trip from Singapore to Melbourne.",
-  "subtasks": [
-    {
-      "assigned_agent": "flight_booking",
-      "task_details": "Book round-trip flights from Singapore to Melbourne."
-    },
-    {
-      "assigned_agent": "hotel_booking",
-      "task_details": "Find family-friendly hotels in Melbourne."
-    },
-    {
-      "assigned_agent": "car_rental",
-      "task_details": "Arrange a car rental suitable for a family of four in Melbourne."
-    },
-    {
-      "assigned_agent": "activities_booking",
-      "task_details": "List family-friendly activities in Melbourne."
-    },
-    {
-      "assigned_agent": "destination_info",
-      "task_details": "Provide information about Melbourne as a travel destination."
-    }
-  ]
+    "is_greeting": "False",
+    "main_task": "Plan a family trip from Singapore to Melbourne.",
+    "subtasks": [
+        {
+            "assigned_agent": "flight_booking",
+            "task_details": "Book round-trip flights from Singapore to Melbourne."
+        },
+        {
+            "assigned_agent": "hotel_booking",
+            "task_details": "Find family-friendly hotels in Melbourne."
+        },
+        {
+            "assigned_agent": "car_rental",
+            "task_details": "Arrange a car rental suitable for a family of four in Melbourne."
+        },
+        {
+            "assigned_agent": "activities_booking",
+            "task_details": "List family-friendly activities in Melbourne."
+        },
+        {
+            "assigned_agent": "destination_info",
+            "task_details": "Provide information about Melbourne as a travel destination."
+        }
+    ]
 }
 ```
 
@@ -200,4 +200,4 @@ In this article we have looked at an example of how we can create a planner that
 
 ## Additional Resources
 
-- AutoGen Magentic One - A Generalist multi-agent system for solving complex tasks and has achieved impressive results on multiple challenging agentic benchmarks. Reference: <a href="https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one" target="_blank">autogen-magentic-one</a>. In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.
+* AutoGen Magentic One - A Generalist multi-agent system for solving complex tasks and has achieved impressive results on multiple challenging agentic benchmarks. Reference: <a href="https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one" target="_blank">autogen-magentic-one</a>. In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.
