@@ -49,7 +49,7 @@ Open that file and paste the token you created into the `GITHUB_TOKEN=` field of
 
 ## Install Required Packages
 
-To ensure you have all the required Python packages for to run the code, run the following command into your terminal.
+To ensure you have all the required Python packages to run the code, run the following command into your terminal.
 
 We recommend creating a Python virtual environment to avoid any conflicts and issues.
 
@@ -61,4 +61,4 @@ This should install the required Python packages.
 
 You are now ready to run the code of this code, happy learning more about the world of AI Agents!
 
-If you have any issue running this setup, hop into our <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> or <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">create an issue</a>.
+If you have any issues running this setup, hop into our <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> or <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">create an issue</a>.

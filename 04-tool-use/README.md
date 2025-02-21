@@ -267,7 +267,7 @@ Imagine you are a sales agent at a company called Contoso. You want to develop a
 
 The following image illustrates how you could use Azure AI Agent Service to analyze your sales data:
 
-![Agentic Service In Action](./images/agent-service-in-action.jpg?WT.mc_id=academic-105485-koreyst)
+![Agentic Service In Action](./images/agent-service-in-action.jpg)
 
 To use any of these tools with the service we can create a client and define a tool or toolset. To implement this practically we can use the following Python code. The LLM will be able to look at the toolset and decide whether to use the user created function, `fetch_sales_data_using_sqlite_query`, or the pre-built Code Interpreter depending on the user request.
 
