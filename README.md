@@ -1,6 +1,6 @@
 # AI Agents for Beginners - A Course
 
-![Generative AI For Beginners](./images/repo-thumbnail.png?WT.mc_id=academic-105485-koreyst)
+![Generative AI For Beginners](./images/repo-thumbnail.png)
 
 ## 10 Lessons teaching everything you need to know to start building AI Agents
 
