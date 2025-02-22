@@ -38,15 +38,15 @@ AI Agents can leverage tools to complete complex tasks, retrieve information, or
 
 These building blocks allow the AI agent to perform a wide range of tasks. Let's look at the key elements needed to implement the Tool Use Design Pattern:
 
-- **Function/Tool Calling**: This is the primary way to enable LLMs to interact with tools. Functions or tools are blocks of reusable code that agents use to carry out tasks. These can range from simple functions like a calculator to API calls to third-party services such as stock price lookups or weather forecasts1.
+- **Function/Tool Calling**: This is the primary way to enable LLMs to interact with tools. Functions or tools are blocks of reusable code that agents use to carry out tasks. These can range from simple functions like a calculator to API calls to third-party services such as stock price lookups or weather forecasts.
 
 - **Dynamic Information Retrieval**: Agents can query external APIs or databases to fetch up-to-date data. This is useful for tasks like data analysis, fetching stock prices, or weather information1.
 
-- **Code Execution and Interpretation**: Agents can execute code or scripts to solve mathematical problems, generate reports, or perform simulations1.
+- **Code Execution and Interpretation**: Agents can execute code or scripts to solve mathematical problems, generate reports, or perform simulations.
 
-- **Workflow Automation**: This involves automating repetitive or multi-step workflows by integrating tools like task schedulers, email services, or data pipelines1.
+- **Workflow Automation**: This involves automating repetitive or multi-step workflows by integrating tools like task schedulers, email services, or data pipelines.
 
-- **Customer Support**: Agents can interact with CRM systems, ticketing platforms, or knowledge bases to resolve user queries1.
+- **Customer Support**: Agents can interact with CRM systems, ticketing platforms, or knowledge bases to resolve user queries.
 
 - **Content Generation and Editing: Agents can leverage tools like grammar checkers, text summarizers, or content safety evaluators to assist with content creation tasks**.
 
