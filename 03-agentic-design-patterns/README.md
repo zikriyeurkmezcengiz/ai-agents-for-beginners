@@ -22,7 +22,7 @@ In general, agents should:
 After completing this lesson, you will be able to:
 
 1. Explain what the Agentic Design Principles are
-2. Explain the guidelines to using the Agentic Design Principles
+2. Explain the guidelines for using the Agentic Design Principles
 3. Understand how to build an agent using the Agentic Design Principles
 
 ## The Agentic Design Principles
@@ -40,7 +40,7 @@ This is the environment in which the agent operates. These principles inform how
   - Agent is easily discoverable and accessible for authorized users on any device or platform.
   - Agent supports multimodal inputs and outputs (sound, voice, text, etc.).
   - Agent can seamlessly transition between foreground and background; between proactive and reactive, depending on its sensing of user needs.
-  - Agent may operate in invisible form, yet its background process path and collaboration with other Agents is transparent to and controllable by the user.
+  - Agent may operate in invisible form, yet its background process path and collaboration with other Agents are transparent to and controllable by the user.
 
 ### Agent (Time)
 
