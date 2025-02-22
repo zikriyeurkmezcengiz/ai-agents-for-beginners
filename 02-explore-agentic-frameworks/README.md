@@ -17,7 +17,7 @@ This lesson will cover:
 
 ## Learning goals
 
-The goals of this lesson is to help you understand:
+The goals of this lesson are to help you understand:
 
 - The role of AI Agent Frameworks in AI development.
 - How to leverage AI Agent Frameworks to build intelligent agents.
@@ -35,7 +35,7 @@ Example: Customer service apps use AI-powered chatbots to handle common inquirie
 - **Enhanced User Experience**: AI can improve the overall user experience by providing intelligent features such as voice recognition, natural language processing, and predictive text.
 Example: Virtual assistants like Siri and Google Assistant use AI to understand and respond to voice commands, making it easier for users to interact with their devices.
 
-### That all sounds great right, so why we do we need AI Agent Framework?
+### That all sounds great right, so why do we need the AI Agent Framework?
 
 AI Agent frameworks represent something more than just AI frameworks. They are designed to enable the creation of intelligent agents that can interact with users, other agents, and the environment to achieve specific goals. These agents can exhibit autonomous behavior, make decisions, and adapt to changing conditions. Let's look at some key capabilities enabled by AI Agent Frameworks:
 
