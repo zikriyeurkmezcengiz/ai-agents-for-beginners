@@ -175,7 +175,7 @@ What you see in the previous code is how you can create a task that involves mul
 
 ### Learn in Real-Time
 
-Advanced frameworks provide capabilities for real-time context understanding and adaptation. 
+Advanced frameworks provide capabilities for real-time context understanding and adaptation.
 
 **How teams can use these**: Teams can implement feedback loops where agents learn from interactions and adjust their behavior dynamically, leading to continuous improvement and refinement of capabilities.
 
@@ -197,7 +197,7 @@ AutoGen is built around the core concept of agents, which are autonomous entitie
 
 Here are some important core concepts of AutoGen:
 
-- **Agents**. An agent is a software entity that: 
+- **Agents**. An agent is a software entity that:
   - **Communicates via messages**, these messages can be synchronous or asynchronous.
   - **Maintains its own state**, which can be modified by incoming messages.
   - **Performs actions** in response to received messages or changes in its state. These actions may modify the agent’s state and produce external effects, such as updating message logs, sending new messages, executing code, or making API calls.
@@ -517,7 +517,7 @@ Let's summarize the key differences in a table:
 What's the ideal use case for each of these frameworks?
 
 - **AutoGen**: Event-driven, distributed agentic applications, advanced multi-agent design patterns. Ideal for automating code generation, data analysis tasks.
-- **Semantic Kernel**: Understanding and generating human-like text content, automating complex workflows, initiating tasks based on project goals. Ideal for natural language understanding, content generation. 
+- **Semantic Kernel**: Understanding and generating human-like text content, automating complex workflows, initiating tasks based on project goals. Ideal for natural language understanding, content generation.
 - **Azure AI Agent Service**: Flexible models, enterprise security mechanisms, data storage methods. Ideal for secure, scalable, and flexible AI agent deployment in enterprise applications.
 
 ## Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
