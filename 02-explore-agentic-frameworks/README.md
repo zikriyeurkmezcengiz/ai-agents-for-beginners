@@ -480,48 +480,43 @@ Azure AI Agent Service has the following core concepts:
 **Use Cases**: Azure AI Agent Service is designed for enterprise applications that require secure, scalable, and flexible AI agent deployment.
 
 ## What's the difference between these frameworks?
-
+ 
 It does sound like there is a lot of overlap between these frameworks, but there are some key differences in terms of their design, capabilities, and target use cases:
-
-- **AutoGen**: Focuses on event-driven, distributed agentic applications, enabling multiple LLMs and SLMs, tools, and advanced multi-agent design patterns.
-- **Semantic Kernel**: Focuses on understanding and generating human-like text content by capturing deeper semantic meanings. It is designed to automate complex workflows and initiate tasks based on project goals.
-- **Azure AI Agent Service**: Provides more flexible models, such as directly calling open-source LLMs like Llama 3, Mistral, and Cohere. It offers stronger enterprise security mechanisms and data storage methods, making it suitable for enterprise applications.
-
+ 
+- **AutoGen**: Is an experiementation framework focused on leading-edge research on multi-agent systems. It is the best place to experiment and prototype sophisticated multi-agent sytems.
+- **Semantic Kernel**: Is a production-ready agent library for building enterprise agentic applications. Focuses on event-driven, distributed agentic applications, enabling multiple LLMs and SLMs, tools, and single/multi-agent design patterns.
+- **Azure AI Agent Service**: Is a platform and deployment service in Azure Foundry for agents. It offers building connectivity to services support by Azure Found like Azure OpenAI, Azure AI Search, Bing Search and code exectuition.
+ 
 Still not sure which one to choose?
 
 ### Use Cases
-
+ 
 Let's see if we can help you by going through some common use cases:
-
-> Q: My team is working on a project that involves automating code generation and data analysis tasks. Which framework should we use?
+ 
+> Q: I'm experimenting, learning and building proof-of-concept agent applications, and I want to be able to build and experiment quickly
 >
-> A: AutoGen would be a good choice for this scenario, as it focuses on event-driven, distributed agentic applications and supports advanced multi-agent design patterns.
-
-> Q: What makes AutoGen a better choice than Semantic Kernel and Azure AI Agent Service for this use case?
+> A: AutoGen would be a good choice for this scenario, as it focuses on experimentation and building applications using the latest multi-agent patterns
+ 
+> Q: I'm designing a building a application that I want to scale and use production or within my enterprise
 >
-> A: AutoGen is specifically designed for event-driven, distributed agentic applications, making it well-suited for automating code generation and data analysis tasks. It provides the necessary tools and capabilities to build complex multi-agent systems efficiently.
-
-> Q: Sounds like Azure AI Agent Service could work here too, it has tools for code generation and more?
+> A: Semantic Kernel is the best choice for build production AI agent applications. Experimental features from AutoGen are stabilized and added to Semantic Kernel reguarly.
+ 
+> Q: Sounds like Azure AI Agent Service could work here too?
 >
-> A: Yes, Azure AI Agent Service also supports code generation and data analysis tasks, but it may be more suitable for enterprise applications that require secure, scalable, and flexible AI agent deployment. AutoGen is more focused on event-driven, distributed agentic applications and advanced multi-agent design patterns.
-
-> Q: So you are saying if I want to go enterprise, I should go with Azure AI Agent Service?
+> A: Yes, Azure AI Agent Service is a platform service for agents and add built-in capabilities for multiple models, Azure AI Search, Bing Search and Azure Functions. It makes it easy to build your agents in the Foundry Portal and deploy them at scale.
+ 
+> Q: I'm still confused just give me one option
 >
-> A: Yes, Azure AI Agent Service is designed for enterprise applications that require secure, scalable, and flexible AI agent deployment. It offers stronger enterprise security mechanisms and data storage methods, making it suitable for enterprise use cases.
-
+> A: A create choice is to build you application in Semantic Kernel first, and use Azure AI Agent Service to deploy you agent. This means you can easily perist your agents while still having the power to build multi-agent systems in Semantic Kernel. Semantic also has a connector in AutoGen to make it easy to use both frameworks together.
+ 
 Let's summarize the key differences in a table:
-
-| Framework              | Focus                                                               | Core Concepts                                    | Use Cases                                          |
-| ---------------------- | ------------------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------- |
-| AutoGen                | Event-driven, distributed agentic applications                      | Agents, Personas, Functions, Data                | Code generation, data analysis tasks               |
-| Semantic Kernel        | Understanding and generating human-like text content                | Agents, Modular Components, Collaboration        | Natural language understanding, content generation |
-| Azure AI Agent Service | Flexible models, enterprise security, Code generation, Tool calling | Modularity, Collaboration, Process Orchestration | Secure, scalable, and flexible AI agent deployment |
-
+ 
+| Framework              | Focus                                                               |
+| ---------------------- | ------------------------------------------------------------------- |
+| AutoGen                | Experimentation and proof-of-concept                                |
+| Semantic Kernel        | Product-ready enterprise AI agent applications                      |
+| Azure AI Agent Service | Deployment, management and integration with Azure Foundry           | 
 What's the ideal use case for each of these frameworks?
-
-- **AutoGen**: Event-driven, distributed agentic applications, advanced multi-agent design patterns. Ideal for automating code generation, data analysis tasks.
-- **Semantic Kernel**: Understanding and generating human-like text content, automating complex workflows, initiating tasks based on project goals. Ideal for natural language understanding, content generation.
-- **Azure AI Agent Service**: Flexible models, enterprise security mechanisms, data storage methods. Ideal for secure, scalable, and flexible AI agent deployment in enterprise applications.
 
 ## Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
 
