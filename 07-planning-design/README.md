@@ -29,7 +29,7 @@ While it is simple to state, it still needs refinement. The clearer the goal, th
 
 ### Task Decomposition
 
- Large or intricate tasks become more manageable when split into smaller, goal-oriented subtasks.
+Large or intricate tasks become more manageable when split into smaller, goal-oriented subtasks.
 For the travel itinerary example, you could decompose the goal into:
 
 * Flight Booking
@@ -175,9 +175,9 @@ e.g sample code
 
     ```python
     from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-    #.. same as previous code and pass on the user history, current plan 
+    #.. same as previous code and pass on the user history, current plan
     messages = [
-        SystemMessage(content="""You are a planner agent to optimize the 
+        SystemMessage(content="""You are a planner agent to optimize the
         Your job is to decide which agents to run based on the user's request.
         Below are the available agents specialized in different tasks:
         - FlightBooking: For booking flights and providing flight information
@@ -200,4 +200,4 @@ In this article we have looked at an example of how we can create a planner that
 
 ## Additional Resources
 
-* AutoGen Magentic One - A Generalist multi agent system for solving complex tasks and has achieved impressive results on multiple challenging agentic benchmarks. Reference: <a href="https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one" target="_blank">autogen-magentic-one</a>. In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.
+* AutoGen Magentic One - A Generalist multi-agent system for solving complex tasks and has achieved impressive results on multiple challenging agentic benchmarks. Reference: <a href="https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one" target="_blank">autogen-magentic-one</a>. In this implementation the orchestrator create task specific plan and delegates these tasks to the available agents. In addition to planning the orchestrator also employs a tracking mechanism to monitor the progress of the task and re-plans as required.

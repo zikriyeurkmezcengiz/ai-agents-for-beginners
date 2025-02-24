@@ -72,9 +72,9 @@ Let's look at each of these aspects more in detail.
 
 - **Performance Metrics**: Performance metrics can help you track the effectiveness of the multi-agent system. For example, you could track the time taken to complete a task, the number of tasks completed per unit of time, and the accuracy of the recommendations made by the agents. This information can help you identify areas for improvement and optimize the system.
 
-## Multi agent patterns
+## Multi-Agent Patterns
 
-Let's dive into some concrete patterns we can use to create multi agent apps. Here are some interesting patterns worth considering:
+Let's dive into some concrete patterns we can use to create multi-agent apps. Here are some interesting patterns worth considering:
 
 ### Group chat
 
@@ -161,7 +161,7 @@ Question: When should you consider using multi-agents?
 - [] A2: When you have a large workload
 - [] A3: When you have a simple task.
 
-[Solution quiz](./solution/solution-quiz.md) 
+[Solution quiz](./solution/solution-quiz.md)
 
 ## Summary
 
