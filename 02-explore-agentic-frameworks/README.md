@@ -116,8 +116,10 @@ async def main():
     assert response is not None
 
     """
-    Note: as part of auto-function calling the model, based on the context, it knows it can call a plugin
-    called `BookTravelPlugin` with the function name `book_flight`, supplying the required arguments.
+    Note: In the auto function calling process, the model determines it can invoke the 
+    `BookTravelPlugin` using the `book_flight` function, supplying the necessary arguments. 
+    
+    For example:
 
     "tool_calls": [
         {
@@ -130,11 +132,11 @@ async def main():
         }
     ]
 
-    Given that the function arguments `location` and `date` are required (defined as part of the kernel function),
-    if the model did not have any of these required arguments, it would ask the user to supply it:
+    Since the location and date arguments are required (as defined by the kernel function), if the 
+    model lacks either, it will prompt the user to provide them. For instance:
 
     User: Book me a flight to New York.
-    Model: Sure, I'd love to help you book a flight. Can you please tell me for which date?
+    Model: Sure, I'd love to help you book a flight. Could you please specify the date?
     User: I want to travel on January 1, 2025.
     Model: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels!
     """
@@ -432,27 +434,51 @@ Let's first cover some core components:
 
   Here you have a simple example of how you can create a kernel and add a chat completion service. Semantic Kernel creates a connection to an external AI service, in this case, Azure OpenAI Chat Completion.
 
-- **Plugins**: Encapsulate functions that an application can use. There are both ready-made plugins and plugins you can create yourself. There's a concept called "prompt functions". You provide it natural language information that helps the model figure out that this function can b called based on the current chat context. Here's an example:
+- **Plugins**: These encapsulate functions that an application can use. There are both ready-made plugins and custom ones you can create. A related concept is "prompt functions." Instead of providing natural language cues for function invocation, you broadcast certain functions to the model. Based on the current chat context, the model may choose to call one of these functions to complete a request or query. Here's an example:
 
   ```python
-  from semantic_kernel.functions import KernelFunctionFromPrompt
-  
-  user_input = input()
+  from semantic_kernel.connectors.ai.open_ai.services.azure_chat_completion import AzureChatCompletion
 
-  function = KernelFunctionFromPrompt(
-      prompt="""
-        Summarize the provided unstructured text in a sentence that is easy to understand.
-        Text to summarize: {{$user_input}}
-        """,
-   )
-   ```
+
+  async def main():
+      from semantic_kernel.functions import KernelFunctionFromPrompt
+      from semantic_kernel.kernel import Kernel
+
+      kernel = Kernel()
+      kernel.add_service(AzureChatCompletion())
+
+      user_input = input("User Input:> ")
+
+      kernel_function = KernelFunctionFromPrompt(
+          function_name="SummarizeText",
+          prompt="""
+          Summarize the provided unstructured text in a sentence that is easy to understand.
+          Text to summarize: {{$user_input}}
+          """,
+      )
+
+      response = await kernel_function.invoke(kernel=kernel, user_input=user_input)
+      print(f"Model Response: {response}")
+
+      """
+      Sample Console Output:
+
+      User Input:> I like dogs
+      Model Response: The text expresses a preference for dogs.
+      """
+
+
+  if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+  ```
 
   ```csharp
   var userInput = Console.ReadLine();
 
   // Define the prompt function inline.
-  string prompt = @"Summarize the provided unstructured text in a sentence that is easy to understand.
-                      Text to summarize: {{$userInput}}";
+  string prompt = @"Summarize the provided unstructured text in a sentence that is easy to understand. 
+                    Text to summarize: {{$userInput}}";
 
   // Register the prompt function
   kernel_function = KernelFunctionFactory.CreateFromPrompt(prompt);
