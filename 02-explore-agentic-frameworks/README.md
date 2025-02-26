@@ -49,26 +49,114 @@ So in summary, agents allow you to do more, to take automation to the next level
 
 This is a fast-moving landscape, but there are some things that are common across most AI Agent Frameworks that can help you quickly prototype and iterate namely module components, collaborative tools, and real-time learning. Let's dive into these:
 
-- **Use Modular Components**: AI Frameworks offer pre-built components such as prompts, parsers, and memory management.
+- **Use Modular Components**: AI SDKs offer pre-built components such as AI and Memory connectors, function calling using natural language or code plugins, prompt templates, and more.
 - **Leverage Collaborative Tools**: Design agents with specific roles and tasks, enabling them to test and refine collaborative workflows.
 - **Learn in Real-Time**: Implement feedback loops where agents learn from interactions and adjust their behavior dynamically.
 
 ### Use Modular Components
 
-Frameworks like LangChain and Microsoft Semantic Kernel offer pre-built components such as prompts, parsers, and memory management.
+SDKs like Microsoft Semantic Kernel and LangChain offer pre-built components such as AI connectors, prompt templates, and memory management.
 
 **How teams can use these**: Teams can quickly assemble these components to create a functional prototype without starting from scratch, allowing for rapid experimentation and iteration.
 
 **How it works in practice**: You can use a pre-built parser to extract information from user input, a memory module to store and retrieve data, and a prompt generator to interact with users, all without having to build these components from scratch.
 
-**Example code**. Let's look at an example of how you can use a pre-built parser to extract information from user input:
+**Example code**. Let's look at examples of how you can use a pre-built AI Connector with Semantic Kernel Python and .Net that uses auto-function calling to have the model respond to user input:
+
+``` python
+# Semantic Kernel Python Example
+
+import asyncio
+from typing import Annotated
+
+from semantic_kernel.connectors.ai import FunctionChoiceBehavior
+from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion, AzureChatPromptExecutionSettings
+from semantic_kernel.contents import ChatHistory
+from semantic_kernel.functions import kernel_function
+from semantic_kernel.kernel import Kernel
+
+# Define a ChatHistory object to hold the conversation's context
+chat_history = ChatHistory()
+chat_history.add_user_message("I'd like to go to New York on January 1, 2025")
+
+
+# Define a sample plugin that contains the function to book travel
+class BookTravelPlugin:
+    """A Sample Book Travel Plugin"""
+
+    @kernel_function(name="book_flight", description="Book travel given location and date")
+    async def book_flight(
+        self, date: Annotated[str, "The date of travel"], location: Annotated[str, "The location to travel to"]
+    ) -> str:
+        return f"Travel was booked to {location} on {date}"
+
+# Create the Kernel
+kernel = Kernel()
+
+# Add the sample plugin to the Kernel object
+kernel.add_plugin(BookTravelPlugin(), plugin_name="book_travel")
+
+# Define the Azure OpenAI AI Connector
+chat_service = AzureChatCompletion(
+    deployment_name="YOUR_DEPLOYMENT_NAME", 
+    api_key="YOUR_API_KEY", 
+    endpoint="https://<your-resource>.azure.openai.com/",
+)
+
+# Define the request settings to configure the model with auto-function calling
+request_settings = AzureChatPromptExecutionSettings(function_choice_behavior=FunctionChoiceBehavior.Auto())
+
+
+async def main():
+    # Make the request to the model for the given chat history and request settings
+    # The Kernel contains the sample that the model will request to invoke
+    response = await chat_service.get_chat_message_content(
+        chat_history=chat_history, settings=request_settings, kernel=kernel
+    )
+    assert response is not None
+
+    """
+    Note: In the auto function calling process, the model determines it can invoke the 
+    `BookTravelPlugin` using the `book_flight` function, supplying the necessary arguments. 
+    
+    For example:
+
+    "tool_calls": [
+        {
+            "id": "call_abc123",
+            "type": "function",
+            "function": {
+                "name": "BookTravelPlugin-book_flight",
+                "arguments": "{'location': 'New York', 'date': '2025-01-01'}"
+            }
+        }
+    ]
+
+    Since the location and date arguments are required (as defined by the kernel function), if the 
+    model lacks either, it will prompt the user to provide them. For instance:
+
+    User: Book me a flight to New York.
+    Model: Sure, I'd love to help you book a flight. Could you please specify the date?
+    User: I want to travel on January 1, 2025.
+    Model: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels!
+    """
+
+    print(f"`{response}`")
+    # Example AI Model Response: `Your flight to New York on January 1, 2025, has been successfully booked. Safe travels! ✈️🗽`
+
+    # Add the model's response to our chat history context
+    chat_history.add_assistant_message(response.content)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
 
 ```csharp
-
-// Semantic Kernel example
+// Semantic Kernel C# example
 
 ChatHistory chatHistory = [];
-chatHistory.AddUserMessage("I'd like to go to New York");
+chatHistory.AddUserMessage("I'd like to go to New York on January 1, 2025.");
 
 // Define a plugin that contains the function to book travel
 public class BookTravelPlugin(
@@ -89,7 +177,7 @@ public class BookTravelPlugin(
 }
 
 IKernelBuilder kernelBuilder = new KernelBuilder();
-kernelBuilder..AddAzureOpenAIChatCompletion(
+kernelBuilder.AddAzureOpenAIChatCompletion(
     deploymentName: "NAME_OF_YOUR_DEPLOYMENT",
     apiKey: "YOUR_API_KEY",
     endpoint: "YOUR_AZURE_ENDPOINT"
@@ -98,7 +186,7 @@ kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel");
 Kernel kernel = kernelBuilder.Build();
 
 /*
-Behind the scenes, it recognizes the tool to call, what arguments it already has (location) and what it needs (date)
+Behind the scenes, the model recognizes the tool to call, what arguments it already has (location) and (date)
 {
 
 "tool_calls": [
@@ -107,7 +195,7 @@ Behind the scenes, it recognizes the tool to call, what arguments it already has
         "type": "function",
         "function": {
             "name": "BookTravelPlugin-book_flight",
-            "arguments": "{\n\"location\": \"New York\",\n\"date\": \"\"\n}"
+            "arguments": "{'location': 'New York', 'date': '2025-01-01'}"
         }
     }
 ]
@@ -122,15 +210,14 @@ ChatResponse response = await chatCompletion.GetChatMessageContentAsync(
 Console.WriteLine(response);
 chatHistory.AddAssistantMessage(response);
 
-// AI Response: "Before I can book your flight, I need to know your departure date. When are you planning to travel?"
-// That is, in the previous code it figures out the tool to call, what arguments it already has (location) and what it needs (date) from the user input, at this point it ends up asking the user for the missing information
+// Example AI Model Response: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels! ✈️🗽
 ```
 
 What you can see from this example is how you can leverage a pre-built parser to extract key information from user input, such as the origin, destination, and date of a flight booking request. This modular approach allows you to focus on the high-level logic.
 
 ### Leverage Collaborative Tools
 
-Frameworks like CrewAI and Microsoft AutoGen facilitate the creation of multiple agents that can work together.
+Frameworks like CrewAI, Microsoft AutoGen, and Semantic Kernel facilitate the creation of multiple agents that can work together.
 
 **How teams can use these**: Teams can design agents with specific roles and tasks, enabling them to test and refine collaborative workflows and improve overall system efficiency.
 
@@ -308,13 +395,29 @@ Here are some important core concepts of AutoGen:
 
 ## Semantic Kernel + Agent Framework
 
-Semantic Kernel consists of two things, the Semantic Kernel Agent Framework and the Semantic Kernel itself.
+Semantic Kernel is an enterprise-ready AI Orchestration SDK. It consists of AI and memory connectors, along with an Agent Framework.
 
-Let's first talk about the Semantic Kernel. It has the following core concepts:
+Let's first cover some core components:
 
-- **Connections**: This is an interface with external AI services and data sources.
+- **AI Connectors**: This is an interface with external AI services and data sources for use in both Python and C#.
+
+  ```python
+  # Semantic Kernel Python
+  from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
+  from semantic_kernel.kernel import Kernel
+
+  kernel = Kernel()
+  kernel.add_service(
+    AzureChatCompletion(
+        deployment_name="your-deployment-name",
+        api_key="your-api-key",
+        endpoint="your-endpoint",
+    )
+  )
+  ```  
 
   ```csharp
+  // Semantic Kernel C#
   using Microsoft.SemanticKernel;
 
   // Create kernel
@@ -331,31 +434,81 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
 
   Here you have a simple example of how you can create a kernel and add a chat completion service. Semantic Kernel creates a connection to an external AI service, in this case, Azure OpenAI Chat Completion.
 
-- **Plugins**: Encapsulate functions that an application can use. There are both ready-made plugins and plugins you can create yourself. There's a concept here called "Semantic functions". What makes it semantic is that you provide it semantic information that helps Semantic Kernel figure out that this function needs to be called. Here's an example:
+- **Plugins**: These encapsulate functions that an application can use. There are both ready-made plugins and custom ones you can create. A related concept is "prompt functions." Instead of providing natural language cues for function invocation, you broadcast certain functions to the model. Based on the current chat context, the model may choose to call one of these functions to complete a request or query. Here's an example:
+
+  ```python
+  from semantic_kernel.connectors.ai.open_ai.services.azure_chat_completion import AzureChatCompletion
+
+
+  async def main():
+      from semantic_kernel.functions import KernelFunctionFromPrompt
+      from semantic_kernel.kernel import Kernel
+
+      kernel = Kernel()
+      kernel.add_service(AzureChatCompletion())
+
+      user_input = input("User Input:> ")
+
+      kernel_function = KernelFunctionFromPrompt(
+          function_name="SummarizeText",
+          prompt="""
+          Summarize the provided unstructured text in a sentence that is easy to understand.
+          Text to summarize: {{$user_input}}
+          """,
+      )
+
+      response = await kernel_function.invoke(kernel=kernel, user_input=user_input)
+      print(f"Model Response: {response}")
+
+      """
+      Sample Console Output:
+
+      User Input:> I like dogs
+      Model Response: The text expresses a preference for dogs.
+      """
+
+
+  if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+  ```
 
   ```csharp
   var userInput = Console.ReadLine();
 
-  // Define semantic function inline.
-  string skPrompt = @"Summarize the provided unstructured text in a sentence that is easy to understand.
-                      Text to summarize: {{$userInput}}";
+  // Define the prompt function inline.
+  string prompt = @"Summarize the provided unstructured text in a sentence that is easy to understand. 
+                    Text to summarize: {{$userInput}}";
 
-  // Register the function
-  kernel.CreateSemanticFunction(
-      promptTemplate: skPrompt,
-      functionName: "SummarizeText",
-      pluginName: "SemanticFunctions"
-  );
+  // Register the prompt function
+  kernel_function = KernelFunctionFactory.CreateFromPrompt(prompt);
   ```
 
-  Here, you first have a template prompt `skPrompt` that leaves room for the user to input text, `$userInput`. Then you register the function `SummarizeText` with the plugin `SemanticFunctions`. Note the name of the function that helps Semantic Kernel understand what the function does and when it should be called.
+  Here, you first have a template `prompt` that leaves room for the user to input text, either `$user_input` in Python or `$userInput` in C#. Then you create the `KernelFunction`. Note the name of the function that helps Semantic Kernel understand what the function does and when it should be called. The plugin name and function name are optional, but it can help to provide a semantically meaningful name so the model understands when to call it during function calling.
 
 - **Native function**: There's also native functions that the framework can call directly to carry out the task. Here's an example of such a function retrieving the content from a file:
 
+  ```python
+  # Semantic Kernel Python
+  from semantic_kernel.functions import kernel_function
+  from semantic_kernel.kernel import Kernel
+
+  class NativeFunctions:
+    @kernel_function(description="Retrieve content from a local file")
+    def retrieve_local_file(self, file_name: str, max_size: int = 5000) -> str:
+        with open(file_name, 'r') as file:
+            content = file.read()
+        return content[:max_size]
+
+  kernel = Kernel()
+  kernel.add_plugin(NativeFunctions(), plugin_name="native_functions")
+  ```
+
   ```csharp
+  // Semantic Kernel C#
   public class NativeFunctions {
 
-      [SKFunction, Description("Retrieve content from local file")]
+      [KernelFunction, Description("Retrieve content from a local file")]
       public async Task<string> RetrieveLocalFile(string fileName, int maxSize = 5000)
       {
           string content = await File.ReadAllTextAsync(fileName);
@@ -369,29 +522,10 @@ Let's first talk about the Semantic Kernel. It has the following core concepts:
   string functionName = "RetrieveLocalFile";
 
   var nativeFunctions = new NativeFunctions();
-  kernel.ImportFunctions(nativeFunctions, plugInName);
+  kernel.CreateFunctionFromMethod(nativeFunctions, plugInName);
   ```
 
-- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invokes the necessary functions to carry out the task. Here's an example of such a plan:
-
-  ```csharp
-  string planDefinition = "Read content from a local file and summarize the content.";
-  SequentialPlanner sequentialPlanner = new SequentialPlanner(kernel);
-
-  string assetsFolder = @"../../assets";
-  string fileName = Path.Combine(assetsFolder,"docs","06_SemanticKernel", "aci_documentation.txt");
-
-  ContextVariables contextVariables = new ContextVariables();
-  contextVariables.Add("fileName", fileName);
-
-  var customPlan = await sequentialPlanner.CreatePlanAsync(planDefinition);
-
-  // Execute the plan
-  KernelResult kernelResult = await kernel.RunAsync(contextVariables, customPlan);
-  Console.WriteLine($"Summarization: {kernelResult.GetValue<string>()}");
-  ```
-
-  Note especially `planDefinition` which is a simple instruction for the planner to follow. The appropriate functions are then called based on this plan, in this case our semantic function `SummarizeText` and the native function `RetrieveLocalFile`.
+- **Planner**: Leveraging a model to plan tasks with Function Calling is a powerful approach. It works best when you provide a clear goal or query along with the functions the model can use to achieve that goal. This method improves latency, reduces token usage, and prompts the user for any missing inputs required to invoke functions.
 
 - **Memory**: Abstracts and simplifies context management for AI apps. The idea with memory is that this is something the LLM should know about. You can store this information in a vector store which ends up being an in-memory database or a vector database or similar. Here's an example of a very simplified scenario where _facts_ are added to the memory:
 
@@ -431,11 +565,101 @@ So that's the basics of the Semantic Kernel framework, what about the Agent Fram
 
 Azure AI Agent Service is a more recent addition, introduced at Microsoft Ignite 2024. It allows for the development and deployment of AI agents with more flexible models, such as directly calling open-source LLMs like Llama 3, Mistral, and Cohere.
 
-Azure AI Agent Service provides stronger enterprise security mechanisms and data storage methods, making it suitable for enterprise applications.
+Azure AI Agent Service provides strong enterprise security mechanisms and data storage methods, making it suitable for enterprise applications.
 
 It works out-of-the-box with multi-agent orchestration frameworks like AutoGen and Semantic Kernel.
 
-This service is currently in Public Preview and supports Python and C# for building agents
+This service is currently in Public Preview and supports Python and C# for building agents.
+
+Using Semantic Kernel Python, we can create an Azure AI Agent with a user-defined plugin:
+
+```python
+import asyncio
+from typing import Annotated
+
+from azure.identity.aio import DefaultAzureCredential
+
+from semantic_kernel.agents.azure_ai import AzureAIAgent, AzureAIAgentSettings
+from semantic_kernel.contents.chat_message_content import ChatMessageContent
+from semantic_kernel.contents.utils.author_role import AuthorRole
+from semantic_kernel.functions.kernel_function_decorator import kernel_function
+
+
+# Define a sample plugin for the sample
+class MenuPlugin:
+    """A sample Menu Plugin used for the concept sample."""
+
+    @kernel_function(description="Provides a list of specials from the menu.")
+    def get_specials(self) -> Annotated[str, "Returns the specials from the menu."]:
+        return """
+        Special Soup: Clam Chowder
+        Special Salad: Cobb Salad
+        Special Drink: Chai Tea
+        """
+
+    @kernel_function(description="Provides the price of the requested menu item.")
+    def get_item_price(
+        self, menu_item: Annotated[str, "The name of the menu item."]
+    ) -> Annotated[str, "Returns the price of the menu item."]:
+        return "$9.99"
+
+
+async def main() -> None:
+    ai_agent_settings = AzureAIAgentSettings.create()
+
+    async with (
+        DefaultAzureCredential() as creds,
+        AzureAIAgent.create_client(
+            credential=creds,
+            conn_str=ai_agent_settings.project_connection_string.get_secret_value(),
+        ) as client,
+    ):
+        # Create agent definition
+        agent_definition = await client.agents.create_agent(
+            model=ai_agent_settings.model_deployment_name,
+            name="Host",
+            instructions="Answer questions about the menu.",
+        )
+
+        # Create the AzureAI Agent using the defined client and agent definition
+        agent = AzureAIAgent(
+            client=client,
+            definition=agent_definition,
+        )
+
+        # Add the sample plugin to the kernel
+        agent.kernel.add_plugin(MenuPlugin(), plugin_name="menu")
+
+        # Create a new thread
+        thread = await client.agents.create_thread()
+
+        user_inputs = [
+            "Hello",
+            "What is the special soup?",
+            "How much does that cost?",
+            "Thank you",
+        ]
+
+        try:
+            for user_input in user_inputs:
+                # Add the user input as a chat message
+                await agent.add_chat_message(
+                    thread_id=thread.id, message=ChatMessageContent(role=AuthorRole.USER, content=user_input)
+                )
+                print(f"# User: '{user_input}'")
+                # Invoke the agent for the specified thread
+                async for content in agent.invoke(
+                    thread_id=thread.id,
+                ):
+                    print(f"# Agent: {content.content}")
+        finally:
+            await client.agents.delete_thread(thread.id)
+            await client.agents.delete_agent(agent.id)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
 
 ### Core concepts
 
@@ -528,6 +752,7 @@ For AutoGen and Semantic Kernel, you can also integrate with Azure services, but
 
 - <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure Agent Service</a>
 - <a href="https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/" target="_blank">Semantic Kernel and AutoGen</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel Agent Framework</a>
+- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-python" target="_blank">Semantic Kernel Python Agent Framework</a>
+- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel .Net Agent Framework</a>
 - <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
 - <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
