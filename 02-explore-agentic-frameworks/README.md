@@ -707,9 +707,9 @@ Azure AI Agent Service has the following core concepts:
  
 It does sound like there is a lot of overlap between these frameworks, but there are some key differences in terms of their design, capabilities, and target use cases:
  
-- **AutoGen**: Is an experiementation framework focused on leading-edge research on multi-agent systems. It is the best place to experiment and prototype sophisticated multi-agent sytems.
+- **AutoGen**: Is an experimentation framework focused on leading-edge research on multi-agent systems. It is the best place to experiment and prototype sophisticated multi-agent systems.
 - **Semantic Kernel**: Is a production-ready agent library for building enterprise agentic applications. Focuses on event-driven, distributed agentic applications, enabling multiple LLMs and SLMs, tools, and single/multi-agent design patterns.
-- **Azure AI Agent Service**: Is a platform and deployment service in Azure Foundry for agents. It offers building connectivity to services support by Azure Found like Azure OpenAI, Azure AI Search, Bing Search and code exectuition.
+- **Azure AI Agent Service**: Is a platform and deployment service in Azure Foundry for agents. It offers building connectivity to services support by Azure Found like Azure OpenAI, Azure AI Search, Bing Search and code execution.
  
 Still not sure which one to choose?
 
