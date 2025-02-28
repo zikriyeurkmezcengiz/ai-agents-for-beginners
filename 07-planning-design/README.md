@@ -47,6 +47,93 @@ Large Language Models (LLMs) can generate structured output (e.g. JSON) that is 
 
 The following Python snippet demonstrates a simple planning agent decomposing a goal into subtasks and generating a structured plan:
 
+```python
+from pydantic import BaseModel
+from enum import Enum
+from typing import List, Optional, Union
+import json
+import os
+from typing import Optional
+from pprint import pprint
+from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
+from autogen_ext.models.azure import AzureAIChatCompletionClient
+from azure.core.credentials import AzureKeyCredential
+
+class AgentEnum(str, Enum):
+    FlightBooking = "flight_booking"
+    HotelBooking = "hotel_booking"
+    CarRental = "car_rental"
+    ActivitiesBooking = "activities_booking"
+    DestinationInfo = "destination_info"
+    DefaultAgent = "default_agent"
+    GroupChatManager = "group_chat_manager"
+
+# Travel SubTask Model
+class TravelSubTask(BaseModel):
+    task_details: str
+    assigned_agent: AgentEnum  # we want to assign the task to the agent
+
+class TravelPlan(BaseModel):
+    main_task: str
+    subtasks: List[TravelSubTask]
+    is_greeting: bool
+
+client = AzureAIChatCompletionClient(
+    model="gpt-4o-mini",
+    endpoint="https://models.inference.ai.azure.com",
+    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
+    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
+    model_info={
+        "json_output": False,
+        "function_calling": True,
+        "vision": True,
+        "family": "unknown",
+    },
+)
+
+# Define the user message
+messages = [
+    SystemMessage(content="""You are an planner agent.
+    Your job is to decide which agents to run based on the user's request.
+                      Provide your response in JSON format with the following structure:
+{'main_task': 'Plan a family trip from Singapore to Melbourne.',
+ 'subtasks': [{'assigned_agent': 'flight_booking',
+               'task_details': 'Book round-trip flights from Singapore to '
+                               'Melbourne.'}
+    Below are the available agents specialised in different tasks:
+    - FlightBooking: For booking flights and providing flight information
+    - HotelBooking: For booking hotels and providing hotel information
+    - CarRental: For booking cars and providing car rental information
+    - ActivitiesBooking: For booking activities and providing activity information
+    - DestinationInfo: For providing information about destinations
+    - DefaultAgent: For handling general requests""", source="system"),
+    UserMessage(
+        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
+]
+
+response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+
+response_content: Optional[str] = response.content if isinstance(
+    response.content, str) else None
+if response_content is None:
+    raise ValueError("Response content is not a valid JSON string" )
+
+pprint(json.loads(response_content))
+
+# # Ensure the response content is a valid JSON string before loading it
+# response_content: Optional[str] = response.content if isinstance(
+#     response.content, str) else None
+# if response_content is None:
+#     raise ValueError("Response content is not a valid JSON string")
+
+# # Print the response content after loading it as JSON
+# pprint(json.loads(response_content))
+
+# Validate the response content with the MathReasoning model
+# TravelPlan.model_validate(json.loads(response_content))
+```
+
 ### Planning Agent with Multi-Agent Orchestration
 
 In this example, a Semantic Router Agent receives a user request (e.g., "I need a hotel plan for my trip.").
