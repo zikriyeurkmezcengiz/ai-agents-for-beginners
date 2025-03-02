@@ -37,7 +37,7 @@ Then select `Generate new token`.
 
 Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
 
-## Add this to your Environment Variables 
+## Add this to your Environment Variables
 
 To create your `.env` file run the following command in your terminal:
 
@@ -65,7 +65,7 @@ We recommend creating a Python virtual environment to avoid any conflicts and is
 pip install -r requirements.txt
 ```
 
-This should install the required Python packages. 
+This should install the required Python packages.
 
 # Sign in to Azure
 
