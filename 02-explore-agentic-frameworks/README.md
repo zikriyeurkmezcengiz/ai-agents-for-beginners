@@ -273,7 +273,7 @@ There are many ways to compare these frameworks, but let's look at some key diff
 
 ## AutoGen
 
-Open-source framework developed by Microsoft Research's AI Frontiers Lab. Focuses on event-driven, distributed *agentic* applications, enabling multiple LLMs and SLMs, tools, and advanced multi-agent design patterns.
+AutoGen is an open-source framework developed by Microsoft Research's AI Frontiers Lab. It Focuses on event-driven, distributed *agentic* applications, enabling multiple LLMs and SLMs, tools, and advanced multi-agent design patterns.
 
 AutoGen is built around the core concept of agents, which are autonomous entities that can perceive their environment, make decisions, and take actions to achieve specific goals. Agents communicate through asynchronous messages, allowing them to work independently and in parallel, enhancing system scalability and responsiveness.
 
