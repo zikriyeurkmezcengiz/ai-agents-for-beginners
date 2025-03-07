@@ -150,41 +150,34 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-
 ```csharp
 // Semantic Kernel C# example
 
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.ChatCompletion;
+using System.ComponentModel;
+using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
+
 ChatHistory chatHistory = [];
+chatHistory.AddUserMessage("I'd like to go to New York on January 1, 2025");
 
-chatHistory.AddUserMessage("I'd like to go to New York on January 1, 2025.");
-
-
-// Define a plugin that contains the function to book travel
-public class BookTravelPlugin(
-    IPizzaService pizzaService,
-    IUserContext userContext,
-    IPaymentService paymentService)
-{
-
-    [KernelFunction("book_flight")]
-    [Description("Book travel given location and date")]
-    public async Task<Booking> BookFlight(
-        DateTime date,
-        string location,
-    )
-    {
-        // book travel given date,location
-    }
-}
-
-IKernelBuilder kernelBuilder = new KernelBuilder();
+var kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddAzureOpenAIChatCompletion(
     deploymentName: "NAME_OF_YOUR_DEPLOYMENT",
     apiKey: "YOUR_API_KEY",
     endpoint: "YOUR_AZURE_ENDPOINT"
 );
-kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel");
-Kernel kernel = kernelBuilder.Build();
+kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel"); 
+var kernel = kernelBuilder.Build();
+
+var settings = new AzureOpenAIPromptExecutionSettings()
+{
+    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
+};
+
+var chatCompletion = kernel.GetRequiredService<IChatCompletionService>();
+
+var response = await chatCompletion.GetChatMessageContentAsync(chatHistory, settings, kernel);
 
 /*
 Behind the scenes, the model recognizes the tool to call, what arguments it already has (location) and (date)
@@ -202,16 +195,21 @@ Behind the scenes, the model recognizes the tool to call, what arguments it alre
 ]
 */
 
-ChatResponse response = await chatCompletion.GetChatMessageContentAsync(
-    chatHistory,
-    executionSettings: openAIPromptExecutionSettings,
-    kernel: kernel)
-
-
-Console.WriteLine(response);
-chatHistory.AddAssistantMessage(response);
+Console.WriteLine(response.Content);
+chatHistory.AddMessage(response!.Role, response!.Content!);
 
 // Example AI Model Response: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels! ✈️🗽
+
+// Define a plugin that contains the function to book travel
+public class BookTravelPlugin
+{
+    [KernelFunction("book_flight")]
+    [Description("Book travel given location and date")]
+    public async Task<string> BookFlight(DateTime date, string location)
+    {
+        return await Task.FromResult( $"Travel was booked to {location} on {date}");
+    }
+}
 ```
 
 What you can see from this example is how you can leverage a pre-built parser to extract key information from user input, such as the origin, destination, and date of a flight booking request. This modular approach allows you to focus on the high-level logic.
