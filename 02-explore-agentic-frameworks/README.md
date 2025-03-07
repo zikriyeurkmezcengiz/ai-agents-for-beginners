@@ -477,15 +477,18 @@ Let's first cover some core components:
     string skPrompt = @"Summarize the provided unstructured text in a sentence that is easy to understand.
                         Text to summarize: {{$userInput}}";
     
-    // Register the function
-    kernel.CreateSemanticFunction(
+    // create the function from the prompt
+    KernelFunction summarizeFunc = kernel.CreateFunctionFromPrompt(
         promptTemplate: skPrompt,
-        functionName: "SummarizeText",
-        pluginName: "SemanticFunctions"
+        functionName: "SummarizeText"
     );
+
+    //then import into the current kernel
+    kernel.ImportPluginFromFunctions("SemanticFunctions", [summarizeFunc]);
+
     ```
 
-    Here, you first have a template prompt `skPrompt` that leaves room for the user to input text, `$userInput`. Then you register the function `SummarizeText` with the plugin `SemanticFunctions`. Note the name of the function that helps Semantic Kernel understand what the function does and when it should be called.
+    Here, you first have a template prompt `skPrompt` that leaves room for the user to input text, `$userInput`. Then you create the kernel function `SummarizeText` and then import it into the kernel with the plugin name `SemanticFunctions`. Note the name of the function that helps Semantic Kernel understand what the function does and when it should be called.
 
 - **Native function**: There's also native functions that the framework can call directly to carry out the task. Here's an example of such a function retrieving the content from a file:
 
