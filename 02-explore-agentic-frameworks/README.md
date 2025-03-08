@@ -512,7 +512,7 @@ Let's first cover some core components:
     //This imports the instance created
    kernel.ImportPluginFromObject(nativeFunctions, pluginName);
 
-   //alternatively just use
+   //alternatively just use which will resolve dependencies
     kernel.ImportPluginFromType<NativeFunctions>();
 
     ```
