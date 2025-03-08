@@ -509,29 +509,14 @@ Let's first cover some core components:
     string functionName = "RetrieveLocalFile";
     
     var nativeFunctions = new NativeFunctions();
-    kernel.ImportFunctions(nativeFunctions, plugInName);
+    //This imports the instance created
+   kernel.ImportPluginFromObject(nativeFunctions, pluginName);
+
+   //alternatively just use
+    kernel.ImportPluginFromType<NativeFunctions>();
+
     ```
 
-- **Planner**: The planner orchestrates execution plans and strategies based on user input. The idea is to express how things should be carried out which then surveys as an instruction for Semantic Kernel to follow. It then invokes the necessary functions to carry out the task. Here's an example of such a plan:
-
-    ```csharp
-    string planDefinition = "Read content from a local file and summarize the content.";
-    SequentialPlanner sequentialPlanner = new SequentialPlanner(kernel);
-    
-    string assetsFolder = @"../../assets";
-    string fileName = Path.Combine(assetsFolder,"docs","06_SemanticKernel", "aci_documentation.txt");
-    
-    ContextVariables contextVariables = new ContextVariables();
-    contextVariables.Add("fileName", fileName);
-    
-    var customPlan = await sequentialPlanner.CreatePlanAsync(planDefinition);
-    
-    // Execute the plan
-    KernelResult kernelResult = await kernel.RunAsync(contextVariables, customPlan);
-    Console.WriteLine($"Summarization: {kernelResult.GetValue<string>()}");
-    ```
-
-    Note especially `planDefinition` which is a simple instruction for the planner to follow. The appropriate functions are then called based on this plan, in this case our semantic function `SummarizeText` and the native function `RetrieveLocalFile`.
 - **Memory**:  Abstracts and simplifies context management for AI apps. The idea with memory is that this is something the LLM should know about. You can store this information in a vector store which ends up being an in-memory database or a vector database or similar. Here's an example of a very simplified scenario where *facts* are added to the memory:
 
     ```csharp
