@@ -163,11 +163,10 @@ Question: When should you consider using multi-agents?
 
 [Solution quiz](./solution/solution-quiz.md)
 
-## Summary
+## Previous Lesson
 
-In this lesson, we've looked at the multi-agent design pattern, including the scenarios where multi-agents are applicable, the advantages of using multi-agents over a singular agent, the building blocks of implementing the multi-agent design pattern, and how to have visibility into how the multiple agents are interacting with each other.
+[Planning Design](../07-planning-design/README.md)
 
-## Additional resources
+## Next Lesson
 
-- <a href="https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/intro.html" target="_blank">AutoGen design patterns</a>
-- <a href="https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/" target="_blank">Agentic design patterns</a>
+[Metacognition in AI Agents](../09-metacognition/README.md)
