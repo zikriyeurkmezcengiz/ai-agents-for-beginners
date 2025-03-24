@@ -1,3 +1,8 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V6HpE9hZEx0?si=GJJipO5QG8PWj8Zh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)**
+
 # Multi-agent design patterns
 
 As soon as you start working on a project that involves multiple agents, you will need to consider the multi-agent design pattern. However, it might not be immediately clear when to switch to multi-agents and what the advantages are.
