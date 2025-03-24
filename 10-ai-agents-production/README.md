@@ -1,3 +1,8 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l4TP6IyJxmQ?si=dClVIdvacBw2Tk9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)**
+
 # AI Agents in Production
 
 ## Introduction
