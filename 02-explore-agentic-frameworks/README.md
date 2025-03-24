@@ -1,3 +1,8 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ODwF-EZo_O8?si=ZDzPwLGovhukK66y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)**
+
 # Explore AI Agent Frameworks
 
 AI agent frameworks are software platforms designed to simplify the creation, deployment, and management of AI agents. These frameworks provide developers with pre-built components, abstractions, and tools that streamline the development of complex AI systems.
