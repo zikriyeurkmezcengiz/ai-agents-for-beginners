@@ -1,3 +1,9 @@
+**Embedded Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3zgm60bXmQk?si=9KSCevz-LZis6cPt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[Link to Video](https://youtu.be/3zgm60bXmQk?si=z8QygFvYQv-9WtO1)
+
 # Introduction to AI Agents and Agent Use Cases
 
 Welcome to the "AI Agents for Beginners" course! This course provides fundamental knowledge and applied samples for building AI Agents.
