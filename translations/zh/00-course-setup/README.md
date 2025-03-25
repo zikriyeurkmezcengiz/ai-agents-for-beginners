@@ -109,4 +109,4 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## 下一课
 
-[AI Agents简介及代理使用案例](../01-intro-to-ai-agents/README.md)
+[AI Agents 介绍及应用案例](../01-intro-to-ai-agents/README.md)
