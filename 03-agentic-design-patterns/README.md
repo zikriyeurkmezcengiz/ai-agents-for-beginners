@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m9lM8qqoOEA?si=at4Gji7N4qzFjkGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![How to Design Good AI Agents](./images/lesson-3-thumbnail.png)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)
 
-**[Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)**
+> _(Click the image above to view video of this lesson)_
 # AI Agentic Design Principles
 
 ## Introduction

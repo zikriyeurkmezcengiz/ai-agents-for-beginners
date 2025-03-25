@@ -1,8 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l4TP6IyJxmQ?si=dClVIdvacBw2Tk9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![AI Agents In Production](./images/lesson-10-thumbnail.png)](https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV)
 
-**[Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)**
-
+> _(Click the image above to view video of this lesson)_
 # AI Agents in Production
 
 ## Introduction

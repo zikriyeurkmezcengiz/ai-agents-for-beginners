@@ -1,8 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/His9R6gw6Ec?si=1zNpKiqs2fgyCkad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Multi-Agent Design](./images/lesson-9-thumbnail.png)](https://youtu.be/His9R6gw6Ec?si=3_RMb8VprNvdLRhX)
 
-**[Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)**
-
+> _(Click the image above to view video of this lesson)_
 # Metacognition in AI Agents
 
 ## Introduction

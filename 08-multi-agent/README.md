@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V6HpE9hZEx0?si=GJJipO5QG8PWj8Zh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Multi-Agent Design](./images/lesson-8-thumbnail.png)](https://youtu.be/kPfJ2BrBCMY?si=A7K44uMCqgvLQVCa)
 
-**[Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)**
+> _(Click the image above to view video of this lesson)_
 
 # Multi-agent design patterns
 
