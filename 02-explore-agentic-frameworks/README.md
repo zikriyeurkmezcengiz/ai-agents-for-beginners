@@ -1,3 +1,8 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ODwF-EZo_O8?si=ZDzPwLGovhukK66y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)**
+
 # Explore AI Agent Frameworks
 
 AI agent frameworks are software platforms designed to simplify the creation, deployment, and management of AI agents. These frameworks provide developers with pre-built components, abstractions, and tools that streamline the development of complex AI systems.
@@ -745,3 +750,11 @@ For AutoGen and Semantic Kernel, you can also integrate with Azure services, but
 - <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel .Net Agent Framework</a>
 - <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
 - <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
+
+## Previous Lesson
+
+[Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
+
+## Next Lesson
+
+[Understanding Agentic Design Patterns](../03-agentic-design-patterns/README.md)

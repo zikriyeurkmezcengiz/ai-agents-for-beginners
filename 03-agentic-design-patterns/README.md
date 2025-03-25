@@ -1,3 +1,7 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m9lM8qqoOEA?si=at4Gji7N4qzFjkGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)**
 # AI Agentic Design Principles
 
 ## Introduction
@@ -89,3 +93,10 @@ Imagine you are designing a Travel Agent, here is how you could think about usin
 - <a href="https://microsoft.com" target="_blank">The HAX Toolkit Project - Microsoft Research</a>
 - <a href="https://responsibleaitoolbox.ai" target="_blank">Responsible AI Toolbox</a>
 
+## Previous Lesson
+
+[Exploring Agentic Frameworks](../02-explore-agentic-frameworks/README.md)
+
+## Next Lesson
+
+[Tool Use Design Pattern](../04-tool-use/README.md)

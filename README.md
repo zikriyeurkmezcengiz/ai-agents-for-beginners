@@ -10,6 +10,18 @@
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/pulls/?WT.mc_id=academic-105485-koreyst)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)
 
+### Language Support
+[![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](Readme.md)
+[![Chinese Simplified](https://img.shields.io/badge/Chinese_Simplified-brightgreen.svg?style=flat-square)](./translations/zh/README.md)
+[![Chinese Traditional](https://img.shields.io/badge/Chinese_Traditional-brightgreen.svg?style=flat-square)](./translations/tw/README.md)     
+[![Chinese Hong Kong](https://img.shields.io/badge/Chinese_Hong_Kong-brightgreen.svg?style=flat-square)](./translations/hk/README.md) 
+[![French](https://img.shields.io/badge/French-brightgreen.svg?style=flat-square)](./translations/fr/README.md)
+[![Japanese](https://img.shields.io/badge/Japanese-brightgreen.svg?style=flat-square)](./translations/ja/README.md) 
+[![Korean](https://img.shields.io/badge/Korean-brightgreen.svg?style=flat-square)](./translations/ko/README.md)
+[![Portuguese Brazilian](https://img.shields.io/badge/Portuguese_Brazilian-brightgreen.svg?style=flat-square)](./translations/pt/README.md)
+[![Spanish](https://img.shields.io/badge/Spanish-brightgreen.svg?style=flat-square)](./translations/es/README.md)
+[![German](https://img.shields.io/badge/German-brightgreen.svg?style=flat-square)](./translations/de/README.md)  
+
 [![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/ai-agents-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/ai-agents-for-beginners/network/?WT.mc_id=academic-105485-koreyst)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)
@@ -59,18 +71,18 @@ If you get stuck or have any questions about building AI Agents, join our [Azure
 
 ## 🗃️ Lessons
 
-| **Lesson**                            | **Link**                                   | 
-|----------------------------------------|--------------------------------------------|
-| Intro to AI Agents and Use Cases       | [Link](./01-intro-to-ai-agents/README.md)          |
-| Exploring Agentic Frameworks           | [Link](./02-explore-agentic-frameworks/README.md)  |
-| Understanding Agentic Design Patterns  | [Link](./03-agentic-design-patterns/README.md)  |
-| Tool Use Design Pattern                | [Link](./04-tool-use/README.md)                    |
-| Agentic RAG                            | [Link](./05-agentic-rag/README.md)                 |
-| Building Trustworthy AI Agents          | [Link](./06-building-trustworthy-agents/README.md) |
-| Planning Design Pattern                | [Link](./07-planning-design/README.md)             |
-| Multi-Agent Design Pattern             | [Link](./08-multi-agent/README.md)                 |
-| Metacognition Design Pattern           | [Link](./09-metacognition/README.md)               |
-| AI Agents in Production                | [Link](./10-ai-agents-production/README.md)        |
+| **Lesson**                               | **Text & Code**                                    | **Video**                                                  | **Extra Learning**                                                                     |
+|------------------------------------------|----------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| Intro to AI Agents and Agent Use Cases   | [Link](./01-intro-to-ai-agents/README.md)          | [Video](https://youtu.be/3zgm60bXmQk?si=z8QygFvYQv-9WtO1)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Exploring AI Agentic Frameworks          | [Link](./02-explore-agentic-frameworks/README.md)  | [Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Understanding AI Agentic Design Patterns | [Link](./03-agentic-design-patterns/README.md)     | [Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Tool Use Design Pattern                  | [Link](./04-tool-use/README.md)                    | [Video](https://youtu.be/vieRiPRx-gI?si=2z6O2Xu2cu_Jz46N)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Agentic RAG                              | [Link](./05-agentic-rag/README.md)                 | [Video](https://youtu.be/WcjAARvdL7I?si=gKPWsQpKiIlDH9A3)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Building Trustworthy AI Agents           | [Link](./06-building-trustworthy-agents/README.md) | [Video](https://youtu.be/iZKkMEGBCUQ?si=jZjpiMnGFOE9L8OK ) | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Planning Design Pattern                  | [Link](./07-planning-design/README.md)             | [Video](https://youtu.be/kPfJ2BrBCMY?si=6SC_iv_E5-mzucnC)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Multi-Agent Design Pattern               | [Link](./08-multi-agent/README.md)                 | [Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Metacognition Design Pattern             | [Link](./09-metacognition/README.md)               | [Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| AI Agents in Production                  | [Link](./10-ai-agents-production/README.md)        | [Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 
 ## 🌐 Multi-Language Support
 

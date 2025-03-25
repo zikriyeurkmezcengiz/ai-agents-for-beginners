@@ -1,3 +1,8 @@
+**Embedded Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vieRiPRx-gI?si=ImP0lCZpa7OCJW7r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**[Video](https://youtu.be/vieRiPRx-gI?si=2z6O2Xu2cu_Jz46N)**
+
 # Tool Use Design Pattern
 
 Tools are interesting because they allow AI agents to have a broader range of capabilities. Instead of the agent having a limited set of actions it can perform, by adding a tool, the agent can now perform a wide range of actions. In this chapter, we will look at the Tool Use Design Pattern, which describes how AI agents can use specific tools to achieve their goals.
@@ -312,3 +317,11 @@ Running the app in a secure environment further enhances protection. In enterpri
 - <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Semantic Kernel Function Calling Tutorial</a>
 - <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel Code Interpreter</a>
 - <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen Tools</a>
+
+## Previous Lesson
+
+[Understanding Agentic Design Patterns](../03-agentic-design-patterns/README.md)
+
+## Next Lesson
+
+[Agentic RAG](../05-agentic-rag/README.md)
