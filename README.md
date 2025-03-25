@@ -64,7 +64,7 @@ If you get stuck or have any questions about building AI Agents, join our [Azure
 
 ## 📂 Each lesson includes
 
-- A written lesson located in the README (Videos Coming March 2025)
+- A written lesson located in the README and a short video
 - Python code samples supporting Azure AI Foundry and Github Models (Free)
 - Links to extra resources to continue your learning
 

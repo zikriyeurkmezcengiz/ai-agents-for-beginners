@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ODwF-EZo_O8?si=ZDzPwLGovhukK66y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Exploring AI Agent Frameworks](./images/lesson-2-thumbnail.png)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
 
-**[Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)**
+> _(Click the image above to view video of this lesson)_
 
 # Explore AI Agent Frameworks
 

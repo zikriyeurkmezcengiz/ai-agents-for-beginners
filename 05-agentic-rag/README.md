@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WcjAARvdL7I?si=qG29s6mH6lZg8RNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Agentic RAG](./images/lesson-5-thumbnail.png)](https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9)
 
-**[Video](https://youtu.be/WcjAARvdL7I?si=gKPWsQpKiIlDH9A3)**
+> _(Click the image above to view video of this lesson)_
 
 # Agentic RAG
 

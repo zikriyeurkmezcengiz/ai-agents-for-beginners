@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iZKkMEGBCUQ?si=kZfUkEKiZIFytxbl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Trustworthy AI Agents](./images/lesson-6-thumbnail.png)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
 
-**[Video](https://youtu.be/iZKkMEGBCUQ?si=jZjpiMnGFOE9L8OK)**
+> _(Click the image above to view video of this lesson)_
 
 # Building Trustworthy AI Agents
 

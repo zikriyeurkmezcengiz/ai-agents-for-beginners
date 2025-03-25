@@ -1,7 +1,6 @@
-**Embedded Video**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vieRiPRx-gI?si=ImP0lCZpa7OCJW7r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![How to Design Good AI Agents](./images/lesson-4-thumbnail.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
-**[Video](https://youtu.be/vieRiPRx-gI?si=2z6O2Xu2cu_Jz46N)**
+> _(Click the image above to view video of this lesson)_
 
 # Tool Use Design Pattern
 
