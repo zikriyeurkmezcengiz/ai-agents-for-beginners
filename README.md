@@ -11,7 +11,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)
 
 ### Language Support
-[![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](Readme.md)
+[![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](README.md)
 [![Chinese Simplified](https://img.shields.io/badge/Chinese_Simplified-brightgreen.svg?style=flat-square)](./translations/zh/README.md)
 [![Chinese Traditional](https://img.shields.io/badge/Chinese_Traditional-brightgreen.svg?style=flat-square)](./translations/tw/README.md)     
 [![Chinese Hong Kong](https://img.shields.io/badge/Chinese_Hong_Kong-brightgreen.svg?style=flat-square)](./translations/hk/README.md) 
