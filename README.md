@@ -21,7 +21,7 @@
 [![Portuguese Brazilian](https://img.shields.io/badge/Portuguese_Brazilian-brightgreen.svg?style=flat-square)](./translations/pt/README.md)
 [![Spanish](https://img.shields.io/badge/Spanish-brightgreen.svg?style=flat-square)](./translations/es/README.md)
 [![German](https://img.shields.io/badge/German-brightgreen.svg?style=flat-square)](./translations/de/README.md)  
-[![Persian](https://img.shields.io/badge/Persian-brightgreen.svg?style=flat-square)](./translations/fr/README.md) 
+[![Persian](https://img.shields.io/badge/Persian-brightgreen.svg?style=flat-square)](./translations/fa/README.md) 
 [![Polish](https://img.shields.io/badge/Polish-brightgreen.svg?style=flat-square)](./translations/pl/README.md) 
 
 [![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)
